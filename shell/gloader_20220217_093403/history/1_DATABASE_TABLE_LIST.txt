@@ -1,0 +1,9 @@
+
+TABLE_LIST                    
+------------------------------
+"PUBLIC"."CYCLONE_SLAVE_STATE"
+"PUBLIC"."CYCLONE_SLAVE_TABLE"
+"PUBLIC"."DEDUCTION"          
+
+3 rows selected.
+

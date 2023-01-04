@@ -1,0 +1,135 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CFLAGS	src/Makefile	/^CFLAGS=-g -O0 -W -Wall$/;"	m
+DB_FAILOVER	include/SundbCbssPoc.h	49;"	d
+INC	src/Makefile	/^INC=-I. -I${GOLDILOCKS_HOME}\/include -I\/home\/son2865\/work\/simple_bmt_cpp\/include$/;"	m
+LIBS	src/Makefile	/^LIBS=-lgoldilocksc -lpthread -lm  -ldl -lrt$/;"	m
+LIB_DIR	src/Makefile	/^LIB_DIR=-L. -L${GOLDILOCKS_HOME}\/lib$/;"	m
+OBJS	src/Makefile	/^OBJS=SundbCbssPoc.o SundbCbssComm.o$/;"	m
+PARAM	src/SundbCbssPoc.cpp	/^typedef struct PARAM$/;"	s	file:
+PARAM	src/SundbCbssPoc.cpp	/^} PARAM;$/;"	t	typeref:struct:PARAM	file:
+PrintDiagnosticRecord	src/SundbCbssComm.cpp	/^int PrintDiagnosticRecord( SQLSMALLINT aHandleType, SQLHANDLE aHandle )$/;"	f
+Record	include/SundbCbssPoc.h	/^    } Record;$/;"	t	class:SundbCbssPoc	typeref:struct:SundbCbssPoc::__anon1
+Record1	include/SundbCbssPoc.h	/^    } Record1;$/;"	t	class:SundbCbssPoc	typeref:struct:SundbCbssPoc::__anon3
+Record1Ind	include/SundbCbssPoc.h	/^    } Record1Ind ;$/;"	t	class:SundbCbssPoc	typeref:struct:SundbCbssPoc::__anon4
+RecordInd	include/SundbCbssPoc.h	/^    } RecordInd ;$/;"	t	class:SundbCbssPoc	typeref:struct:SundbCbssPoc::__anon2
+SUNDB_MAX_CLIENT	include/SundbCbssPoc.h	42;"	d
+SUNDB_SCENARIO	include/SundbCbssPoc.h	43;"	d
+SUNDB_SELECT	include/SundbCbssPoc.h	48;"	d
+SundbCbssPoc	include/SundbCbssPoc.h	/^    SundbCbssPoc ( int aIdx, char* aDml, int aScenario,int aSession,int aTransMax )$/;"	f	class:SundbCbssPoc
+SundbCbssPoc	include/SundbCbssPoc.h	/^class SundbCbssPoc $/;"	c
+_PRT	include/SundbDefine.h	10;"	d
+_T_PRT	include/SundbDefine.h	9;"	d
+__CBSS_POC_DEF_H__	include/SundbDefine.h	2;"	d
+__CBSS_POC_H__	include/SundbCbssPoc.h	2;"	d
+_catch_err	include/SundbCbssPoc.h	/^    int     _catch_err;$/;"	m	class:SundbCbssPoc
+_catch_err	src/SundbCbssPoc.cpp	/^int             _catch_err = 0;$/;"	v
+_rc	include/SundbCbssPoc.h	/^    int     _rc;$/;"	m	class:SundbCbssPoc
+_sundb_argc	src/SundbCbssPoc.cpp	/^int             _sundb_argc = 0;   $/;"	v
+_sundb_argv	src/SundbCbssPoc.cpp	/^const char**    _sundb_argv = NULL;$/;"	v
+_sundb_dbc_name_set	src/SundbCbssComm.cpp	/^void _sundb_dbc_name_set ( char* sDbcName, int sGroup )$/;"	f
+_sundb_getArg	src/SundbCbssPoc.cpp	/^char* _sundb_getArg ( const char* name, const char* long_name )$/;"	f
+_sundb_getArg_	src/SundbCbssPoc.cpp	/^char* _sundb_getArg_ ( const char* name )$/;"	f
+_sundb_group_process	src/SundbCbssComm.cpp	/^void _sundb_group_process ( int* aGroup, int aUseGroup, int aIdx )$/;"	f
+_sundb_max_search_id	src/SundbCbssComm.cpp	/^void _sundb_max_search_id ( int* aGroup, int aIdx, int aSessMax )$/;"	f
+_sundb_scenario_sql_set	src/SundbCbssComm.cpp	/^int _sundb_scenario_sql_set ( char* aString, int aType, int aSequence )$/;"	f
+_sundb_setArg	src/SundbCbssPoc.cpp	/^void _sundb_setArg ( int* pArgc, char** ppArgv )$/;"	f
+_sundb_setArg2	src/SundbCbssComm.cpp	/^void _sundb_setArg2 ()$/;"	f
+_sundb_sql_set	src/SundbCbssComm.cpp	/^void _sundb_sql_set ( char* aSql, int aType, int aScenario )$/;"	f
+_sundb_vector_set	src/SundbCbssComm.cpp	/^void _sundb_vector_set ( int aIdx, int* aMax,int* aMin, int aTransMax )$/;"	f
+db_type	src/SundbCbssPoc.cpp	/^    int db_type;          \/\/ 1:group 2:no-group$/;"	m	struct:PARAM	file:
+dml	src/SundbCbssPoc.cpp	/^    char dml[1];        \/\/ 1:insert 2:update 3:delete 4:select$/;"	m	struct:PARAM	file:
+doIt	src/truncate.sh	/^doIt()$/;"	f
+g_use_client	src/SundbCbssPoc.cpp	/^int             g_use_client;$/;"	v
+g_use_dml	src/SundbCbssPoc.cpp	/^char            g_use_dml[1];$/;"	v
+g_use_max_count	src/SundbCbssPoc.cpp	/^int             g_use_max_count;$/;"	v
+idx	src/SundbCbssPoc.cpp	/^    int idx;            \/\/ thread number$/;"	m	struct:PARAM	file:
+mDbType	include/SundbCbssPoc.h	/^    int     mDbType;$/;"	m	class:SundbCbssPoc
+mDml	include/SundbCbssPoc.h	/^    char    mDml[1];$/;"	m	class:SundbCbssPoc
+mIdx	include/SundbCbssPoc.h	/^    int     mIdx;$/;"	m	class:SundbCbssPoc
+mRecord	include/SundbCbssPoc.h	/^    Record          mRecord;$/;"	m	class:SundbCbssPoc
+mRecord1	include/SundbCbssPoc.h	/^    Record1          mRecord1;$/;"	m	class:SundbCbssPoc
+mRecord1Ind	include/SundbCbssPoc.h	/^    Record1Ind       mRecord1Ind;$/;"	m	class:SundbCbssPoc
+mRecordInd	include/SundbCbssPoc.h	/^    RecordInd       mRecordInd;$/;"	m	class:SundbCbssPoc
+mScenario	include/SundbCbssPoc.h	/^    int     mScenario;$/;"	m	class:SundbCbssPoc
+mSessMax	include/SundbCbssPoc.h	/^    int     mSessMax;$/;"	m	class:SundbCbssPoc
+mTransMax	include/SundbCbssPoc.h	/^    int     mTransMax;$/;"	m	class:SundbCbssPoc
+mType	include/SundbCbssPoc.h	/^    int     mType;$/;"	m	class:SundbCbssPoc
+main	src/SundbCbssPoc.cpp	/^int main ( int argc, char** argv )$/;"	f
+sC1	include/SundbCbssPoc.h	/^        SQLLEN              sC1 ;$/;"	m	struct:SundbCbssPoc::__anon2
+sC1	include/SundbCbssPoc.h	/^    SQLINTEGER          sC1;$/;"	m	struct:SundbCbssPoc::__anon1
+sC2	include/SundbCbssPoc.h	/^        SQLLEN              sC2 ;$/;"	m	struct:SundbCbssPoc::__anon2
+sC2	include/SundbCbssPoc.h	/^    SQLBIGINT           sC2;$/;"	m	struct:SundbCbssPoc::__anon1
+sC3	include/SundbCbssPoc.h	/^        SQLLEN              sC3 ;$/;"	m	struct:SundbCbssPoc::__anon2
+sC3	include/SundbCbssPoc.h	/^    SQLSMALLINT         sC3;$/;"	m	struct:SundbCbssPoc::__anon1
+sC4	include/SundbCbssPoc.h	/^        SQLLEN              sC4 ;$/;"	m	struct:SundbCbssPoc::__anon2
+sC4	include/SundbCbssPoc.h	/^    SQLCHAR             sC4[1000];$/;"	m	struct:SundbCbssPoc::__anon1
+sC5	include/SundbCbssPoc.h	/^        SQLLEN              sC5 ;$/;"	m	struct:SundbCbssPoc::__anon2
+sC5	include/SundbCbssPoc.h	/^    SQLCHAR             sC5[100];$/;"	m	struct:SundbCbssPoc::__anon1
+sC6	include/SundbCbssPoc.h	/^        SQLLEN              sC6 ;$/;"	m	struct:SundbCbssPoc::__anon2
+sC6	include/SundbCbssPoc.h	/^    char*               sC6;$/;"	m	struct:SundbCbssPoc::__anon1
+sChannelNo	include/SundbCbssPoc.h	/^    SQLINTEGER      sChannelNo;$/;"	m	class:SundbCbssPoc
+sChannelNoInd	include/SundbCbssPoc.h	/^    SQLLEN          sChannelNoInd;$/;"	m	class:SundbCbssPoc
+sDbc	include/SundbCbssPoc.h	/^    SQLHDBC         sDbc    ;$/;"	m	class:SundbCbssPoc
+sDiff	include/SundbCbssPoc.h	/^    double  sDiff;$/;"	m	class:SundbCbssPoc
+sEnd	include/SundbCbssPoc.h	/^    struct  timeval sStart, sEnd;$/;"	m	class:SundbCbssPoc	typeref:struct:SundbCbssPoc::
+sEvent_Id	include/SundbCbssPoc.h	/^    SQLCHAR         sEvent_Id[19];$/;"	m	class:SundbCbssPoc
+sEvent_Id_Len	include/SundbCbssPoc.h	/^    SQLLEN          sEvent_Id_Len;$/;"	m	class:SundbCbssPoc
+sIdentifier	include/SundbCbssPoc.h	/^        SQLCHAR             sIdentifier [130];$/;"	m	struct:SundbCbssPoc::__anon3
+sIdentifier	include/SundbCbssPoc.h	/^        SQLLEN              sIdentifier ;$/;"	m	struct:SundbCbssPoc::__anon4
+sInputUserId	include/SundbCbssPoc.h	/^    SQLBIGINT       sInputUserId;$/;"	m	class:SundbCbssPoc
+sInputUserIdInd	include/SundbCbssPoc.h	/^    SQLLEN          sInputUserIdInd;$/;"	m	class:SundbCbssPoc
+sKey_index_p	include/SundbCbssPoc.h	/^        SQLCHAR             sKey_index_p[84];$/;"	m	struct:SundbCbssPoc::__anon3
+sKey_index_p	include/SundbCbssPoc.h	/^        SQLLEN              sKey_index_p;$/;"	m	struct:SundbCbssPoc::__anon4
+sKey_index_s	include/SundbCbssPoc.h	/^        SQLCHAR             sKey_index_s[196];$/;"	m	struct:SundbCbssPoc::__anon3
+sKey_index_s	include/SundbCbssPoc.h	/^        SQLLEN              sKey_index_s;$/;"	m	struct:SundbCbssPoc::__anon4
+sMax	include/SundbCbssPoc.h	/^    int     sMax;$/;"	m	class:SundbCbssPoc
+sMin	include/SundbCbssPoc.h	/^    int     sMin;$/;"	m	class:SundbCbssPoc
+sOpen_date	include/SundbCbssPoc.h	/^        SQLCHAR             sOpen_date  [8];$/;"	m	struct:SundbCbssPoc::__anon3
+sOpen_date	include/SundbCbssPoc.h	/^        SQLLEN              sOpen_date  ;$/;"	m	struct:SundbCbssPoc::__anon4
+sOpen_time	include/SundbCbssPoc.h	/^        SQLCHAR             sOpen_time  [6];$/;"	m	struct:SundbCbssPoc::__anon3
+sOpen_time	include/SundbCbssPoc.h	/^        SQLLEN              sOpen_time  ;$/;"	m	struct:SundbCbssPoc::__anon4
+sPara_Name	include/SundbCbssPoc.h	/^    SQLCHAR         sPara_Name[51];$/;"	m	class:SundbCbssPoc
+sPara_Name_Len	include/SundbCbssPoc.h	/^    SQLLEN          sPara_Name_Len;$/;"	m	class:SundbCbssPoc
+sPayload	include/SundbCbssPoc.h	/^        SQLCHAR             sPayload    [1024];$/;"	m	struct:SundbCbssPoc::__anon3
+sPayload	include/SundbCbssPoc.h	/^        SQLLEN              sPayload    ;$/;"	m	struct:SundbCbssPoc::__anon4
+sStart	include/SundbCbssPoc.h	/^    struct  timeval sStart, sEnd;$/;"	m	class:SundbCbssPoc	typeref:struct:SundbCbssPoc::timeval
+sStep	include/SundbCbssPoc.h	/^    int     sStep;$/;"	m	class:SundbCbssPoc
+sStmt	include/SundbCbssPoc.h	/^    SQLHSTMT        sStmt   ;$/;"	m	class:SundbCbssPoc
+sStmt_d	include/SundbCbssPoc.h	/^    SQLHSTMT        sStmt_d ;$/;"	m	class:SundbCbssPoc
+sStmt_u	include/SundbCbssPoc.h	/^    SQLHSTMT        sStmt_u ;$/;"	m	class:SundbCbssPoc
+sTpoBjId	include/SundbCbssPoc.h	/^    SQLBIGINT       sTpoBjId   ;$/;"	m	class:SundbCbssPoc
+sTpoBjIdInd	include/SundbCbssPoc.h	/^    SQLLEN          sTpoBjIdInd;$/;"	m	class:SundbCbssPoc
+sType	include/SundbCbssPoc.h	/^    SQLINTEGER      sType;$/;"	m	class:SundbCbssPoc
+sTypeInd	include/SundbCbssPoc.h	/^    SQLLEN          sTypeInd;$/;"	m	class:SundbCbssPoc
+sUserId	include/SundbCbssPoc.h	/^    SQLBIGINT       sUserId    ;$/;"	m	class:SundbCbssPoc
+sUserIdInd	include/SundbCbssPoc.h	/^    SQLLEN          sUserIdInd ;$/;"	m	class:SundbCbssPoc
+s_env	include/SundbCbssPoc.h	/^    SQLHENV         s_env   ;$/;"	m	class:SundbCbssPoc
+s_max_count	src/SundbCbssPoc.cpp	/^    int s_max_count;    \/\/ session Max Cont$/;"	m	struct:PARAM	file:
+scenario	src/SundbCbssPoc.cpp	/^    int scenario;$/;"	m	struct:PARAM	file:
+sunPthreadStart	src/SundbCbssPoc.cpp	/^int sunPthreadStart ()$/;"	f
+sundbOdbcAlloc	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcAlloc()$/;"	f	class:SundbCbssPoc
+sundbOdbcBindCol	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcBindCol()$/;"	f	class:SundbCbssPoc
+sundbOdbcBindParaMeter	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcBindParaMeter()$/;"	f	class:SundbCbssPoc
+sundbOdbcConnect	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcConnect()$/;"	f	class:SundbCbssPoc
+sundbOdbcExecute	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcExecute()$/;"	f	class:SundbCbssPoc
+sundbOdbcExecute_i	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcExecute_i()$/;"	f	class:SundbCbssPoc
+sundbOdbcExecute_s	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcExecute_s()$/;"	f	class:SundbCbssPoc
+sundbOdbcExecute_u	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcExecute_u()$/;"	f	class:SundbCbssPoc
+sundbOdbcFreeEnd	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcFreeEnd()$/;"	f	class:SundbCbssPoc
+sundbOdbcPrepare	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbOdbcPrepare( char* aSql )$/;"	f	class:SundbCbssPoc
+sundbPocDelete	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbPocDelete()$/;"	f	class:SundbCbssPoc
+sundbPocInd	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbPocInd()$/;"	f	class:SundbCbssPoc
+sundbPocInsert	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbPocInsert()$/;"	f	class:SundbCbssPoc
+sundbPocSelect	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbPocSelect()$/;"	f	class:SundbCbssPoc
+sundbPocStart	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbPocStart()$/;"	f	class:SundbCbssPoc
+sundbPocStart	src/SundbCbssPoc.cpp	/^void* sundbPocStart ( void* param )$/;"	f
+sundbPocUpdate	src/SundbCbssPoc.cpp	/^int SundbCbssPoc::sundbPocUpdate()$/;"	f	class:SundbCbssPoc
+t_max_count	src/SundbCbssPoc.cpp	/^    int t_max_count;    \/\/ transaction Max Count$/;"	m	struct:PARAM	file:
+thr_param	src/SundbCbssPoc.cpp	/^PARAM           thr_param[SUNDB_MAX_CLIENT];$/;"	v
+type	src/SundbCbssPoc.cpp	/^    int type;           \/\/ 1:ind 2:sum 3:ind & sum$/;"	m	struct:PARAM	file:
+usage	src/SundbCbssPoc.cpp	/^void usage ( )$/;"	f
