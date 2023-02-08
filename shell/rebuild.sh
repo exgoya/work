@@ -1,4 +1,4 @@
-LOG=/home/goya/work/shell/rebuild.log
+LOG=./rebuild.log
 GSQL='gsqlnet sys gliese --no-prompt'
 TABLE=$1
 sStatement=V\$STATEMENT
