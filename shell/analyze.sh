@@ -38,12 +38,9 @@ date
 echo "analyze table start"
 echo "====================================="
 
-date
-
 analyzeTable temp1
 
 rm temp1
-rm temp2
 
 echo "====================================="
 date
