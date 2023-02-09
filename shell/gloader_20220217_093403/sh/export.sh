@@ -1,3 +1,0 @@
-gloadernet SYS gliese -e -c ../control/PUBLIC.CYCLONE_SLAVE_STATE.ctl -d ../data/PUBLIC.CYCLONE_SLAVE_STATE.dat -l ../export_log/PUBLIC.CYCLONE_SLAVE_STATE.log -b ../export_log/PUBLIC.CYCLONE_SLAVE_STATE.bad -a 1000 -C 10000 -A
-gloadernet SYS gliese -e -c ../control/PUBLIC.CYCLONE_SLAVE_TABLE.ctl -d ../data/PUBLIC.CYCLONE_SLAVE_TABLE.dat -l ../export_log/PUBLIC.CYCLONE_SLAVE_TABLE.log -b ../export_log/PUBLIC.CYCLONE_SLAVE_TABLE.bad -a 1000 -C 10000 -A
-gloadernet SYS gliese -e -c ../control/PUBLIC.DEDUCTION.ctl -d ../data/PUBLIC.DEDUCTION.dat -l ../export_log/PUBLIC.DEDUCTION.log -b ../export_log/PUBLIC.DEDUCTION.bad -a 1000 -C 10000 -A

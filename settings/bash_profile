@@ -1,0 +1,60 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+export PATH
+
+export GOLDILOCKS_HOME=$HOME/goldilocks_home
+export GOLDILOCKS_DATA=$HOME/goldilocks_data
+export PATH=$GOLDILOCKS_HOME/bin:/home/goya/bin:$PATH
+export CLASSPATH=/home/goya/trunk/Gliese/home/lib/goldilocks8.jar
+export LD_LIBRARY_PATH=/home/goya/trunk/Gliese/home/lib/
+
+#alias gs='gsql sys gliese --as sysdba'
+alias gn='gsqlnet sys gliese'
+alias gm='gsqlnet monitor monitor'
+alias trc='cd ~/goldilocks_data/trc'
+alias conf='cd ~/goldilocks_data/conf'
+stty erase 
+stty erase 
+
+set -o vi
+
+export GOLDILOCKS_LOCAL_CLUSTER_MEMBER='G1N1'
+export GOLDILOCKS_LOCAL_CLUSTER_MEMBER_PORT='24903'
+export GOLDILOCKS_LOCAL_CLUSTER_MEMBER_HOST='192.168.0.119'
+export GOLDILOCKS_SHARED_MEMORY_STATIC_KEY='529353'
+
+export TELEGRAF_HOME=$HOME/telegraf_home
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TELEGRAF_HOME/lib
+export PATH=$PATH:$TELEGRAF_HOME/bin
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$TELEGRAF_HOME/bin:$GOPATH/bin
+
+export GOLDILOCKS_PORT=30009
+export GOLDILOCKS_HOST='192.168.0.119'
+export GOLDILOCKS_UID='monitor'
+export GOLDILOCKS_PWD='monitor'
+export INFLUX_TOKEN='NwtKnfHdIeWsn2MovF9RqWfglrJxW-W77yxxkTAdeR0mtr6JEb3sL3IBa8CVjSF2uqGVmgMoiuUS9TCphwnSzw=='
+
+#jdk
+export JAVA_HOME=/home/goya/product/jdk1.8.0_202
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=$CLASSPATH:$JAVA_HOME/jre/lib:$JAVA_HOME/lib/tools.jar
+
+#maven
+export M2_HOME=/home/goya/work/jsql/apache-maven-3.6.3
+export PATH=$PATH:$M2_HOME/bin
+
+#export CLASSPATH=$CLASSPATH:"/home/goya/product/goldilocks-server-21c.21.1.5-linux-x86_64/goldilocks_home/app_dev/Hibernate/ver5/5/hibernate-release-5.4.32.Final/lib/required/*"
+
+export __GITHUB_TOKEN__=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
+. "$HOME/.cargo/env"
