@@ -1,0 +1,321 @@
+/*
+ * gc_test.gc
+ */
+EXEC SQL INCLUDE SQLCA;
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define  SUCCESS  0
+#define  FAILURE  -1
+#define  ERRETRY  1
+
+#define  PRINT_SQL_ERROR(aMsg)                                      \
+    {                                                               \
+        printf("\n");                                               \
+        printf(aMsg);                                               \
+        printf("\nSQLCODE : %d\nSQLSTATE : %s\nERROR MSG : %s\n",   \
+               sqlca.sqlcode,                                       \
+               SQLSTATE,                                            \
+               sqlca.sqlerrm.sqlerrmc );                            \
+    }
+
+int re_count=0;
+int Connect(char *aHostInfo, char *aUserID, char *sPassword);
+int Disconnect();
+int SelectForUpdate(int aC1);
+int Update(int aC1);
+int PrintRecord(int aC1);
+int runXact(int aC1);
+
+EXEC SQL BEGIN DECLARE SECTION;
+int  gC2 = 0;
+EXEC SQL END DECLARE SECTION;
+
+int main(int argc, char **argv)
+{
+    if (argc == 1) {
+        fputs("no prams..\n", stderr);
+        exit(1);
+    }else if(argc > 2){
+        fputs("to many prams..\n", stderr);
+        exit(1);
+    }
+    
+    // 옵션 배열의 요소들을 하나씩 출력
+    //for (int i = 1; i < argc; i++)
+    //  printf("argv[%d] = %s\n", i, argv[i]);
+
+    int runCount=atoi(argv[1]);
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    int  sC1_g1[10] = {1,2,3,4,5,6,7,8,9,10};
+    int  sC1_g2[10] = {12,13,14,15,16,17,18,19,20,21};
+    EXEC SQL END DECLARE SECTION;
+    int  sState = 0;
+    int i=0;
+    printf("Connect GOLDILOCKS ...\n");
+    if(Connect("DSN=GLOBAL", "test", "test") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+    sState = 1;
+
+    while(1==1){
+      //transaction retry
+      retry:
+        for(i=0; i < 10; i++){
+            if(runXact(sC1_g1[i]) != SUCCESS){
+                if(sqlca.sqlcode == -19068){
+                    re_count++;
+                    printf("retry : %d \n",re_count);
+                    goto retry;
+                }
+                goto fail_exit;
+            }
+            if(runXact(sC1_g2[i]) != SUCCESS){
+                if(sqlca.sqlcode == -19068){
+                    re_count++;
+                    printf("retry : %d \n",re_count);
+                    goto retry;
+                }
+                goto fail_exit;
+            }
+        }
+        EXEC SQL COMMIT WORK;
+        if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+        if(gC2 == runCount){
+            break;
+        }
+        if(gC2%100 == 0){
+            printf("transaction no : %d\n",gC2);
+        }
+        gC2++;
+    }
+    sState = 0;
+    printf("Disconnect GOLDILOCKS ...\n");
+    if(Disconnect() != SUCCESS)
+    {
+        goto fail_exit;
+    }
+
+    printf("SUCCESS\n");
+    printf("############################\n");
+
+    return 0;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Failure!");
+    printf("############################\n\n");
+
+    EXEC SQL ROLLBACK WORK;
+
+    switch(sState)
+    {
+        case 1:
+            printf("Disconnect GOLDILOCKS ...\n");
+            (void)Disconnect();
+            break;
+        default:
+            break;
+    }
+
+    return 0;
+}
+
+int runXact(int aC1){
+
+    //printf("SELECT .. FOR .. UPDATE \n");
+    //if( SelectForUpdate(aC1) != SUCCESS){
+    //    goto fail_exit;
+    //}
+
+//    printf("Before Update record\n");
+//    
+//    if( PrintRecord(aC1) != SUCCESS){
+//        goto fail_exit;
+//    }
+
+    //printf("UPDATE \n");
+    if( Update(aC1) != SUCCESS){
+        goto fail_exit;
+    }
+
+//    printf("After Update record\n");
+//    
+//    if( PrintRecord(aC1) != SUCCESS){
+//        goto fail_exit;
+//    }
+    
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] SQL Failure!");
+
+    return sqlca.sqlcode;
+}
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    VARCHAR  sUid[80];
+    VARCHAR  sPwd[20];
+    VARCHAR  sConnStr[1024];
+    EXEC SQL END DECLARE SECTION;
+
+    /*----------------------------------------------
+      Log on GOLDILOCKS
+      ------------------------------------------------*/
+    strcpy((char *)sUid.arr, aUserID);
+    sUid.len = (short)strlen((char *)sUid.arr);
+    strcpy((char *)sPwd.arr, sPassword);
+    sPwd.len = (short)strlen((char *)sPwd.arr);
+    strcpy((char *)sConnStr.arr, aHostInfo);
+    sConnStr.len = (short)strlen((char *)sConnStr.arr);
+
+    /* DB 연결 */
+    EXEC SQL CONNECT :sUid IDENTIFIED BY :sPwd USING :sConnStr;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Connection Failure!");
+
+    return FAILURE;
+}
+
+int Disconnect()
+{
+    EXEC SQL DISCONNECT;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] [ERROR] Disconnect Failure!");
+
+    return FAILURE;
+}
+
+int SelectForUpdate(int aC1){
+    EXEC SQL BEGIN DECLARE SECTION;
+    int lC1=aC1;
+    EXEC SQL END DECLARE SECTION;
+
+    EXEC SQL
+        SELECT C1, C2
+        FROM TEST
+        WHERE C1= :lC1
+        FOR UPDATE;
+    
+    if(sqlca.sqlcode == SQL_NO_DATA)
+    {
+        printf( "No data.\n" );
+        return FAILURE;
+    }
+    else if(sqlca.sqlcode != 0)
+    {
+        return FAILURE;
+    }
+    return SUCCESS;
+}
+
+int Update(int aC1){
+    EXEC SQL BEGIN DECLARE SECTION;
+    int lC1=aC1;
+    EXEC SQL END DECLARE SECTION;
+
+    EXEC SQL
+        UPDATE TEST
+        SET    c2 = :gC2
+        WHERE  c1 = :lC1;
+
+    if(sqlca.sqlcode != 0)
+    {
+        return FAILURE;
+    }
+    return SUCCESS;
+}
+
+int PrintRecord(int aC1)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    int p_c1;
+    int p_c2; 
+    int lC1 = aC1;
+    EXEC SQL END DECLARE SECTION;
+    int  sState = 0;
+
+    EXEC SQL
+        DECLARE RECORD_CUR CURSOR FOR
+        SELECT  C1,C2 
+        FROM TEST
+        WHERE C1 = :lC1;
+
+    EXEC SQL OPEN RECORD_CUR;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+    sState = 1;
+    while( 1 )
+    {
+        EXEC SQL FETCH RECORD_CUR INTO :p_c1, :p_c2 ;
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            break;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            goto fail_exit;
+        }
+
+        printf("C1     C2    \n");
+        printf("====== ======\n");
+        printf("%d %d\n", p_c1, p_c2);
+    }
+
+    EXEC SQL CLOSE RECORD_CUR;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+    PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+
+    switch(sState)
+    {
+        case 1:
+            //문제점.. -19068 에러시 커서가 잘 닫힐 것인가, 또는 닫지 않고 재시도 했을 때 잘 될 것인가..
+            printf("err close CURSOR...\n");
+            EXEC SQL CLOSE RECORD_CUR;
+            if(sqlca.sqlcode != 0)
+            {
+                goto fail_exit;
+            }
+            break;
+        default:
+            break;
+    }
+    return FAILURE;
+}
+

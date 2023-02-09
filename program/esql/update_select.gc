@@ -1,0 +1,230 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <sys/time.h>
+
+EXEC SQL INCLUDE SQLCA;
+
+#define  SUCCESS  0
+#define  FAILURE  -1
+
+#define  PRINT_SQL_ERROR(aMsg)                                      \
+    {                                                               \
+        printf("\n");                                               \
+        printf(aMsg);                                               \
+        printf("\nSQLCODE : %d\nSQLSTATE : %s\nERROR MSG : %s\n",   \
+               sqlca.sqlcode,                                       \
+               SQLSTATE,                                            \
+               sqlca.sqlerrm.sqlerrmc );                            \
+    }
+//EXEC SQL BEGIN DECLARE SECTION;
+//EXEC SQL INCLUDE query.hpp;
+//EXEC SQL END DECLARE SECTION;
+
+//#include "query.hpp"
+int Connect(char *aHostInfo, char *aUserID, char *sPassword ,char *sDbname);
+int Query1();
+
+int run(); int i; int arr;// int crr;
+
+int main(int argc, char **argv)
+{
+    if(argc != 3){
+        printf("use >> ./query [array count] [query number]\n");
+        exit(1);
+    }
+    printf("Connect GOLDILOCKS ...\n");
+    if(Connect("DSN=GOLDILOCKS", "sys", "gliese","GLOBAL") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+    if(Connect("DSN=GOLDILOCKS", "sys", "gliese","LOCAL") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+
+
+    arr = atoi(argv[1]);
+    int cNum = atoi(argv[2]);
+
+    if(run(cNum) != SUCCESS)
+    {
+        goto fail_exit;
+    }
+
+    EXEC SQL DISCONNECT ALL;
+    return 0;
+
+  fail_exit:
+
+    printf("FAILURE\n");
+    printf("############################\n\n");
+
+    EXEC SQL DISCONNECT ALL;
+
+    return 0;
+}
+
+int run(int cNum){
+    struct timeval start,end,diff;
+    int sPrevArr = arr;
+
+    arr = 1;
+    switch(cNum){
+        case 1  : if(Query1()   != SUCCESS){ goto fail_exit; } break;
+
+        default : printf("no parameter.."); goto fail_exit;
+    }
+ 
+    arr = sPrevArr;
+    gettimeofday(&start,NULL);
+
+    //if(Query(cNum) != SUCCESS){ goto fail_exit; } break;
+    switch(cNum){
+        case 1  : if(Query1()   != SUCCESS){ goto fail_exit; } break;
+        
+        default : printf("no parameter.."); goto fail_exit;
+    }
+            
+    gettimeofday(&end,NULL);
+
+    diff.tv_sec=end.tv_sec-start.tv_sec;
+    if( end.tv_usec > start.tv_usec )
+    {
+        diff.tv_usec=end.tv_usec-start.tv_usec;
+    }
+    else
+    {
+        diff.tv_usec=1000000 + end.tv_usec - start.tv_usec;
+        diff.tv_sec--;
+    }
+
+    double ell = diff.tv_sec*1000000 + diff.tv_usec;
+    double tps = arr/(ell/1000000);
+    printf("SUCCESS\n");
+    printf("############################################\n");
+    printf("    SUCCESS        :   %d\n",i);
+    printf("    SUM USEC       :   %lf us\n",ell);
+    printf("    AVG USEC       :   %lf us\n",ell/i);
+    printf("    TPS            :   %0.2lf TPS\n",tps);
+    printf("############################################\n");
+   
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Run Function FAILURE!");
+    return FAILURE;
+
+}
+
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword,char *sDbname)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    VARCHAR  sUid[80];
+    VARCHAR  sPwd[20];
+    VARCHAR  sDname[20];
+    VARCHAR  sConnStr[1024];
+    EXEC SQL END DECLARE SECTION;
+
+    /*----------------------------------------------
+      Log on GOLDILOCKS
+      ------------------------------------------------*/
+    strcpy((char *)sUid.arr, aUserID);
+    sUid.len = (short)strlen((char *)sUid.arr);
+    strcpy((char *)sPwd.arr, sPassword);
+    sPwd.len = (short)strlen((char *)sPwd.arr);
+    strcpy((char *)sDname.arr, sDbname);
+    sDname.len = (short)strlen((char *)sDname.arr);
+    strcpy((char *)sConnStr.arr, aHostInfo);
+    sConnStr.len = (short)strlen((char *)sConnStr.arr);
+
+    /* DB 연결 */
+    EXEC SQL AT :sDname CONNECT :sUid IDENTIFIED BY :sPwd USING :sConnStr;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Connection Failure!");
+
+    return FAILURE;
+}
+int Query1(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        int             dbintSno       ; 
+        int         xno=0;
+    EXEC SQL END DECLARE SECTION;
+
+//xxno=0;
+    //strcpy((char *)xxno.arr, "0");
+    //xxno.len = (short)strlen((char *)xxno.arr);
+    //char origin[] = "0";
+
+    //strcpy(xxno, origin);
+
+    for(i=0;i < arr;i++){
+       xno=i;
+       EXEC SQL AT GLOBAL UPDATE TEST_GTX SET AMOUNT=:xno WHERE ACCOUNT='A';
+       if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+       //EXEC SQL UPDATE TEST_GTX SET AMOUNT=:xno WHERE ACCOUNT='B';
+       // if(sqlca.sqlcode != 0)
+       // {
+       //     PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+       //     goto fail_exit;
+       // }
+
+       EXEC SQL AT GLOBAL COMMIT;
+        if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+        EXEC SQL AT LOCAL
+            //SELECT SUM(AMOUNT) 
+            SELECT AMOUNT 
+            INTO :dbintSno 
+            FROM TEST_GTX
+            WHERE ACCOUNT='A';
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            printf( "NO DATA.\n" );
+            goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+        if( i % 1000 == 0 )
+        {
+            printf("CURNUM %d = %d \n",dbintSno,i);
+        }
+        if (dbintSno != i){
+            printf("DATA DIFF %d \n",i);
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+

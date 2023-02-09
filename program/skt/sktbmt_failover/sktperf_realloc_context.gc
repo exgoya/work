@@ -1,0 +1,354 @@
+/*
+ * prepare and execute repeatedly
+ *
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <pthread.h>
+#include <sys/time.h>
+#include <unistd.h>
+
+EXEC SQL INCLUDE SQLCA;
+
+#define  SUCCESS  0
+#define  FAILURE  -1
+
+#define  MAX_THREAD_COUNT  256 
+#define  MAX_DSN_COUNT     32 
+
+typedef struct threadParam
+{
+    int    mThreadId;
+    int    mTPS;
+} threadParam;
+
+int          gTestCount;
+int          gStartId;
+int          gEndId;
+char         gCurDSN[MAX_THREAD_COUNT][32];
+int          gCurDSNIdx[MAX_THREAD_COUNT];
+int          gDSNCount = 0;
+char         gDSNList[MAX_DSN_COUNT][32];
+int          gClientCount;
+
+#define  PRINT_SQL_ERROR(aMsg, aThreadId, aCount, aTestId )         \
+    {                                                               \
+        printf("\n");                                               \
+        printf(aMsg);                                               \
+        printf("\nSQLCODE : %d\nSQLSTATE : %s\nERROR MSG : %s -> (%d:%d:%d) DSN(%s)\n",   \
+               sqlca.sqlcode,                                       \
+               SQLSTATE,                                            \
+               sqlca.sqlerrm.sqlerrmc, aThreadId, aCount, aTestId, gCurDSN[aThreadId] );\
+    }
+
+int Connect( threadParam * aParam,
+             sql_context * aCtx,
+             char        * aHostInfo,
+             char        * aUserID,
+             char        * sPassword);
+
+int isLinkFailure( char * aSqlState );
+int Reconnect( threadParam * aParam,
+               sql_context * aCtx );
+
+int timeval_subtract(struct timeval *result, struct timeval *t2, struct timeval *t1) {
+    long int diff = (t2->tv_usec + 1000000 * t2->tv_sec) - (t1->tv_usec + 1000000 * t1->tv_sec);
+    result->tv_sec = diff / 1000000;
+    result->tv_usec = diff % 1000000;
+
+    return (diff < 0); 
+}
+
+void * ThreadJob( void * aArg )
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    int          i;
+    int          sCnt;
+    VARCHAR      sName[10 + 1];
+    SQL_CONTEXT  sMyContext;
+    EXEC SQL END DECLARE SECTION;
+
+    int          sState = 0;
+    int          sCount = 0;
+    int          sIDCount;
+    int          sMyStartId;
+    int          sMyEndId;
+    int          sStartId;
+    threadParam *sParam = (threadParam *)aArg;
+    struct timeval sBegin;
+    struct timeval sEnd;
+    struct timeval sElapsed;
+    double         sTmp;
+
+    struct sqlca   sqlca;
+
+    sIDCount = (gEndId - gStartId + 1) / gClientCount;
+
+    sMyStartId = gStartId + (sParam->mThreadId * sIDCount);
+    sMyEndId = sMyStartId + sIDCount - 1;
+
+    sStartId = sMyStartId;
+
+    printf("[%d] START : (%s) (%d) ~ (%d) : Test Count(%d)\n",
+            sParam->mThreadId, gCurDSN[sParam->mThreadId], sMyStartId, sMyEndId, gTestCount);
+
+    if(Connect(sParam, &sMyContext, gCurDSN[sParam->mThreadId], "test", "test") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+    sState = 1;
+
+    EXEC SQL CONTEXT USE :sMyContext;
+
+    gettimeofday( &sBegin, NULL );
+
+    while( 1 )
+    {
+        for( i = sStartId; i <= sMyEndId; i++ )
+        {
+retry:
+            EXEC SQL SELECT CNT, NAME
+                       INTO :sCnt, :sName
+                       FROM TEST
+                      WHERE ID = :i
+                        FOR UPDATE;
+            if(sqlca.sqlcode != 0)
+            {
+	        printf("==========>>>>>> select code(%d)\n", sqlca.sqlcode );
+                PRINT_SQL_ERROR("[ERROR] SELECT ERROR -", sParam->mThreadId, sCount, i);
+
+                if( isLinkFailure( SQLSTATE ) )
+                {
+                    if( Reconnect( sParam, &sMyContext ) != SUCCESS )
+                    {
+                        goto fail_exit;
+                    }
+                    goto retry;
+                }
+
+                goto fail_exit;
+            }
+            sState = 2;
+
+            EXEC SQL UPDATE TEST
+                        SET CNT = :sCnt + 1
+                      WHERE ID = :i;
+            if(sqlca.sqlcode != 0)
+            {
+	        printf("==========>>>>>> update code(%d)\n", sqlca.sqlcode );
+                PRINT_SQL_ERROR("[ERROR] UPDATE ERROR -", sParam->mThreadId, sCount, i);
+
+                if( isLinkFailure( SQLSTATE ) )
+                {
+                    if( Reconnect( sParam, &sMyContext ) != SUCCESS )
+                    {
+                        goto fail_exit;
+                    }
+                    goto retry;
+                }
+
+                goto fail_exit;
+            }
+            sState = 3;
+
+            EXEC SQL COMMIT WORK;
+            if(sqlca.sqlcode != 0)
+            {
+	        printf("==========>>>>>> commit code(%d)\n", sqlca.sqlcode );
+                PRINT_SQL_ERROR("[ERROR] COMMIT ERROR -", sParam->mThreadId, sCount, i);
+
+                if( isLinkFailure( SQLSTATE ) )
+                {
+                    if( Reconnect( sParam, &sMyContext ) != SUCCESS )
+                    {
+                        goto fail_exit;
+                    }
+                    goto retry;
+                }
+
+                goto fail_exit;
+            }
+            sState = 4;
+
+            //printf("[%d] test_count(%d) id(%d) count(%d) name(%s)\n",
+            //        sParam->mThreadId, sCount+1, i, sCnt, sName.arr);
+
+            if( ++sCount >= gTestCount )
+            {
+                goto done;
+            }
+        }
+    }
+
+done:
+    gettimeofday( &sEnd, NULL );
+    timeval_subtract(&sElapsed, &sEnd, &sBegin);
+
+    sTmp = (double)(sElapsed.tv_sec * 1000000 + sElapsed.tv_usec) / 1000000;
+    sParam->mTPS = gTestCount / sTmp;
+
+    printf("[%d] END : dsn(%s) (%d) ~ (%d) : Test Count(%d) Elapse Time(%f s) TPS(%d)\n",
+            sParam->mThreadId,
+            gCurDSN[sParam->mThreadId],
+            sMyStartId,
+            sMyEndId,
+            gTestCount,
+            sTmp,
+            sParam->mTPS );
+
+    EXEC SQL DISCONNECT;
+    EXEC SQL CONTEXT FREE :sMyContext;
+    return 0;
+
+fail_exit:
+
+    printf("FAILURE. state(%d)\n", sState);
+
+    //EXEC SQL ROLLBACK WORK;
+    EXEC SQL DISCONNECT;
+    EXEC SQL CONTEXT FREE :sMyContext;
+
+    return 0;
+}
+
+int main(int argc, char **argv)
+{
+    int          i;
+    int          sTotalTPS = 0;
+    pthread_t    sThrID[MAX_THREAD_COUNT];
+    threadParam  sParam[MAX_THREAD_COUNT];
+
+    if( argc < 6 )
+    {
+        printf("Usage : %s client_count start_id end_id test_count dsn_list\n", argv[0]);
+        exit(0);
+    }
+
+    memset( gCurDSN, 0x00, sizeof(gCurDSN) );
+    memset( gDSNList, 0x00, sizeof(gDSNList) );
+
+    gClientCount = atoi(argv[1]);
+    gStartId = atoi(argv[2]);
+    gEndId = atoi(argv[3]);
+    gTestCount = atoi(argv[4]);
+
+    for( i = 5; i < argc; i++ )
+    {
+        strcpy( gDSNList[i-5], "DSN=" );
+        strcat( gDSNList[i-5], argv[i] );
+        gDSNCount++;
+    }
+
+    for( i = 0; i < gClientCount; i++ )
+    {
+        sParam[i].mThreadId = i;
+        sParam[i].mTPS = 0;
+
+        gCurDSNIdx[i] = 0;
+        strcat( gCurDSN[i], gDSNList[gCurDSNIdx[i]] );
+
+        pthread_create( &sThrID[i],
+                        NULL,
+                        ThreadJob,
+                        &sParam[i] );
+    }
+
+    for( i = 0; i < gClientCount; i++ )
+    {
+        pthread_join( sThrID[i], NULL );
+    }
+
+    for( i = 0; i < gClientCount; i++ )
+    {
+        printf(" > [%d] TPS : %d  client count(%d)\n", i, sParam[i].mTPS, gClientCount );
+        sTotalTPS += sParam[i].mTPS;
+    }
+
+    printf("=====> [%s] Total TPS : %d\n", gCurDSN[0], sTotalTPS );
+
+    return 0;
+}
+
+int Connect( threadParam * aParam,
+             sql_context * aCtx,
+             char        * aHostInfo,
+             char        * aUserID,
+             char        * sPassword)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    VARCHAR  sUid[80];
+    VARCHAR  sPwd[20];
+    VARCHAR  sConnStr[1024];
+    EXEC SQL END DECLARE SECTION;
+
+    struct sqlca   sqlca;
+
+    /*----------------------------------------------
+      Log on GOLDILOCKS
+      ------------------------------------------------*/
+    strcpy((char *)sUid.arr, aUserID);
+    sUid.len = (short)strlen((char *)sUid.arr);
+    strcpy((char *)sPwd.arr, sPassword);
+    sPwd.len = (short)strlen((char *)sPwd.arr);
+    strcpy((char *)sConnStr.arr, aHostInfo);
+    sConnStr.len = (short)strlen((char *)sConnStr.arr);
+
+    /* DB 연결 */
+    EXEC SQL CONTEXT ALLOCATE :*aCtx;
+    EXEC SQL CONTEXT USE :*aCtx;
+
+    EXEC SQL CONNECT :sUid IDENTIFIED BY :sPwd USING :sConnStr;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    printf("[%d] Connect GOLDILOCKS ... (%s)\n", aParam->mThreadId, aHostInfo);
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Connection Failure!", -1, -1, -1);
+
+    return FAILURE;
+}
+
+int isLinkFailure( char * aSqlState )
+{
+    if( strcmp(aSqlState, "08S01") == 0 )
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int Reconnect( threadParam * aParam,
+               sql_context * aCtx )
+{
+    int   sThreadId = aParam->mThreadId;
+
+    EXEC SQL CONTEXT USE :*aCtx;
+
+    //EXEC SQL ROLLBACK WORK;
+    EXEC SQL ROLLBACK;
+    EXEC SQL DISCONNECT;
+    EXEC SQL CONTEXT FREE :*aCtx;
+
+    gCurDSNIdx[sThreadId] = (++gCurDSNIdx[sThreadId]) %  gDSNCount;
+
+    memset( gCurDSN[sThreadId], 0x00, sizeof(gCurDSN[0]) );
+    strcpy( gCurDSN[sThreadId], gDSNList[gCurDSNIdx[sThreadId]] );
+
+    if(Connect(aParam, aCtx, gCurDSN[sThreadId], "test", "test") != SUCCESS)
+    {
+        return FAILURE;
+    }
+
+    return SUCCESS;
+}

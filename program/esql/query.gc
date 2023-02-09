@@ -1,0 +1,572 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <sys/time.h>
+
+EXEC SQL INCLUDE SQLCA;
+
+#define  SUCCESS  0
+#define  FAILURE  -1
+
+#define  PRINT_SQL_ERROR(aMsg)                                      \
+    {                                                               \
+        printf("\n");                                               \
+        printf(aMsg);                                               \
+        printf("\nSQLCODE : %d\nSQLSTATE : %s\nERROR MSG : %s\n",   \
+               sqlca.sqlcode,                                       \
+               SQLSTATE,                                            \
+               sqlca.sqlerrm.sqlerrmc );                            \
+    }
+//EXEC SQL BEGIN DECLARE SECTION;
+//EXEC SQL INCLUDE query.hpp;
+//EXEC SQL END DECLARE SECTION;
+
+//#include "query.hpp"
+int Connect(char *aHostInfo, char *aUserID, char *sPassword);
+int Query1();
+int Query2();
+int Query3();
+int Query4();
+int Query5();
+int Query6();
+int Query7();
+int Query8();
+
+int run(); int i; int arr;// int crr;
+
+int main(int argc, char **argv)
+{
+    if(argc != 3){
+        printf("use >> ./query [array count] [query number]\n");
+        exit(1);
+    }
+    printf("Connect GOLDILOCKS ...\n");
+    if(Connect("DSN=GOLDILOCKS", "sys", "gliese") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+
+    arr = atoi(argv[1]);
+    int cNum = atoi(argv[2]);
+
+    if(run(cNum) != SUCCESS)
+    {
+        goto fail_exit;
+    }
+
+    EXEC SQL DISCONNECT ALL;
+    return 0;
+
+  fail_exit:
+
+    printf("FAILURE\n");
+    printf("############################\n\n");
+
+    EXEC SQL DISCONNECT ALL;
+
+    return 0;
+}
+
+int run(int cNum){
+    struct timeval start,end,diff;
+    int sPrevArr = arr;
+
+    arr = 1;
+//    switch(cNum){
+//        case 1  : if(Query1()   != SUCCESS){ goto fail_exit; } break;
+//        case 2  : if(Query2()   != SUCCESS){ goto fail_exit; } break;
+//        case 3  : if(Query3()   != SUCCESS){ goto fail_exit; } break;
+//        case 4  : if(Query4()   != SUCCESS){ goto fail_exit; } break;
+//        case 5  : if(Query5()   != SUCCESS){ goto fail_exit; } break;
+//        case 6  : if(Query6()   != SUCCESS){ goto fail_exit; } break;
+//        case 7  : if(Query7()   != SUCCESS){ goto fail_exit; } break;
+//        case 8  : if(Query8()   != SUCCESS){ goto fail_exit; } break;
+//
+//        default : printf("no parameter.."); goto fail_exit;
+//    }
+ 
+    arr = sPrevArr;
+    gettimeofday(&start,NULL);
+
+    //if(Query(cNum) != SUCCESS){ goto fail_exit; } break;
+    switch(cNum){
+        case 1  : if(Query1()   != SUCCESS){ goto fail_exit; } break;
+        case 2  : if(Query2()   != SUCCESS){ goto fail_exit; } break;
+        case 3  : if(Query3()   != SUCCESS){ goto fail_exit; } break;
+        case 4  : if(Query4()   != SUCCESS){ goto fail_exit; } break;
+        case 5  : if(Query5()   != SUCCESS){ goto fail_exit; } break;
+        case 6  : if(Query6()   != SUCCESS){ goto fail_exit; } break;
+        case 7  : if(Query7()   != SUCCESS){ goto fail_exit; } break;
+        case 8  : if(Query8()   != SUCCESS){ goto fail_exit; } break;
+        
+        default : printf("no parameter.."); goto fail_exit;
+    }
+            
+    gettimeofday(&end,NULL);
+
+    diff.tv_sec=end.tv_sec-start.tv_sec;
+    if( end.tv_usec > start.tv_usec )
+    {
+        diff.tv_usec=end.tv_usec-start.tv_usec;
+    }
+    else
+    {
+        diff.tv_usec=1000000 + end.tv_usec - start.tv_usec;
+        diff.tv_sec--;
+    }
+
+    double ell = diff.tv_sec*1000000 + diff.tv_usec;
+    double tps = arr/(ell/1000000);
+    printf("SUCCESS\n");
+    printf("############################################\n");
+    printf("    SUCCESS        :   %d\n",i);
+    printf("    SUM USEC       :   %lf us\n",ell);
+    printf("    AVG USEC       :   %lf us\n",ell/i);
+    printf("    TPS            :   %0.2lf TPS\n",tps);
+    printf("############################################\n");
+   
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Run Function FAILURE!");
+    return FAILURE;
+
+}
+
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    VARCHAR  sUid[80];
+    VARCHAR  sPwd[20];
+    VARCHAR  sConnStr[1024];
+    EXEC SQL END DECLARE SECTION;
+
+    /*----------------------------------------------
+      Log on GOLDILOCKS
+      ------------------------------------------------*/
+    strcpy((char *)sUid.arr, aUserID);
+    sUid.len = (short)strlen((char *)sUid.arr);
+    strcpy((char *)sPwd.arr, sPassword);
+    sPwd.len = (short)strlen((char *)sPwd.arr);
+    strcpy((char *)sConnStr.arr, aHostInfo);
+    sConnStr.len = (short)strlen((char *)sConnStr.arr);
+
+    /* DB 연결 */
+    EXEC SQL CONNECT :sUid IDENTIFIED BY :sPwd USING :sConnStr;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Connection Failure!");
+
+    return FAILURE;
+}
+int Query1(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        int             dbintSno       ; 
+        VARCHAR         dbstrSname     [10+1];
+        int             dbintUseAmt;
+        TIMESTAMP       dbDate;
+        VARCHAR         dbstrText [100+1];
+        VARCHAR         xxno[100+1];
+        int         xno=0;
+    EXEC SQL END DECLARE SECTION;
+
+//xxno=0;
+    strcpy((char *)xxno.arr, "0");
+    xxno.len = (short)strlen((char *)xxno.arr);
+    //char origin[] = "0";
+
+    //strcpy(xxno, origin);
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+            SELECT *
+            INTO :dbintSno   ,     
+                 :dbstrSname ,     
+                 :dbintUseAmt,
+                 :dbDate     ,         
+                 :dbstrText 
+            FROM INSERT_DATA_TEST_1
+            order by sno desc
+            limit 1 ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            printf( "NO DATA.\n" );
+            goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+int Query2(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        int             dbintSno       ; 
+        VARCHAR         dbstrSname     [10+1];
+        int             dbintUseAmt;
+        TIMESTAMP       dbDate;
+        VARCHAR         dbstrText [100+1];
+        VARCHAR         xxno[100+1];
+        int         xno=0;
+    EXEC SQL END DECLARE SECTION;
+
+//xxno=0;
+    strcpy((char *)xxno.arr, "0");
+    xxno.len = (short)strlen((char *)xxno.arr);
+    //char origin[] = "0";
+
+    //strcpy(xxno, origin);
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+            SELECT *
+            INTO :dbintSno   ,     
+                 :dbstrSname ,     
+                 :dbintUseAmt,
+                 :dbDate     ,         
+                 :dbstrText 
+            FROM (
+                select * from 
+                INSERT_DATA_TEST_1
+                order by sno desc
+            )
+            where rownum = 1
+            ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            printf( "NO DATA.\n" );
+            goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+
+
+int Query3(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        int             dbintSno       ; 
+        VARCHAR         dbstrSname     [10+1];
+        int             dbintUseAmt;
+        TIMESTAMP       dbDate;
+        VARCHAR         dbstrText [100+1];
+        VARCHAR         xxno[100+1];
+        int         xno=0;
+    EXEC SQL END DECLARE SECTION;
+
+//xxno=0;
+    strcpy((char *)xxno.arr, "0");
+    xxno.len = (short)strlen((char *)xxno.arr);
+    //char origin[] = "0";
+
+    //strcpy(xxno, origin);
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL UPDATE DEDUCTION 
+            SET (USE_AMT, SNAME, MOD_DATE) = (10+1, 10, SYSTIMESTAMP) WHERE SNO = 99;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            printf( "NO DATA.\n" );
+            goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+        EXEC SQL COMMIT WORK;
+        if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+int Query4(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        int             dbintSno       ; 
+        VARCHAR         dbstrSname     [100+1];
+        int         xno=0;
+    EXEC SQL END DECLARE SECTION;
+
+//xxno=0;
+    //char origin[] = "0";
+    //strcpy(xxno, origin);
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+            select * 
+            INTO :dbintSno   ,     
+                 :dbstrSname 
+            from in_test where c2 in ('asdf','asdf','asde') limit 1
+           ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            //printf( "NO DATA.\n" );
+            //goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+
+
+
+int Query5(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        int             dbintSno       ; 
+        VARCHAR         dbstrSname     [100+1];
+        int         xno=0;
+    EXEC SQL END DECLARE SECTION;
+
+//xxno=0;
+    //char origin[] = "0";
+    //strcpy(xxno, origin);
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+            select * 
+            INTO :dbintSno   ,     
+                 :dbstrSname 
+            from in_test where instr('asdfasdfadienalsdkflnasdf',c2) >=1 limit 1;
+           ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            //printf( "NO DATA.\n" );
+            //goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+int Query6(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        LONGVARCHAR         dbstr1;
+        LONGVARCHAR         dbstr2;
+        LONGVARCHAR         dbstr3;
+    EXEC SQL END DECLARE SECTION;
+
+    dbstr1.arr = malloc(1048576);
+    dbstr2.arr = malloc(1048576);
+    dbstr3.arr = malloc(1048576);
+ 
+    for(i=0;i < arr;i++){
+    dbstr1.len = 10000;
+    dbstr2.len = 10000;
+    dbstr3.len = 10000;
+
+
+        EXEC SQL
+        SELECT
+            IN_HTTP_PAYLOAD
+            ,OUT_HTTP_PAYLOAD
+            ,SMF_OUT_HTTP_PAYLOAD
+            INTO
+            :dbstr1,:dbstr2,:dbstr3
+            FROM    T_AF_SESSION_INFO_TEST A
+            WHERE
+//            A.SM_POLICY_ID = '03010303000-01-166606059501310434053507370535043611'
+            A.SM_POLICY_ID = 'asdf'
+            ORDER BY A.CREATE_TIME DESC    ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            //printf( "NO DATA.\n" );
+            //goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+        }
+        free( dbstr1.arr );
+        free( dbstr2.arr );
+        free( dbstr3.arr );
+
+
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+
+int Query7(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        LONGVARCHAR         dbstr1;
+        LONGVARCHAR         dbstr2;
+        LONGVARCHAR         dbstr3;
+    EXEC SQL END DECLARE SECTION;
+
+    dbstr1.arr = malloc(1048576);
+    dbstr2.arr = malloc(1048576);
+    dbstr3.arr = malloc(1048576);
+ 
+    for(i=0;i < arr;i++){
+    dbstr1.len = 10000;
+    dbstr2.len = 10000;
+    dbstr3.len = 10000;
+
+
+        EXEC SQL
+        SELECT
+            IN_HTTP_PAYLOAD
+            ,OUT_HTTP_PAYLOAD
+            ,SMF_OUT_HTTP_PAYLOAD
+            INTO
+            :dbstr1,:dbstr2,:dbstr3
+            FROM    T_AF_SESSION_INFO A
+            WHERE
+//            A.SM_POLICY_ID = '03010303000-01-166606059501310434053507370535043611'
+            A.SM_POLICY_ID = 'asdf'
+            ORDER BY A.CREATE_TIME DESC    ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            //printf( "NO DATA.\n" );
+            //goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+        }
+        free( dbstr1.arr );
+        free( dbstr2.arr );
+        free( dbstr3.arr );
+
+
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+
+int Query8(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        VARCHAR         dbstr1[100];
+        VARCHAR         dbstr2[100];
+        VARCHAR         dbstr3[100];
+    EXEC SQL END DECLARE SECTION;
+ 
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+        SELECT
+            ASC_ID 
+            ,SM_POLICY_ID
+            ,SUPI
+            INTO
+            :dbstr1,:dbstr2,:dbstr3
+            FROM    T_AF_SESSION_INFO A
+            WHERE
+//            A.SM_POLICY_ID = '03010303000-01-166606059501310434053507370535043611'
+            A.SM_POLICY_ID = 'asdf'
+            ORDER BY A.CREATE_TIME DESC    ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            //printf( "NO DATA.\n" );
+            //goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+        }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+

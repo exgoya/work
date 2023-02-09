@@ -1,0 +1,1440 @@
+nclude <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <sys/time.h>
+
+EXEC SQL INCLUDE SQLCA;
+
+#define  SUCCESS  0
+#define  FAILURE  -1
+
+#define  PRINT_SQL_ERROR(aMsg)                                      \
+    {                                                               \
+        printf("\n");                                               \
+        printf(aMsg);                                               \
+        printf("\nSQLCODE : %d\nSQLSTATE : %s\nERROR MSG : %s\n",   \
+               sqlca.sqlcode,                                       \
+               SQLSTATE,                                            \
+               sqlca.sqlerrm.sqlerrmc );                            \
+    }
+//EXEC SQL BEGIN DECLARE SECTION;
+//EXEC SQL INCLUDE query.hpp;
+//EXEC SQL END DECLARE SECTION;
+
+//#include "query.hpp"
+int Connect(char *aHostInfo, char *aUserID, char *sPassword);
+int Query1();  int Query2();  int Query3();
+int Query4();  int Query5();  int Query6();
+int Query7();  int Query8();  int Query9();
+int Query10(); int Query11(); int Query12();
+int Query13(); int Query14(); int Query15();
+int Query16(); int Query17(); int Query18();
+int Query19(); int Query20(); int Query21();
+int Query22(); int Query23(); int Query24();
+
+int Query110();
+int run(); int i; int arr;
+
+int main(int argc, char **argv)
+{
+    if(argc != 3){
+        printf("use >> ./query [array count] [query number]\n");
+        exit(1);
+    }
+    printf("Connect GOLDILOCKS ...\n");
+    if(Connect("DSN=GLOBAL", "NGRATER1", "NGRCDRS1") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+
+    arr = atoi(argv[1]);
+    int cNum = atoi(argv[2]);
+
+    if(run(cNum) != SUCCESS)
+    {
+        goto fail_exit;
+    }
+
+    EXEC SQL DISCONNECT ALL;
+    return 0;
+
+  fail_exit:
+
+    printf("FAILURE\n");
+    printf("############################\n\n");
+
+    EXEC SQL DISCONNECT ALL;
+
+    return 0;
+}
+
+int run(int cNum){
+    struct timeval start,end,diff;
+    int sPrevArr = arr;
+
+    arr = 1;
+    switch(cNum){
+        case 1  : if(Query1()   != SUCCESS){ goto fail_exit; } break;
+        case 2  : if(Query2()   != SUCCESS){ goto fail_exit; } break;
+        case 3  : if(Query3()   != SUCCESS){ goto fail_exit; } break;
+        case 4  : if(Query4()   != SUCCESS){ goto fail_exit; } break;
+        case 5  : if(Query5()   != SUCCESS){ goto fail_exit; } break;
+        case 6  : if(Query6()   != SUCCESS){ goto fail_exit; } break;
+        case 7  : if(Query7()   != SUCCESS){ goto fail_exit; } break;
+        case 8  : if(Query8()   != SUCCESS){ goto fail_exit; } break;
+        case 9  : if(Query9()   != SUCCESS){ goto fail_exit; } break;
+        case 10 : if(Query10()  != SUCCESS){ goto fail_exit; } break;
+        case 11 : if(Query11()  != SUCCESS){ goto fail_exit; } break;
+        case 110 : if(Query110()  != SUCCESS){ goto fail_exit; } break;
+        case 12 : if(Query12()  != SUCCESS){ goto fail_exit; } break;
+        case 13 : if(Query13()  != SUCCESS){ goto fail_exit; } break;
+        case 14 : if(Query14()  != SUCCESS){ goto fail_exit; } break;
+        case 15 : if(Query15()  != SUCCESS){ goto fail_exit; } break;
+        case 16 : if(Query16()  != SUCCESS){ goto fail_exit; } break;
+        case 17 : if(Query17()  != SUCCESS){ goto fail_exit; } break;
+        case 18 : if(Query18()  != SUCCESS){ goto fail_exit; } break;
+        case 19 : if(Query19()  != SUCCESS){ goto fail_exit; } break;
+        case 20 : if(Query20()  != SUCCESS){ goto fail_exit; } break;
+        case 21 : if(Query21()  != SUCCESS){ goto fail_exit; } break;
+        case 22 : if(Query22()  != SUCCESS){ goto fail_exit; } break;
+        case 23 : if(Query23()  != SUCCESS){ goto fail_exit; } break;
+        case 24 : if(Query24()  != SUCCESS){ goto fail_exit; } break;
+
+        default : printf("no parameter.."); goto fail_exit;
+    }
+ 
+    arr = sPrevArr;
+    gettimeofday(&start,NULL);
+
+    //if(Query(cNum) != SUCCESS){ goto fail_exit; } break;
+    switch(cNum){
+        case 1  : if(Query1()   != SUCCESS){ goto fail_exit; } break;
+        case 2  : if(Query2()   != SUCCESS){ goto fail_exit; } break;
+        case 3  : if(Query3()   != SUCCESS){ goto fail_exit; } break;
+        case 4  : if(Query4()   != SUCCESS){ goto fail_exit; } break;
+        case 5  : if(Query5()   != SUCCESS){ goto fail_exit; } break;
+        case 6  : if(Query6()   != SUCCESS){ goto fail_exit; } break;
+        case 7  : if(Query7()   != SUCCESS){ goto fail_exit; } break;
+        case 8  : if(Query8()   != SUCCESS){ goto fail_exit; } break;
+        case 9  : if(Query9()   != SUCCESS){ goto fail_exit; } break;
+        case 10 : if(Query10()  != SUCCESS){ goto fail_exit; } break;
+        case 11 : if(Query11()  != SUCCESS){ goto fail_exit; } break;
+        case 110 : if(Query110()  != SUCCESS){ goto fail_exit; } break;
+        case 12 : if(Query12()  != SUCCESS){ goto fail_exit; } break;
+        case 13 : if(Query13()  != SUCCESS){ goto fail_exit; } break;
+        case 14 : if(Query14()  != SUCCESS){ goto fail_exit; } break;
+        case 15 : if(Query15()  != SUCCESS){ goto fail_exit; } break;
+        case 16 : if(Query16()  != SUCCESS){ goto fail_exit; } break;
+        case 17 : if(Query17()  != SUCCESS){ goto fail_exit; } break;
+        case 18 : if(Query18()  != SUCCESS){ goto fail_exit; } break;
+        case 19 : if(Query19()  != SUCCESS){ goto fail_exit; } break;
+        case 20 : if(Query20()  != SUCCESS){ goto fail_exit; } break;
+        case 21 : if(Query21()  != SUCCESS){ goto fail_exit; } break;
+        case 22 : if(Query22()  != SUCCESS){ goto fail_exit; } break;
+        case 23 : if(Query23()  != SUCCESS){ goto fail_exit; } break;
+        case 24 : if(Query24()  != SUCCESS){ goto fail_exit; } break;
+
+        default : printf("no parameter.."); goto fail_exit;
+    }
+            
+    gettimeofday(&end,NULL);
+
+    diff.tv_sec=end.tv_sec-start.tv_sec;
+    if( end.tv_usec > start.tv_usec )
+    {
+        diff.tv_usec=end.tv_usec-start.tv_usec;
+    }
+    else
+    {
+        diff.tv_usec=1000000 + end.tv_usec - start.tv_usec;
+        diff.tv_sec--;
+    }
+
+    double ell = diff.tv_sec*1000000 + diff.tv_usec;
+    double tps = arr/(ell/1000000);
+    printf("SUCCESS\n");
+    printf("############################################\n");
+    printf("    SUCCESS        :   %d\n",i);
+    printf("    SUM USEC       :   %lf us\n",ell);
+    printf("    AVG USEC       :   %lf us\n",ell/i);
+    printf("    TPS            :   %0.2lf TPS\n",tps);
+    printf("############################################\n");
+   
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Run Function FAILURE!");
+    return FAILURE;
+
+}
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    VARCHAR  sUid[80];
+    VARCHAR  sPwd[20];
+    VARCHAR  sConnStr[1024];
+    EXEC SQL END DECLARE SECTION;
+
+    /*----------------------------------------------
+      Log on GOLDILOCKS
+      ------------------------------------------------*/
+    strcpy((char *)sUid.arr, aUserID);
+    sUid.len = (short)strlen((char *)sUid.arr);
+    strcpy((char *)sPwd.arr, sPassword);
+    sPwd.len = (short)strlen((char *)sPwd.arr);
+    strcpy((char *)sConnStr.arr, aHostInfo);
+    sConnStr.len = (short)strlen((char *)sConnStr.arr);
+
+    /* DB 연결 */
+    EXEC SQL CONNECT :sUid IDENTIFIED BY :sPwd USING :sConnStr;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Connection Failure!");
+
+    return FAILURE;
+}
+int Query1(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+        //char    dbstrSpclExtrnid        [AI_EXTRNID_LEN+1];
+        char    dbstrSpclExtrnidTyp     [AI_EXTRNID_TYPE_LEN+1];
+        char    dbstrSpclExtrnidMdn     [AI_EXTRNID_MDN_LEN+1];
+        char    dbstrSpclSvcMgmtNo      [AI_SERVICE_MGMT_NO_LEN+1];
+        char    dbstrSpclEffDate        [AI_DATE_TIME_LEN+1];
+        char    dbstrSpclExpDate        [AI_DATE_TIME_LEN+1];
+        //char    dbstrSpclProdId         [AI_PROD_ID_LEN+1];
+        //char    dbstrStartTime          [AI_DATE_TIME_LEN+1];
+        //char    dbstrSpclBillPhonNumTyp [AI_BILL_PHON_NUM_TYP_LEN+1];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+            SELECT SERVICE_MGMT_NO,
+                EXTRNID_TYPE,
+                      DECODE(EXTRNID_TYPE, 7, EXTRNID, 8, EXTRNID, EXTRNID_MDN) EXTRNID_MDN,
+                CE_EFFECT_DATE,
+                CE_EXPIRED_DATE
+            INTO  :dbstrSpclSvcMgmtNo,
+                :dbstrSpclExtrnidTyp,
+                :dbstrSpclExtrnidMdn,
+                :dbstrSpclEffDate,
+                :dbstrSpclExpDate
+            FROM CUST_EXTRNID
+            WHERE EXTRNID = '01071704433'
+              AND   EXTRNID_TYPE = '1';
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            printf( "NO DATA.\n" );
+            goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY1 FAILURE!");
+    return FAILURE;  
+}
+
+int Query2(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    struct __db_event_ {
+        char    strEventCode        [AI_EVENT_CODE_LEN+1];
+        char    strEventStartDate   [AI_DATE_TIME_LEN+1];
+        char    strEventEndDate     [AI_DATE_TIME_LEN+1];
+        char    strSubEventCode     [AI_SUBEVENT_CODE_LEN+1];
+        char    strRjType           [AI_RJ_TYPE_LEN + 1];
+    };
+    struct __db_event_ dbstEvent[AI_EVENT_MAX_CNT];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+        EXEC SQL
+        SELECT  /*+ ORDERED USE_NL(A B) USE_NL(B C) INDEX(B DC_DEDT_PROD_MAPP_PK) INDEX(C DC_DEDT_DEF_PK) */
+              A.EVENT_CODE,
+              A.EI_EFFECT_DATE,
+              A.EI_EXPIRED_DATE,
+              A.SUB_EVENT_CODE,
+              A.RJ_TYPE
+              INTO :dbstEvent
+                              FROM (SELECT /*+ INDEX(PR EVENT_INSTANCE_PK) */
+                      EVENT_CODE,
+                      EI_EFFECT_DATE,
+                      EI_EXPIRED_DATE,
+                      SUB_EVENT_CODE,
+                      RJ_TYPE
+                 FROM EVENT_INSTANCE pr
+                WHERE pr.SERVICE_MGMT_NO  =     '7226936899'
+                  AND (pr.TRANS_COUNT = -1 OR pr.TRANS_COUNT = 0)
+                  AND (
+                    ( pr.EI_EFFECT_DATE  <=    '20200301170028'
+           AND pr.EI_EXPIRED_DATE >     '20200301170028'
+           AND (   (   pr.RJ_TYPE = 'R'
+             AND EXISTS(SELECT 'X'
+                 FROM CUST_PROD CP
+                WHERE CP.SERVICE_MGMT_NO           = PR.SERVICE_MGMT_NO
+                  AND PR.BASIC_PROD_ID             = CP.PROD_ID
+                  AND NVL(PR.BASIC_PROD_SEQ, '00') = NVL(CP.PROD_SEQ, '00')
+                  AND PR.RJ_TYPE                   = 'R'
+                  AND CP.CP_EFFECT_DATE  <=  '20200301170028'
+                  AND CP.CP_EXPIRED_DATE >   '20200301170028' ))
+      //                                    AND '20200301170028' BETWEEN CP.CP_EFFECT_DATE AND CP.CP_EXPIRED_DATE))
+            OR  (   pr.RJ_TYPE = 'D'
+             AND EXISTS(SELECT 'X'
+                 FROM CUST_PROD CP
+                WHERE CP.SERVICE_MGMT_NO           = PR.SERVICE_MGMT_NO
+                  AND PR.BASIC_PROD_ID             = CP.PROD_ID
+                  AND NVL(PR.BASIC_PROD_SEQ, '00') = NVL(CP.PROD_SEQ, '00')
+                  AND PR.RJ_TYPE                   = 'D'
+                  AND CP.CP_EFFECT_DATE  <=  '20200301170028'
+                  AND CP.CP_EXPIRED_DATE >   '20200301170028' ))
+      //                                    AND '20200301170028' BETWEEN CP.CP_EFFECT_DATE AND CP.CP_EXPIRED_DATE))
+            OR pr.RJ_TYPE       = 'J'
+            OR pr.RJ_TYPE       = 'T'
+            OR pr.RJ_TYPE       = 'E'
+            OR pr.RJ_TYPE       = 'H'
+            OR (pr.RJ_TYPE = 'Z' AND NVL(pr.RESERVE1, ' ') NOT IN('Y', 'C')))
+           )
+           OR  ( pr.RJ_TYPE       = 'O'
+            AND (  '20200301170028' between pr.EI_EFFECT_DATE and pr.EI_EXPIRED_DATE
+             OR '20200301170858' between pr.EI_EFFECT_DATE and pr.EI_EXPIRED_DATE
+             OR pr.EI_EFFECT_DATE between '20200301170028' and  '20200301170858' )
+            AND NVL(pr.RESERVE1, ' ') NOT IN ('C')
+           )
+          )
+          UNION ALL
+                     SELECT  /*+ LEADING(CG) USE_NL(CG PD) INDEX(CG  CUST_GRP_PK) INDEX(PD POT_DONATION_IDX1) */
+                      PD.DEDUCT_CODE,
+                      PD.PD_EFFECT_DATE,
+                      PD.PD_EXPIRED_DATE,
+                      PD.SHR_SEQ,
+                      PD.POT_TYPE
+                      FROM  CUST_GRP CG,  POT_DONATION PD
+                     WHERE CG.SERVICE_MGMT_NO = '7226936899'
+                     AND CG.TRANS_COUNT = 0
+                     AND CG.GRP_ID = PD.GRP_ID
+                     AND PD.POT_TYPE = 'P'
+                     AND PD.PD_EFFECT_DATE  <=  '20200301170028'
+                     AND PD.PD_EXPIRED_DATE >   '20200301170028'
+                     AND CG.EFFECT_DATE  <=     '20200301170028'
+                     AND CG.EXPIRED_DATE >      '20200301170028'
+                     AND NVL(PD.POT_ST_CD, ' ') <> 'C'
+              )                 A,
+              DC_DEDT_PROD_MAPP B,
+              DC_DEDT_DEF       C
+        WHERE A.EVENT_CODE        = B.CODE
+          AND C.FREE_TYPE          in ('1','4')
+          AND B.DC_DEDT_DEF_CODE  = C.CODE
+          AND B.EFFECT_DATE      <= '20200301170028'
+          AND B.EFF_END_DTM      >  '20200301170028'
+     ORDER BY C.FREE_OF_CHARGE_FLAG DESC,
+              B.DC_DEDT_PRTY,
+              DECODE(B.RATE_DC_YN, 'D', A.EI_EXPIRED_DATE, A.EI_EFFECT_DATE),
+              A.EI_EFFECT_DATE,
+              A.SUB_EVENT_CODE;
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY2 FAILURE!");
+    return FAILURE;  
+}
+
+int Query3(){
+    EXEC SQL BEGIN DECLARE SECTION;
+    struct rsRecord
+    {
+        char    strProdid           [AI_PROD_ID_LEN+1];
+        char    strEffdate          [AI_DATE_TIME_LEN+1];
+        char    strProdoffertype    [AI_PROD_OFFER_TYPE_LEN+1];
+        char    strFamilyflag       [1+1];
+        char    strProdseq          [AI_PROD_SEQ_LEN+1];
+    };
+    struct rsRecord resultRecord[AI_PROD_MAX_CNT];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+          SELECT /*+ USE_NL(A B) INDEX(B PRODUCT_PK) */
+               A.PROD_ID,
+               A.CP_EFFECT_DATE,
+               B.PROD_OFFER_TYPE,
+               DECODE(UPPER(B.PROD_FAMILY), 'TLOGIN', 'Y', 'N') AS FAMILY_FLAG,
+               NVL(A.PROD_SEQ, '00') AS PROD_SEQ
+          into :resultRecord
+          FROM PRODUCT   B,
+               CUST_PROD A
+         WHERE B.PROD_ID              = A.PROD_ID
+           AND NVL(B.PROD_SEQ, '00')  = NVL(A.PROD_SEQ, '00')
+           AND B.PROD_LAUNCH_DATE    <= '20200301165304'
+           AND B.PROD_OFFER_TYPE IN('B', 'E')
+           AND A.CP_EFFECT_DATE      <= DECODE(A.PROD_ID, 'NA00000617', '20071003235959', '20200301165304')
+           AND A.CP_EXPIRED_DATE     >  '20200301165304'
+           AND A.SERVICE_MGMT_NO      = '7282428914'
+         ORDER BY B.PROD_PRIORITY ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            printf( "NO DATA.\n" );
+            goto fail_exit;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY3 FAILURE!");
+    return FAILURE;  
+}
+
+int Query4(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    struct __db_svc_info_ {
+        int     nTransCount;
+        int     nBillcycleId;
+        char    strEquipModlCode    [AI_EQUIP_MODL_CODE_LEN+1];
+        char    strPhoneSerNo       [AI_PHONE_SER_NO_LEN+1];
+        char    strSvcTypeCd        [AI_SVC_TYPE_CD_LEN+1]  ;
+
+        char    cLmtTyp             [1+1];
+        char    cChrgPvnt;
+
+        char    strCustTypeCd       [AI_CUST_TYPE_CD_LEN+1] ;
+        char    strEffDate          [AI_DATE_TIME_LEN+1];
+        char    strExpDate          [AI_DATE_TIME_LEN+1];
+    };
+    struct __db_svc_info_ dbstSvcInfo;
+
+    struct __db_svc_info_ind_ {
+        int     nTransCount;
+        int     nBillcycleId;
+        int     nEquipModlCode;
+        int     nPhoneSerNo;
+        int     nSvcTypeCd;
+
+        int     nLmtTyp;
+        int     nChrgPvnt;
+
+        int     nCustTypeCd;
+        int     nEffDate;
+        int     nExpDate;
+    };
+    struct __db_svc_info_ind_ dbstSvc_ind;
+    struct sqlca sqlca;
+    EXEC SQL END DECLARE SECTION;
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT  TRANS_COUNT,
+                BILLCYCLE_ID,
+//              GROUP_ID,       // RSI 2008.02.29 삭제
+//              GROUP2_ID,      // RSI 2008.02.29 삭제
+                EQUIP_MODL_CODE,
+                PHONE_SER_NO,
+                SERVICE_TYPE_CD, // NGM-Rater Renovation 2005.12.12 추가
+
+                NVL(LIMIT_CUST_TYPE_CD, '0'), // IBRS통합
+                CHRG_PRVNT,          // IBRS통합
+
+                CUST_TYPE_CD,    // NGM-Rater Renovation 2005.12.12 추가
+                SMI_EFFECT_DATE,
+                SMI_EXPIRED_DATE
+
+        INTO    :dbstSvcInfo    INDICATOR   :dbstSvc_ind
+        FROM    SERVICE_MGMT_INFO
+        WHERE   SERVICE_MGMT_NO =   '7311099407';
+      
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY4 FAILURE!");
+    return FAILURE;  
+}
+
+int Query5(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+
+    char    dbstrCustInfoUpdateType [2 + 1];
+    char    dbstrCustInfoUpdateRsnCd[2 + 1];
+ 
+    EXEC SQL END DECLARE SECTION;
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT  CUST_INFO_UPDATE_TYPE, CUST_INFO_UPDATE_RSN_CD
+        INTO    :dbstrCustInfoUpdateType, :dbstrCustInfoUpdateRsnCd
+      FROM    CUST_SERVICE_SUSP_HIST
+             WHERE   SERVICE_MGMT_NO   =  '7220703557'
+                  AND     CSS_EFFECT_DATE  <=  '20130605072310'
+                       AND     CSS_EXPIRED_DATE >=  '99991231235959'
+     ORDER BY CSS_EFFECT_DATE DESC, LAST_MODIFIED_DT DESC
+     LIMIT 1;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) { }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY5 FAILURE!");
+    return FAILURE;  
+}
+
+int Query6(){ //bind
+
+    EXEC SQL BEGIN DECLARE SECTION;
+
+     struct __db_cust_grp_kndnid_ {
+        int  nGrpKnd;
+        char strGroupId     [AI_GROUP_ID_LEN+1];
+    };
+    struct __db_cust_grp_kndnid_ db_stGroupNPool[AI_GROUP_MAX_CNT + 1 ];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+
+    EXEC SQL
+        SELECT  /*+ INDEX_ASC(CUST_GRP CUST_GRP_PK) */ GRP_KND,  GRP_ID
+        INTO    :db_stGroupNPool
+        FROM    CUST_GRP
+        WHERE   SERVICE_MGMT_NO =   '7005846654'
+        AND     TRANS_COUNT     =   0
+        AND     EFFECT_DATE     <=  '99991231235959'
+        AND     EXPIRED_DATE    >   '20080605072310'
+        ORDER BY GRP_KND DESC
+        LIMIT   6;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) { }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY6 FAILURE!");
+    return FAILURE;  
+}
+
+int Query7(){ //bind
+
+    EXEC SQL BEGIN DECLARE SECTION;
+
+    char    dbstrWibroProdId    [AI_PROD_MAX_CNT][AI_PROD_ID_LEN+1];
+    char    dbstrWibroProdSeq   [AI_PROD_MAX_CNT][AI_PROD_SEQ_LEN+1];
+
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+
+    EXEC SQL
+    SELECT /*+ USE_NL(A B) INDEX(B PRODUCT_PK) */
+           A.PROD_ID,
+           NVL(A.PROD_SEQ, '00') AS PROD_SEQ
+      INTO :dbstrWibroProdId,
+           :dbstrWibroProdSeq
+      FROM PRODUCT   B,
+           CUST_PROD A
+     WHERE B.PROD_ID              = A.PROD_ID
+       AND A.CP_EFFECT_DATE      <= '99991231235959'
+       AND A.CP_EXPIRED_DATE     >  '20190725155911'
+       AND A.SERVICE_MGMT_NO      = '7282428914'
+       AND NVL(A.PROD_SEQ, '00')  = NVL(B.PROD_SEQ, '00')
+       LIMIT 99;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) { }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY7 FAILURE!");
+    return FAILURE;  
+}
+
+ 
+
+ 
+
+int Query8(){
+
+    int rCount=0;
+    EXEC SQL BEGIN DECLARE SECTION;
+    char    db_TempProdId   [AI_PROD_ID_LEN+1];
+    char    db_TempProdSeq  [AI_PROD_SEQ_LEN+1];
+
+    struct __db_corridor_info_ {
+        char    strCorridorType [AI_CORRIDOR_TYPE_LEN+1];
+        char    strCorridor     [AI_CORRIDOR_LEN+1];
+        int     nCorridorId;
+    };
+    struct __db_corridor_info_ db_stCorridor[10];
+
+    EXEC SQL END DECLARE SECTION;
+    for(i=0;i < arr;i++){
+        EXEC SQL DECLARE CUR2 CURSOR FOR
+            SELECT PROD_ID,
+                   NVL(PROD_SEQ, '00') AS PROD_SEQ,
+                   CORRIDOR_TYPE,
+                   CORRIDOR,
+                   CORRIDOR_ID
+              FROM CUST_CORRIDOR
+             WHERE SERVICE_MGMT_NO      = '7258338152'
+               AND CC_EFFECT_DATE      <= '20180502142223'
+               AND CC_EXPIRED_DATE     >  '2019410154405'
+            ORDER BY PROD_ID,
+                   NVL(PROD_SEQ, '00'),
+                   CORRIDOR_TYPE DESC,
+                   CORRIDOR_ID;     
+   
+        EXEC SQL OPEN CUR2;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+        while(1)
+        {
+            EXEC SQL FETCH CUR2 INTO :db_TempProdId, :db_TempProdSeq, :db_stCorridor;
+            if(sqlca.sqlcode == SQL_NO_DATA)
+            {
+                break;
+            }
+            else if(sqlca.sqlcode != 0)
+            {
+                goto fail_exit;
+            }
+            rCount++;
+        }
+        EXEC SQL CLOSE CUR2;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY8 FAILURE!");
+    return FAILURE;  
+}
+
+int Query9(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    char    dbstrWorkGroupId   [AI_WORK_GROUP_ID_LEN+1];
+    char    dbstrContentId     [AI_CONTENT_ID_LEN+1];
+    char    dbstrSettlementFlag[AI_SETTLEMENT_FLAG_LEN+1];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+    EXEC SQL
+ 
+        SELECT /*+ INDEX(CONTENT_PRODUCT CONTENT_PRODUCT_PK) */ WORK_GROUP_ID,
+            NVL(CONTENT_ID,'          '),
+            DECODE(PRCH_CONTENT_YN, 'Y',
+            DECODE(NVL(EXPERIENCE_YN,' '), 'Y','E','Y'),PRCH_CONTENT_YN)  PRCH_GUBUN
+        INTO    :dbstrWorkGroupId
+                ,:dbstrContentId
+                ,:dbstrSettlementFlag
+          FROM CONTENT_PRODUCT
+          WHERE END_TIME > '20200301071923'
+          AND  START_TIME <= '20200301071923'
+          AND  PRODUCT_ID = '0027774098';
+           
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY9 FAILURE!");
+    return FAILURE;  
+}
+
+int Query10(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+      typedef struct {
+                char    phon_num        [PHON_NUM_LEN + 1];
+                char    prefix_lower_end[PHON_NUM_LEN + 1];
+                char    pp_date         [DATE_TIME_LEN + 1];
+                int     fixed_charge;
+                int     call_type;
+    } ST_PrefixPartition;
+    ST_PrefixPartition h_stPrefix;
+
+    EXEC SQL END DECLARE SECTION;
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT  /*+ INDEX(PREFIX_PARTITION, PREFIX_PARTITION_IND1) */  PREFIX_LOWER_END,
+        FIXED_CHARGE,
+        CALL_TYPE
+        INTO :h_stPrefix.prefix_lower_end,
+        :h_stPrefix.fixed_charge,
+        :h_stPrefix.call_type
+        FROM PREFIX_PARTITION
+           WHERE PREFIX_HIGHER_END >= '01115080000000000000' AND
+         PP_EFFECT_DATE    <= '20200301003708'  AND
+         PP_EXPIRED_DATE   > '20200301003708' LIMIT 1;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY10 FAILURE!");
+    return FAILURE;  
+}
+
+
+int Query11(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    char g_szgrpid          [100][AI_GROUP_ID_LEN+1];
+    char gdb_strFamilyDcType[100][AI_FAMILY_DC_TYPE+1];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT GROUP_ID ,NVL(FAMILY_DC_TYPE,' ')
+        INTO    :g_szgrpid ,:gdb_strFamilyDcType
+              FROM EXTRNID_GROUP_MAP
+         WHERE
+         EXTRNID    in ('0117025274','01043171357')
+         AND  EGM_EFFECT_DATE  <= '20200301114459'
+         AND  EGM_EXPIRED_DATE > '20200301114459'
+         AND     EXTRNID_TYPE        = '1'
+         ORDER BY
+         GROUP_ID, FAMILY_DC_TYPE
+         ;
+
+       
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY11 FAILURE!");
+    return FAILURE;  
+}
+int Query110(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    char g_szgrpid          [100][AI_GROUP_ID_LEN+1];
+    char gdb_strFamilyDcType[100][AI_FAMILY_DC_TYPE+1];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT 1 //GROUP_ID ,NVL(FAMILY_DC_TYPE,' ')
+        INTO    :g_szgrpid// ,:gdb_strFamilyDcType
+              FROM EXTRNID_GROUP_MAP
+         WHERE
+         //EXTRNID    in ('0117025274')
+         //EXTRNID    in ('0117025274' ,'01043171357')
+         EXTRNID    in ('0117025274' ,'01043171357','01003171357')
+         ;
+       
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY11 FAILURE!");
+    return FAILURE;  
+}
+
+int Query12(){
+    EXEC SQL BEGIN DECLARE SECTION;
+    
+        char    min             [MIN_LEN + 1];
+    EXEC SQL END DECLARE SECTION;
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT MIN
+        INTO :min
+        FROM CUST_STI
+        WHERE MIN =  '0112208880';
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+        printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY12 FAILURE!");
+    return FAILURE;  
+}
+
+int Query13(){
+    EXEC SQL BEGIN DECLARE SECTION;
+        char    dbstrSpclExtrnidTyp     [AI_EXTRNID_TYPE_LEN+1];
+        char    dbstrSpclExtrnidMdn     [AI_EXTRNID_MDN_LEN+1];
+        char    dbstrSpclSvcMgmtNo      [AI_SERVICE_MGMT_NO_LEN+1];
+        char    dbstrSpclEffDate        [AI_DATE_TIME_LEN+1];
+        char    dbstrSpclExpDate        [AI_DATE_TIME_LEN+1];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT  /*+ INDEX(M_CUST_EXTRNID M_CUST_EXTRNID_PK) */SERVICE_MGMT_NO,
+                EXTRNID_TYPE,
+                DECODE(EXTRNID_TYPE, 7, EXTRNID, 8, EXTRNID, EXTRNID_MDN) EXTRNID_MDN,
+                CE_EFFECT_DATE,
+                CE_EXPIRED_DATE
+        INTO    :dbstrSpclSvcMgmtNo,
+                :dbstrSpclExtrnidTyp,
+                :dbstrSpclExtrnidMdn,
+                :dbstrSpclEffDate,
+                :dbstrSpclExpDate
+        FROM    M_CUST_EXTRNID
+        WHERE   EXTRNID =   '01021339731'
+          AND   EXTRNID_TYPE = '2';
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+        //printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY13 FAILURE!");
+    return FAILURE;  
+}
+
+int Query14(){
+    EXEC SQL BEGIN DECLARE SECTION;
+        struct __db_svc_info_ {
+            int     nTransCount;
+            int     nBillcycleId;
+            char    strEquipModlCode    [AI_EQUIP_MODL_CODE_LEN+1];
+            char    strPhoneSerNo       [AI_PHONE_SER_NO_LEN+1];
+            char    strSvcTypeCd        [AI_SVC_TYPE_CD_LEN+1]  ;
+            char    strCustTypeCd       [AI_CUST_TYPE_CD_LEN+1] ;
+            char    strEffDate          [AI_DATE_TIME_LEN+1];
+            char    strExpDate          [AI_DATE_TIME_LEN+1];
+        };
+        struct __db_svc_info_ dbstSvcInfo;
+
+        struct __db_svc_info_ind_ {
+            int     nTransCount;
+            int     nBillcycleId;
+            int     nEquipModlCode;
+            int     nPhoneSerNo;
+            int     nSvcTypeCd;
+            int     nCustTypeCd;
+            int     nEffDate;
+            int     nExpDate;
+        };
+        struct __db_svc_info_ind_ dbstSvc_ind;
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+        SELECT  TRANS_COUNT,
+                BILLCYCLE_ID,
+//              GROUP_ID,       // RSI 2008.02.29 삭제
+//              GROUP2_ID,      // RSI 2008.02.29 삭제
+                EQUIP_MODL_CODE,
+                PHONE_SER_NO,
+                SERVICE_TYPE_CD, // NGM-Rater Renovation 2005.12.12 추가
+                CUST_TYPE_CD,    // NGM-Rater Renovation 2005.12.12 추가
+                SMI_EFFECT_DATE,
+                SMI_EXPIRED_DATE
+        INTO    :dbstSvcInfo    INDICATOR   :dbstSvc_ind
+        FROM    M_SERVICE_MGMT_INFO
+        WHERE   SERVICE_MGMT_NO =  '0109642147';
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+        printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY14 FAILURE!");
+    return FAILURE;  
+}
+
+int Query15(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    char    dbstrCustInfoUpdateType [2 + 1];
+    char    dbstrCustInfoUpdateRsnCd[2 + 1];
+    EXEC SQL END DECLARE SECTION;
+
+ 
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+            SELECT  CUST_INFO_UPDATE_TYPE, CUST_INFO_UPDATE_RSN_CD
+            INTO    :dbstrCustInfoUpdateType, :dbstrCustInfoUpdateRsnCd
+            FROM    M_CUST_SERVICE_SUSP_HIST
+            WHERE   SERVICE_MGMT_NO   = '0100021157'
+            AND     CSS_EFFECT_DATE  <= '20120117191324'
+            AND     CSS_EXPIRED_DATE >=  '20120108001543'
+        ORDER BY CSS_EFFECT_DATE DESC, LAST_MODIFIED_DT DESC
+        LIMIT 1 ;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            // printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY15 FAILURE!");
+    return FAILURE;  
+}
+
+int Query16(){//event_instance table no data..
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    struct __db_prod_info_ {
+        char    strProdId           [AI_PROD_ID_LEN+1];
+        char    strEffDate          [AI_DATE_TIME_LEN+1];
+        char    strProdOfferType    [AI_PROD_OFFER_TYPE_LEN+1];
+        char    strFamilyFlag       [1+1];
+    };
+    struct __db_prod_info_ dbstProdInfo[AI_PROD_MAX_CNT];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+    EXEC SQL
+        SELECT /*+ use_nl(A B) index(B M_PRODUCT_PK) */
+           A.PROD_ID,
+           A.CP_EFFECT_DATE,
+           B.PROD_OFFER_TYPE,
+           decode( upper(B.PROD_FAMILY),'TLOGIN','Y','N')
+           INTO    :dbstProdInfo
+
+                               FROM M_PRODUCT  B,
+           M_CUST_PROD A
+           WHERE B.PROD_ID   = A.PROD_ID
+           AND  B.PROD_LAUNCH_DATE <= '20200301164451'
+           AND  B.PROD_OFFER_TYPE IN ('B', 'E')
+           //AND  A.CP_EFFECT_DATE <=  :db_strStartTime
+           AND  A.CP_EFFECT_DATE <=
+             decode(A.PROD_ID,'NA00000617','20071003235959', '20200301164451')
+           AND  A.CP_EXPIRED_DATE > '20200301164451'
+           AND  A.SERVICE_MGMT_NO = '0105807146'
+           ORDER BY
+           B.PROD_PRIORITY;
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY16 FAILURE!");
+    return FAILURE;  
+}
+
+int Query17(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+
+        struct __db_cust_grp_kndnid_ {
+            int  nGrpKnd;
+            char strGroupId     [AI_GROUP_ID_LEN+1];
+        };
+        struct __db_cust_grp_kndnid_ dbstGroupNPool[AI_GROUP_MAX_CNT + 1 ];
+
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+      
+        EXEC SQL
+             SELECT  /*+ INDEX_ASC(M_CUST_GRP M_CUST_GRP_PK) */   GRP_KND,  GRP_ID
+             INTO    :dbstGroupNPool
+             FROM    M_CUST_GRP
+             WHERE   SERVICE_MGMT_NO =   '7029039887'
+             AND     TRANS_COUNT     =   0
+             AND     EFFECT_DATE     <=  '20200301165703'
+             AND     EXPIRED_DATE    >   '20200301165703'
+             LIMIT   6;
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            // printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY17 FAILURE!");
+    return FAILURE;  
+}
+
+int Query18(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    struct __db_event_ {
+        char    strEventCode        [AI_EVENT_CODE_LEN+1];
+        char    strEventStartDate   [AI_DATE_TIME_LEN+1];
+        char    strEventEndDate     [AI_DATE_TIME_LEN+1];
+        char    strSubEventCode     [AI_SUBEVENT_CODE_LEN+1];
+    };
+    struct __db_event_ dbstEvent[AI_EVENT_MAX_CNT];
+ 
+    EXEC SQL END DECLARE SECTION;
+    for(i=0;i < arr;i++){
+    EXEC SQL
+         SELECT  /*+ USE_NL(A) INDEX(A M_EVENT_INSTANCE_PK) */
+             A.EVENT_CODE,
+             A.EI_EFFECT_DATE,
+             A.EI_EXPIRED_DATE,
+             A.SUB_EVENT_CODE
+          INTO    :dbstEvent
+                              FROM M_DC_DEDT_DEF         C,
+             M_DC_DEDT_PROD_MAPP B,
+             M_EVENT_INSTANCE      A
+               WHERE A.SERVICE_MGMT_NO = '0107253781'
+               AND  A.EI_EFFECT_DATE <= '20200301162719'
+               AND  A.EI_EXPIRED_DATE > '20200301162719'
+               AND  A.EVENT_CODE  = B.CODE
+               AND  C.FREE_TYPE   =  '1'
+               AND  B.DC_DEDT_DEF_CODE = C.CODE
+               AND  B.EFFECT_DATE  <= '20200301162719'
+               AND  B.EFF_END_DTM  > '20200301162719'
+               ORDER BY
+             C.FREE_OF_CHARGE_FLAG DESC,
+             B.DC_DEDT_PRTY, A.EI_EFFECT_DATE;
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            //printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY18 FAILURE!");
+    return FAILURE;  
+}
+
+
+int Query19(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+      char    dbstrTempProdId   [AI_PROD_ID_LEN+1];
+
+        struct __db_corridor_info_ {
+            char    strCorridorType [AI_CORRIDOR_TYPE_LEN+1];
+            char    strCorridor     [AI_CORRIDOR_LEN+1];
+            int     nCorridorId;
+        };
+        struct __db_corridor_info_ dbstCorridor;
+
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+        int rCount = 0;
+
+        EXEC SQL
+         DECLARE CUR_CORRIDOR CURSOR FOR
+            SELECT  /*+ INDEX(M_CUST_CORRIDOR M_CUST_CORRIDOR_PK) */ PROD_ID,CORRIDOR_TYPE,
+                CORRIDOR,
+                CORRIDOR_ID
+                    FROM    M_CUST_CORRIDOR
+                    WHERE
+                        SERVICE_MGMT_NO =   '0107253781'
+                    AND     CC_EFFECT_DATE  <=  '20200301162719'
+                    AND CC_EXPIRED_DATE >   '20200301162719'
+                    ORDER BY PROD_ID,CORRIDOR_TYPE DESC, CORRIDOR_ID;
+
+        EXEC SQL OPEN CUR_CORRIDOR;
+        if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+        while(1)
+        {
+            EXEC SQL FETCH CUR_CORRIDOR INTO :dbstrTempProdId,:dbstCorridor;
+
+            if(sqlca.sqlcode == SQL_NO_DATA)
+            {
+        //        printf( "NO DATA.\n" );
+                break;
+            }
+            else if(sqlca.sqlcode != 0)
+            {
+                goto fail_exit;
+            }
+            rCount++;
+        }
+        EXEC SQL CLOSE CUR_CORRIDOR;
+        if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY19 FAILURE!");
+    return FAILURE;  
+}
+
+int Query20(){//bind
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    char g_szgrpid_mvno          [100][AI_GROUP_ID_LEN+1];
+    int  gn_cntpergrp_mvno       [100];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+
+        EXEC SQL
+            SELECT  GROUP_ID,COUNT(1)
+            INTO    :g_szgrpid_mvno,:gn_cntpergrp_mvno
+            FROM    EXTRNID_GROUP_MAP
+            WHERE
+            EXTRNID             in  ('01086509808','01052370206')
+            AND     EGM_EFFECT_DATE     <=  '20200202115737'
+            AND     EGM_EXPIRED_DATE    >   '20200202115737'
+            AND     EXTRNID_TYPE        = '1'
+            GROUP BY GROUP_ID;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            // printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY20 FAILURE!");
+    return FAILURE;  
+}
+
+
+int Query21(){//bind
+
+    EXEC SQL BEGIN DECLARE SECTION;
+         struct __db_event_ {
+            char    strEventCode        [AI_EVENT_CODE_LEN+1];
+            char    strEventStartDate   [AI_DATE_TIME_LEN+1];
+            char    strEventEndDate     [AI_DATE_TIME_LEN+1];
+            char    strSubEventCode     [AI_SUBEVENT_CODE_LEN+1];
+        };
+        struct __db_event_ dbstEvent[AI_EVENT_MAX_CNT];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+
+       EXEC SQL
+        SELECT /*+ ordered use_nl(A B) use_nl(B C) index(B M_DC_DEDT_PROD_MAPP_PK) index(C M_DC_DEDT_DEF_PK) */
+               A.EVENT_CODE,
+               A.EI_EFFECT_DATE,
+               A.EI_EXPIRED_DATE,
+               A.SUB_EVENT_CODE
+        INTO    :dbstEvent
+         FROM   (
+                SELECT  /*+ index(evt M_EVENT_INSTANCE_PK) */
+                        EVENT_CODE,
+                        EI_EFFECT_DATE,
+                        EI_EXPIRED_DATE,
+                        SUB_EVENT_CODE
+                FROM    M_EVENT_INSTANCE evt
+                WHERE    SERVICE_MGMT_NO     =     '0107253781'
+                AND      EI_EFFECT_DATE      <=   '20200202115737'
+                AND      EI_EXPIRED_DATE     >     '20200202115737'
+                UNION ALL
+                SELECT /*+ index(birth M_CUST_BIRTHDAY_PK) */
+                       'HP001' EVENT_CODE,
+                        EFFECT_DATE EI_EFFECT_DATE,
+                        EFF_END_DTM EI_EXPIRED_DATE,
+                        '000000000000000' SUB_EVENT_CODE
+               FROM    M_CUST_BIRTHDAY birth
+               WHERE  SERVICE_MGMT_NO        =     '0107253781'
+               AND    TRANS_COUNT            =     '0'
+               AND    BIRTH_DAY              =     SUBSTR('3214', 5, 4)
+               AND    EFFECT_DATE            <=    '20200202115737'
+               AND    EFF_END_DTM            >     '20200202115737'
+               ) A,  M_DC_DEDT_PROD_MAPP   B, M_DC_DEDT_DEF  C
+         WHERE  A.EVENT_CODE  =  B.CODE
+         AND    C.FREE_TYPE   =  '1'
+         AND    B.DC_DEDT_DEF_CODE  =  C.CODE
+         AND    B.EFFECT_DATE    <=  '20200202115737'
+         AND    B.EFF_END_DTM   >   '20200202115737'
+         ORDER BY
+               C.FREE_OF_CHARGE_FLAG DESC,
+               B.DC_DEDT_PRTY, A.EI_EFFECT_DATE;
+
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            // printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY21 FAILURE!");
+    return FAILURE;  
+}
+
+
+int Query22(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+   
+    typedef struct {
+            char    service_mgmt_no         [MGMT_LEN + 1];
+            int     usg_type;
+            char    next_cycle_start_date   [DATE_LEN + 1];
+            char    rerating_flag           [RERATING_FLAG_LEN + 1];
+    } ST_CustReratingStatus;
+
+    ST_CustReratingStatus   h_stCust;
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+        EXEC SQL
+            SELECT USG_TYPE
+            INTO :h_stCust.usg_type
+            FROM M_CUST_RERATING_STATUS LIMIT 1,1 ;
+
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            // printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY22 FAILURE!");
+    return FAILURE;  
+}
+
+int Query23(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    int     dbiRatGrpKnd;
+    EXEC SQL END DECLARE SECTION;
+    for(i=0;i < arr;i++){
+    EXEC SQL
+         SELECT /*+ USE_NL(A B) */ A.GRP_KND
+         INTO    :dbiRatGrpKnd
+         FROM CUST_GRP A, CUST_EXTRNID B
+         WHERE B.EXTRNID   = '01093391771'
+         AND  B.EXTRNID_TYPE  =  1
+         AND  A.SERVICE_MGMT_NO = B.SERVICE_MGMT_NO
+         AND  A.EFFECT_DATE  <= '20200301181514'
+         AND  A.EXPIRED_DATE  > '20200301181514'
+         AND     B.CE_EFFECT_DATE <= '20200301181514'
+         AND  B.CE_EXPIRED_DATE > '20200301181514'
+         AND  A.GRP_ID  like    'BO%'
+         LIMIT 1;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY23 FAILURE!");
+    return FAILURE;  
+}
+
+
+int Query24(){
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    char    dbstrCategoryType  [AI_CATEGORY_TYPE_LEN+1];
+    char    dbstrCategoryId    [AI_CATEGORY_ID_LEN+1];
+    EXEC SQL END DECLARE SECTION;
+
+    for(i=0;i < arr;i++){
+        EXEC SQL
+            SELECT  A.CATEGORY_TYPE,
+                    A.CATEGORY_ID
+            INTO    :dbstrCategoryType,
+                    :dbstrCategoryId
+            FROM    CONTENT_CATEGORY    B,
+                    MAIN_CONTENT        A
+            WHERE   B.CATEGORY_LEVEL=   '3'
+            AND     B.CATEGORY_ID   =   A.CATEGORY_ID
+            AND     B.CATEGORY_TYPE =   A.CATEGORY_TYPE
+            AND     A.END_TIME      >  '20020618000000'
+            AND     A.START_TIME    <=  '99991231235959'
+            AND     A.CONTENT_ID    =   '0044833573';
+        if(sqlca.sqlcode == SQL_NO_DATA) {
+            // printf( "NO DATA.\n" );
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+    }
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] QUERY24 FAILURE!");
+    return FAILURE;  
+}

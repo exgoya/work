@@ -1,0 +1,151 @@
+/*
+ * cyclone_target.gc 
+ * target db 검증 작업 수행
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/time.h>
+
+EXEC SQL INCLUDE SQLCA;
+
+#define  SUCCESS  0
+#define  FAILURE  -1
+
+#define  PRINT_SQL_ERROR(aMsg)                                      \
+    {                                                               \
+        printf("\n");                                               \
+        printf(aMsg);                                               \
+        printf("\nSQLCODE : %d\nSQLSTATE : %s\nERROR MSG : %s\n",   \
+               sqlca.sqlcode,                                       \
+               SQLSTATE,                                            \
+               sqlca.sqlerrm.sqlerrmc );                            \
+    }
+
+//CREATE TABLE DEDUCTION
+//(
+// SNO NUMBER PRIMARY KEY
+//,SNAME VARCHAR(10)
+//,USE_AMT NUMBER
+//,MOD_DATE TIMESTAMP
+//)
+//SHARDING BY RANGE(SNO)
+//SHARD s1 VALUES LESS THAN ( 200      ) AT CLUSTER GROUP g1,
+//SHARD s2 VALUES LESS THAN ( MAXVALUE ) AT CLUSTER GROUP g2;
+
+#define ARRCOUNT 100
+#define EXECOUNT 1000
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword);
+
+int main(int argc, char **argv)
+{
+    struct timeval startTime, endTime, gepTime;
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    int          sSum=0;
+    int          sName=0;
+    EXEC SQL END DECLARE SECTION;
+
+    printf("Connect GOLDILOCKS ...\n");
+    if(Connect("DSN=GOLDILOCKS", "test", "test") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+    int bName;
+    //start time
+    while(1){
+        if(sName==0){
+            gettimeofday( &startTime, NULL );
+        }
+
+        EXEC SQL
+        SELECT SNAME,NVL(SUM(USE_AMT),0)
+        INTO :sName, :sSum
+        FROM DEDUCTION
+        GROUP BY SNAME
+        ORDER BY SNAME DESC
+        LIMIT 1;
+
+        if(sqlca.sqlcode == SQL_NO_DATA) { 
+            printf( "No data.\n" ); 
+        }
+        else if(sqlca.sqlcode != 0) { PRINT_SQL_ERROR("[ERROR] SQL ERROR -") goto fail_exit; }
+
+        if(bName!=sName){
+            gettimeofday( &endTime, NULL ); //end time
+
+            gepTime.tv_sec = endTime.tv_sec - startTime.tv_sec;
+            gepTime.tv_usec = endTime.tv_usec - startTime.tv_usec;
+
+            if ( gepTime.tv_usec < 0 )
+            {
+            gepTime.tv_sec = gepTime.tv_sec - 1;
+            gepTime.tv_usec = gepTime.tv_usec + 1000000;
+            }
+
+            printf("commit number : %d , amt : %d ellapsed time [%02ld.%02ld] second\n",sName,sSum, gepTime.tv_sec, gepTime.tv_usec);
+            gettimeofday( &startTime, NULL );
+        }
+        //if(sSum==1000){ break;
+        bName=sName;
+        //}
+    }
+
+    EXEC SQL COMMIT WORK RELEASE;
+    if(sqlca.sqlcode != 0)
+    {
+        PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+        goto fail_exit;
+    }
+
+    printf("SUCCESS\n");
+    printf("############################\n");
+
+    return 0;
+
+  fail_exit:
+
+    printf("FAILURE\n");
+    printf("############################\n\n");
+
+    EXEC SQL ROLLBACK WORK RELEASE;
+
+    return 0;
+}
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    VARCHAR  sUid[80];
+    VARCHAR  sPwd[20];
+    VARCHAR  sConnStr[1024];
+    EXEC SQL END DECLARE SECTION;
+
+    /*----------------------------------------------
+      Log on GOLDILOCKS
+      ------------------------------------------------*/
+    strcpy((char *)sUid.arr, aUserID);
+    sUid.len = (short)strlen((char *)sUid.arr);
+    strcpy((char *)sPwd.arr, sPassword);
+    sPwd.len = (short)strlen((char *)sPwd.arr);
+    strcpy((char *)sConnStr.arr, aHostInfo);
+    sConnStr.len = (short)strlen((char *)sConnStr.arr);
+
+    /* DB 연결 */
+    EXEC SQL CONNECT :sUid IDENTIFIED BY :sPwd USING :sConnStr;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Connection Failure!");
+
+    return FAILURE;
+}
+

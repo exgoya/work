@@ -1,0 +1,3076 @@
+=================================================
+ TIME    : 2022-12-28 14:24:06.913722
+ VERSION : Release 21c 21.1.23 revision(af2034b)
+=================================================
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.913717][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.913825][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.913989][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27a79a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.914004][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27a79a0
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.914034][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.914045][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27a79a0
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.914058][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.914070][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27a79a0
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915651][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915681][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27a79a0
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915695][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915708][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915864][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915888][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7ce8
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915902][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915914][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915929][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915943][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7ce8
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915971][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.915983][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916001][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916015][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7ce8
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916027][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916039][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916051][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916064][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7ce8
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916076][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916087][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916100][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916128][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7ce8
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916139][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916150][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916162][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916174][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7ce8
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916188][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916199][SQLBindCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916215][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916226][SQLBindCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916240][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916251][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7b28
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916263][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916274][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7b28
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916285][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916296][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27a7b28
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916308][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916318][SQLBindCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916333][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916345][SQLBindCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916359][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916370][SQLBindCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916384][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916395][SQLBindCol]
+ENTRY:
+	Statement = 0x27a79a0
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916410][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916435][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27a79a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916451][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916471][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27a79a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916483][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916497][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27a79a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916912][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.916950][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:06.917714][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152630][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152667][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152797][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27abfa0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152829][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27abfa0
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152887][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152899][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27abfa0
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152912][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.152924][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27abfa0
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154539][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154587][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27abfa0
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154602][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154617][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154706][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154731][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac2e8
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154747][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154760][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154774][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154804][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac2e8
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154833][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154860][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154895][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154909][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac2e8
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154936][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154947][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.154959][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155000][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac2e8
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155012][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155031][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155044][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155057][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac2e8
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155069][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155081][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155093][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155106][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac2e8
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155118][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155134][SQLBindCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155168][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155181][SQLBindCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155198][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155211][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac128
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155243][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155256][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac128
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155269][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155281][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ac128
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155295][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155307][SQLBindCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155323][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155335][SQLBindCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155352][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155364][SQLBindCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155381][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155394][SQLBindCol]
+ENTRY:
+	Statement = 0x27abfa0
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155410][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155457][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27abfa0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155479][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155504][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27abfa0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155518][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155572][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27abfa0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.155997][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.156021][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.156678][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272447][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272480][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272606][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27ae2a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272623][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27ae2a0
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272638][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272650][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27ae2a0
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272664][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.272677][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27ae2a0
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274132][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274163][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27ae2a0
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274178][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274193][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274378][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274400][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae5e8
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274414][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274426][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274438][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274451][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae5e8
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274463][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274474][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274492][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274505][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae5e8
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274516][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274527][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274564][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274579][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae5e8
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274592][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274605][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274619][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274633][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae5e8
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274646][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274658][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274672][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274686][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae5e8
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274699][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274715][SQLBindCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274735][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274748][SQLBindCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274764][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274778][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae428
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274792][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274804][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae428
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274817][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274845][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27ae428
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274872][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274883][SQLBindCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274898][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274909][SQLBindCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274925][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274937][SQLBindCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274952][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274964][SQLBindCol]
+ENTRY:
+	Statement = 0x27ae2a0
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.274978][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.275002][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27ae2a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.275019][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.275039][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27ae2a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.275051][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.275066][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27ae2a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.275636][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.275660][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.276223][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.479769][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.479824][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.479990][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27b1fe0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.480005][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27b1fe0
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.480018][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.480030][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27b1fe0
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.480042][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.480054][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27b1fe0
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481592][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481622][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27b1fe0
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481635][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481648][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481732][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481770][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2328
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481784][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481796][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481809][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481823][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2328
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481851][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481862][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481887][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481900][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2328
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481912][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481922][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481934][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481946][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2328
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481972][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.481999][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482011][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482022][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2328
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482034][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482044][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482056][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482069][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2328
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482080][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482092][SQLBindCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482110][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482122][SQLBindCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482138][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482150][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2168
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482162][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482172][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2168
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482184][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482196][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b2168
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482207][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482218][SQLBindCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482233][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482244][SQLBindCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482259][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482270][SQLBindCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482287][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482299][SQLBindCol]
+ENTRY:
+	Statement = 0x27b1fe0
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482313][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482338][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27b1fe0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482356][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482377][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27b1fe0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482389][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482405][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27b1fe0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.482985][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.483016][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.483759][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568226][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568261][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568456][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27b3a20
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568471][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27b3a20
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568485][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568497][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27b3a20
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568509][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.568520][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27b3a20
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570043][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570069][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27b3a20
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570082][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570094][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570255][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570278][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3d68
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570293][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570305][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570318][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570333][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3d68
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570346][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570358][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570371][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570391][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3d68
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570405][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570417][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570446][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570474][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3d68
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570487][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570498][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570510][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570523][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3d68
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570559][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570572][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570602][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570615][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3d68
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570628][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570640][SQLBindCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570663][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570693][SQLBindCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570710][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570723][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3ba8
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570737][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570749][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3ba8
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570763][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570776][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b3ba8
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570789][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570801][SQLBindCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570821][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570849][SQLBindCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570884][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570897][SQLBindCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570914][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570926][SQLBindCol]
+ENTRY:
+	Statement = 0x27b3a20
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.570945][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.571006][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27b3a20
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.571026][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.571049][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27b3a20
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.571063][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.571080][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27b3a20
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.571612][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.571636][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.572443][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776242][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776274][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776405][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27b7760
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776421][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27b7760
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776435][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776448][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27b7760
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776479][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.776507][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27b7760
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778036][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778068][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27b7760
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778083][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778097][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778206][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778228][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b7aa8
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778242][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778259][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778274][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778288][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b7aa8
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778302][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778329][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778342][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778379][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b7aa8
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778392][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778403][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778416][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778429][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b7aa8
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778441][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778484][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778497][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778509][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b7aa8
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778521][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778537][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778567][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778581][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b7aa8
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778593][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778606][SQLBindCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778625][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778639][SQLBindCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778655][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778667][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b78e8
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778681][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778693][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b78e8
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778706][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778718][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27b78e8
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778731][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778743][SQLBindCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778761][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778774][SQLBindCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778808][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778836][SQLBindCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778866][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778876][SQLBindCol]
+ENTRY:
+	Statement = 0x27b7760
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778893][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778917][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27b7760
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778932][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778952][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27b7760
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778965][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.778980][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27b7760
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.779599][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.779622][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.780308][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.978925][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.978961][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.979110][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27bb4a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.979132][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27bb4a0
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.979146][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.979158][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27bb4a0
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.979171][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.979183][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27bb4a0
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.980761][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.980784][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27bb4a0
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.980798][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.980812][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.980976][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981000][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb7e8
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981015][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981028][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981043][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981077][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb7e8
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981090][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981102][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981116][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981134][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb7e8
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981148][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981160][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981174][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981188][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb7e8
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981201][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981213][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981226][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981255][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb7e8
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981285][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981297][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981311][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981325][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb7e8
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981338][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981352][SQLBindCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981375][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981390][SQLBindCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981406][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981435][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb628
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981449][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981462][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb628
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981475][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981488][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bb628
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981501][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981514][SQLBindCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981530][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981550][SQLBindCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981569][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981582][SQLBindCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981598][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981611][SQLBindCol]
+ENTRY:
+	Statement = 0x27bb4a0
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981627][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981657][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27bb4a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981675][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981700][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27bb4a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981715][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.981732][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27bb4a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.982312][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.982334][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:07.982981][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071705][SQLDriverConnect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071750][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071880][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7fffddd9c1f0 -> 0x27bcee0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071901][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27bcee0
+	Attribute = 10010[SQL_ATTR_APP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e8
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071916][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071929][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x27bcee0
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7fffddd9c1e0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071942][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.071954][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x27bcee0
+	Statement Text = 0x5862ff: SELECT * FROM Deposit
+	Text Length = -3
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074693][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074725][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x27bcee0
+	Column Count Ptr = 0x7fffddd5c1de
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074739][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7fffddd5c1de -> 6
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074753][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 1
+	Column Name Ptr = 0x7fffddd5c2e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c344
+	Data Type Ptr = 0x7fffddd5c346
+	Column Size Ptr = 0x7fffddd5c348
+	Decimal Digits Ptr = 0x7fffddd5c350
+	Nullable Ptr = 0x7fffddd5c352
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074946][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c2e0 -> NAME
+	Name Length Ptr = 0x7fffddd5c344 -> 4
+	Data Type Ptr = 0x7fffddd5c346 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c348 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c350 -> 0
+	Nullable Ptr = 0x7fffddd5c352 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074969][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd228
+	Record Number = 1
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c358
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074982][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.074993][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 2
+	Column Name Ptr = 0x7fffddd5c3e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c444
+	Data Type Ptr = 0x7fffddd5c446
+	Column Size Ptr = 0x7fffddd5c448
+	Decimal Digits Ptr = 0x7fffddd5c450
+	Nullable Ptr = 0x7fffddd5c452
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075005][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c3e0 -> BALANCE
+	Name Length Ptr = 0x7fffddd5c444 -> 7
+	Data Type Ptr = 0x7fffddd5c446 -> 2[SQL_NUMERIC]
+	Column Size Ptr = 0x7fffddd5c448 -> 10
+	Decimal Digits Ptr = 0x7fffddd5c450 -> 0
+	Nullable Ptr = 0x7fffddd5c452 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075018][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd228
+	Record Number = 2
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c458
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075029][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075040][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 3
+	Column Name Ptr = 0x7fffddd5c4e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c544
+	Data Type Ptr = 0x7fffddd5c546
+	Column Size Ptr = 0x7fffddd5c548
+	Decimal Digits Ptr = 0x7fffddd5c550
+	Nullable Ptr = 0x7fffddd5c552
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075052][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c4e0 -> ACCOUNTNUMBER
+	Name Length Ptr = 0x7fffddd5c544 -> 13
+	Data Type Ptr = 0x7fffddd5c546 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c548 -> 100
+	Decimal Digits Ptr = 0x7fffddd5c550 -> 0
+	Nullable Ptr = 0x7fffddd5c552 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075068][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd228
+	Record Number = 3
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c558
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075080][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075090][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 4
+	Column Name Ptr = 0x7fffddd5c5e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c644
+	Data Type Ptr = 0x7fffddd5c646
+	Column Size Ptr = 0x7fffddd5c648
+	Decimal Digits Ptr = 0x7fffddd5c650
+	Nullable Ptr = 0x7fffddd5c652
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075120][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c5e0 -> ACCOUNTDAY
+	Name Length Ptr = 0x7fffddd5c644 -> 10
+	Data Type Ptr = 0x7fffddd5c646 -> 91[SQL_TYPE_DATE]
+	Column Size Ptr = 0x7fffddd5c648 -> 19
+	Decimal Digits Ptr = 0x7fffddd5c650 -> 0
+	Nullable Ptr = 0x7fffddd5c652 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075133][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd228
+	Record Number = 4
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c658
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075145][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075157][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 5
+	Column Name Ptr = 0x7fffddd5c6e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c744
+	Data Type Ptr = 0x7fffddd5c746
+	Column Size Ptr = 0x7fffddd5c748
+	Decimal Digits Ptr = 0x7fffddd5c750
+	Nullable Ptr = 0x7fffddd5c752
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075170][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c6e0 -> INTERESTRATES
+	Name Length Ptr = 0x7fffddd5c744 -> 13
+	Data Type Ptr = 0x7fffddd5c746 -> 7[SQL_REAL]
+	Column Size Ptr = 0x7fffddd5c748 -> 7
+	Decimal Digits Ptr = 0x7fffddd5c750 -> 0
+	Nullable Ptr = 0x7fffddd5c752 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075182][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd228
+	Record Number = 5
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c758
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075194][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075205][SQLDescribeCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 6
+	Column Name Ptr = 0x7fffddd5c7e0
+	Buffer Length = 100
+	Name Length Ptr = 0x7fffddd5c844
+	Data Type Ptr = 0x7fffddd5c846
+	Column Size Ptr = 0x7fffddd5c848
+	Decimal Digits Ptr = 0x7fffddd5c850
+	Nullable Ptr = 0x7fffddd5c852
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075218][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7fffddd5c7e0 -> PHONENUMBER
+	Name Length Ptr = 0x7fffddd5c844 -> 11
+	Data Type Ptr = 0x7fffddd5c846 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7fffddd5c848 -> 30
+	Decimal Digits Ptr = 0x7fffddd5c850 -> 0
+	Nullable Ptr = 0x7fffddd5c852 -> 1[SQL_NULLABLE]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075231][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd228
+	Record Number = 6
+	Field Identifier = 1013[SQL_DESC_OCTET_LENGTH]
+	Value Ptr = 0x7fffddd5c858
+	Buffer Length = 0
+	String Length Ptr = 0x0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075244][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075256][SQLBindCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c378
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c368
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075290][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075303][SQLBindCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 2
+	Target Type = 2[SQL_C_NUMERIC]
+	Target Value Ptr= 0x7fffddd5c478
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c468
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075324][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075337][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd068
+	Record Number = 2
+	Field Identifier = 1005[SQL_DESC_PRECISION]
+	Value Ptr = 0xa
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075351][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075363][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd068
+	Record Number = 2
+	Field Identifier = 1006[SQL_DESC_SCALE]
+	Value Ptr = 0x0
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075376][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075387][SQLSetDescField]
+ENTRY:
+	Descriptor Handle = 0x27bd068
+	Record Number = 2
+	Field Identifier = 1010[SQL_DESC_DATA_PTR]
+	Value Ptr = 0x7fffddd5c478
+	Buffer Length = 0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075415][SQLSetDescField]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075443][SQLBindCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c578
+	Buffer Length = 100
+	String Length or Indicator Ptr = 0x7fffddd5c568
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075457][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075469][SQLBindCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 4
+	Target Type = 91[SQL_C_TYPE_DATE]
+	Target Value Ptr= 0x7fffddd5c678
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c668
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075483][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075494][SQLBindCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 5
+	Target Type = 7[SQL_C_FLOAT]
+	Target Value Ptr= 0x7fffddd5c778
+	Buffer Length = 0
+	String Length or Indicator Ptr = 0x7fffddd5c768
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075510][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075521][SQLBindCol]
+ENTRY:
+	Statement = 0x27bcee0
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7fffddd5c878
+	Buffer Length = 30
+	String Length or Indicator Ptr = 0x7fffddd5c868
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075582][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075623][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27bcee0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075644][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075670][SQLFetch]
+ENTRY:
+	Statement Handle = 0x27bcee0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075684][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.075701][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x27bcee0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.076289][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.076311][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x26c39a0
+
+[SAMPLE_SELECT][9096,140231086917440][2022-12-28 14:24:08.077080][SQLDisconnect]
+EXIT:[SQL_SUCCESS]

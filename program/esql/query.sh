@@ -1,0 +1,10 @@
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS
+./query 1000 1 |grep TPS

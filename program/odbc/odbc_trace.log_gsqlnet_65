@@ -1,0 +1,4552 @@
+=================================================
+ TIME    : 2022-12-28 14:40:02.557995
+ VERSION : Release 21c 21.1.23 revision(af2034b)
+=================================================
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.557989][SQLConnect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.558263][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0x20d0fb0
+	Attribute = 16400[SQL_ATTR_XA_RMID]
+	Value Ptr = 0x0
+	String Length = 0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.558284][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.558298][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0x20d0fb0
+	Attribute = 102[SQL_ATTR_AUTOCOMMIT]
+	Value Ptr = 0x1
+	String Length = -5
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.558326][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.558356][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.558397][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.558413][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_DATE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559309][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559368][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe455d06de
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559407][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559437][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559481][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559510][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559554][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559593][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559713][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559735][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559750][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.559763][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 66
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560224][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560244][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe455d07a0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560258][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560269][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560286][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560297][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560308][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560320][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560406][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560429][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560448][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.560460][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIME_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561018][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561040][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe455d06de
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561055][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561067][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561081][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561094][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561107][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561120][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561197][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561216][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561231][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561244][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 67
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561670][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561707][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe455d07a0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561738][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561751][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561764][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561777][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561789][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561802][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561946][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561967][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561982][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.561995][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIME_WITH_TIME_ZONE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562770][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562804][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe455d06de
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562827][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562841][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562855][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562868][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562881][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562893][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562974][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.562996][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563011][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563025][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 68
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563565][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563598][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe455d07a0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563613][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563627][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563641][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563654][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563667][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563680][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563750][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563774][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563790][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.563804][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIMESTAMP_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564277][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564307][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe455d06de
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564323][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564336][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564350][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564364][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564377][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564389][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564468][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564486][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564506][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.564519][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 69
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565022][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565051][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe455d07a0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565066][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565078][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565091][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565104][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565116][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565145][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565210][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565233][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565248][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565261][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIMESTAMP_WITH_TIME_ZONE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565726][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565760][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe455d06de
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565775][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565789][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565803][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565816][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565829][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565842][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565909][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565930][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565944][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe455ce680 -> 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.565958][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+	Statement Text = 0x7ffe455ce690: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 70
+	Text Length = -3
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566407][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566435][SQLBindCol]
+ENTRY:
+	Statement = 0x20ff0b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe455d07a0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe455ce678
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566449][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566460][SQLFetch]
+ENTRY:
+	Statement Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566497][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566510][SQLCloseCursor]
+ENTRY:
+	Statement = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566522][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566562][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x20ff0b0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566630][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566653][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0x20d0fb0
+	Attribute = 102[SQL_ATTR_AUTOCOMMIT]
+	Value Ptr = 0x0
+	String Length = -5
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:02.566669][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:03.422105][SQLEndTran]
+ENTRY:
+	Handle Type = 2[SQL_HANDLE_DBC]
+	Handle = 0x20d0fb0
+	Completion Type = 0[SQL_COMMIT]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:03.422312][SQLEndTran]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:03.422334][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x20d0fb0
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:03.422448][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36179,139929128003392][2022-12-28 14:40:03.422469][SQLFreeHandle]
+ENTRY:
+	Handle Type = 2[SQL_HANDLE_DBC]
+	Handle = 0x20d0fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052338][SQLConnect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052402][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0x28d4fb0
+	Attribute = 16400[SQL_ATTR_XA_RMID]
+	Value Ptr = 0x0
+	String Length = 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052424][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052438][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0x28d4fb0
+	Attribute = 102[SQL_ATTR_AUTOCOMMIT]
+	Value Ptr = 0x1
+	String Length = -5
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052451][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052467][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052523][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.052549][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_DATE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053447][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053494][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffcfdef354e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053514][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053552][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053577][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053592][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053606][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053620][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053702][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053723][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053739][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.053760][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 66
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054214][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054242][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffcfdef3610
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054274][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054287][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054306][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054319][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054332][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054344][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054415][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054438][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054453][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054466][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIME_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054892][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054929][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffcfdef354e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054944][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054956][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054969][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054981][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.054994][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055006][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055094][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055128][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055142][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055154][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 67
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055589][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055611][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffcfdef3610
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055626][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055639][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055653][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055666][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055684][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055698][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055757][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055779][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055809][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.055822][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIME_WITH_TIME_ZONE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056264][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056283][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffcfdef354e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056296][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056307][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056318][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056330][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056341][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056352][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056398][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056414][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056426][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056439][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 68
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056905][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056924][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffcfdef3610
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056938][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056951][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056963][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056975][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056987][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.056999][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057068][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057086][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057100][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057112][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIMESTAMP_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057585][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057606][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffcfdef354e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057620][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057633][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057645][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057657][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057669][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057681][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057737][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057755][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057769][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.057781][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 69
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058189][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058225][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffcfdef3610
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058239][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058251][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058263][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058275][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058287][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058299][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058352][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058372][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058385][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058398][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIMESTAMP_WITH_TIME_ZONE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058924][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058944][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffcfdef354e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058957][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058970][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058982][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.058994][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059010][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059022][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059094][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059129][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059144][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdef14f0 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059157][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1500: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 70
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059607][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059644][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffcfdef3610
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffcfdef14e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059657][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059670][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059683][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059695][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059708][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059721][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059775][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059796][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0x28d4fb0
+	Attribute = 102[SQL_ATTR_AUTOCOMMIT]
+	Value Ptr = 0x0
+	String Length = -5
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:07.059810][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.396862][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.396925][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffcfdeef738 -> 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.396940][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Statement Text = 0x7ffcfdef1870: select * from x$session@local where program like 'gsqlnet'
+	Text Length = -3
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400454][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400485][SQLRowCount]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Row Count Ptr = 0x7ffcfdeef6d8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400498][SQLRowCount]
+EXIT:[SQL_SUCCESS]
+	Row Count Ptr = 0x7ffcfdeef6d8 -> -1
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400511][SQLNumResultCols]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Column Count Ptr = 0x7ffcfdeef6ec
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400524][SQLNumResultCols]
+EXIT:[SQL_SUCCESS]
+	Column Count Ptr = 0x7ffcfdeef6ec -> 38
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400562][SQLGetStmtAttr]
+ENTRY:
+	Statement Handle = 0x29030b0
+	Attribute = 10012[SQL_ATTR_IMP_ROW_DESC]
+	Value Ptr = 0x7ffcfdeef5a0
+	Buffer Length = -4
+	String Length Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400593][SQLGetStmtAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400607][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Column Name Ptr = 0x7f16bdefa140
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa210
+	Column Size Ptr = 0x7f16bdefa200
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400752][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa140 -> ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 2
+	Data Type Ptr = 0x7f16bdefa210 -> 4[SQL_INTEGER]
+	Column Size Ptr = 0x7f16bdefa200 -> 10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400788][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400809][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400821][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400835][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400847][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 1
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400899][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400914][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc4e0
+	Buffer Length = 12
+	String Length or Indicator Ptr = 0x7f16bdefa218
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400928][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400939][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 2
+	Column Name Ptr = 0x7f16bdefa230
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa300
+	Column Size Ptr = 0x7f16bdefa2f0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400952][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa230 -> SERIAL
+	Name Length Ptr = 0x7ffcfdeef5be -> 6
+	Data Type Ptr = 0x7f16bdefa300 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefa2f0 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400965][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 2
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400977][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.400988][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 2
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401000][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401011][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 2
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401023][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401034][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 2
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc4f0
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefa308
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401048][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401062][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 3
+	Column Name Ptr = 0x7f16bdefa320
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa3f0
+	Column Size Ptr = 0x7f16bdefa3e0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401075][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa320 -> TRANS_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 8
+	Data Type Ptr = 0x7f16bdefa3f0 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefa3e0 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401087][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 3
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401099][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401110][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 3
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401122][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401133][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 3
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401144][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401155][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 3
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc508
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefa3f8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401167][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401178][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 4
+	Column Name Ptr = 0x7f16bdefa410
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa4e0
+	Column Size Ptr = 0x7f16bdefa4d0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401189][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa410 -> TOP_LAYER
+	Name Length Ptr = 0x7ffcfdeef5be -> 9
+	Data Type Ptr = 0x7f16bdefa4e0 -> 5[SQL_SMALLINT]
+	Column Size Ptr = 0x7f16bdefa4d0 -> 5
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401201][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 4
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401213][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401224][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 4
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401236][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401246][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 4
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401258][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401270][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 4
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc520
+	Buffer Length = 7
+	String Length or Indicator Ptr = 0x7f16bdefa4e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401283][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401294][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 5
+	Column Name Ptr = 0x7f16bdefa500
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa5d0
+	Column Size Ptr = 0x7f16bdefa5c0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401306][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa500 -> CONNECTION
+	Name Length Ptr = 0x7ffcfdeef5be -> 10
+	Data Type Ptr = 0x7f16bdefa5d0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefa5c0 -> 8
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401320][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 5
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401331][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401342][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 5
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401354][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401365][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 5
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401376][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401388][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 5
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc528
+	Buffer Length = 9
+	String Length or Indicator Ptr = 0x7f16bdefa5d8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401403][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401415][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 6
+	Column Name Ptr = 0x7f16bdefa5f0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa6c0
+	Column Size Ptr = 0x7f16bdefa6b0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401427][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa5f0 -> DBC_TYPE
+	Name Length Ptr = 0x7ffcfdeef5be -> 8
+	Data Type Ptr = 0x7f16bdefa6c0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefa6b0 -> 8
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401439][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 6
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401451][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401462][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 6
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401473][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401486][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 6
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401498][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401509][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 6
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc538
+	Buffer Length = 9
+	String Length or Indicator Ptr = 0x7f16bdefa6c8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401521][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401540][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 7
+	Column Name Ptr = 0x7f16bdefa6e0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa7b0
+	Column Size Ptr = 0x7f16bdefa7a0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401553][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa6e0 -> USER_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 7
+	Data Type Ptr = 0x7f16bdefa7b0 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefa7a0 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401565][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 7
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401577][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401587][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 7
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401599][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401609][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 7
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401621][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401633][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 7
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc548
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefa7b8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401644][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401655][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 8
+	Column Name Ptr = 0x7f16bdefa7d0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa8a0
+	Column Size Ptr = 0x7f16bdefa890
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401667][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa7d0 -> LOGIN_USER_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 13
+	Data Type Ptr = 0x7f16bdefa8a0 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefa890 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401679][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 8
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401691][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401711][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 8
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401724][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401735][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 8
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401764][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401776][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 8
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc560
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefa8a8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401791][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401803][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 9
+	Column Name Ptr = 0x7f16bdefa8c0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefa990
+	Column Size Ptr = 0x7f16bdefa980
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401835][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa8c0 -> ROLE_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 7
+	Data Type Ptr = 0x7f16bdefa990 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefa980 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401864][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 9
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401877][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401889][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 9
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401901][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401912][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 9
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401925][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401936][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 9
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc578
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefa998
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401948][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401960][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 10
+	Column Name Ptr = 0x7f16bdefa9b0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefaa80
+	Column Size Ptr = 0x7f16bdefaa70
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401973][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefa9b0 -> SCHEMA_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 9
+	Data Type Ptr = 0x7f16bdefaa80 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefaa70 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.401989][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 10
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402001][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402013][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 10
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402025][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402052][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 10
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402064][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402075][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 10
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc590
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefaa88
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402087][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402098][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 11
+	Column Name Ptr = 0x7f16bdefaaa0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefab70
+	Column Size Ptr = 0x7f16bdefab60
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402110][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefaaa0 -> STATUS
+	Name Length Ptr = 0x7ffcfdeef5be -> 6
+	Data Type Ptr = 0x7f16bdefab70 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefab60 -> 15
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402122][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 11
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402134][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402146][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 11
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402158][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402168][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 11
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402180][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402192][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 11
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc5a8
+	Buffer Length = 16
+	String Length or Indicator Ptr = 0x7f16bdefab78
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402206][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402217][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 12
+	Column Name Ptr = 0x7f16bdefab90
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefac60
+	Column Size Ptr = 0x7f16bdefac50
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402232][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefab90 -> WATCH
+	Name Length Ptr = 0x7ffcfdeef5be -> 5
+	Data Type Ptr = 0x7f16bdefac60 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefac50 -> 8
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402245][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 12
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402257][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402267][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 12
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402279][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402290][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 12
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402302][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402313][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 12
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc5c0
+	Buffer Length = 9
+	String Length or Indicator Ptr = 0x7f16bdefac68
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402324][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402335][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 13
+	Column Name Ptr = 0x7f16bdefac80
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefad50
+	Column Size Ptr = 0x7f16bdefad40
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402347][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefac80 -> SERVER
+	Name Length Ptr = 0x7ffcfdeef5be -> 6
+	Data Type Ptr = 0x7f16bdefad50 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefad40 -> 10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402359][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 13
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402370][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402381][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 13
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402393][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402403][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 13
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402415][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402426][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 13
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc5d0
+	Buffer Length = 11
+	String Length or Indicator Ptr = 0x7f16bdefad58
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402443][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402454][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 14
+	Column Name Ptr = 0x7f16bdefad70
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefae40
+	Column Size Ptr = 0x7f16bdefae30
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402466][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefad70 -> REQUEST_GROUP_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 16
+	Data Type Ptr = 0x7f16bdefae40 -> 4[SQL_INTEGER]
+	Column Size Ptr = 0x7f16bdefae30 -> 10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402478][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 14
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402490][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402501][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 14
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402513][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402524][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 14
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402561][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402581][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 14
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc5e0
+	Buffer Length = 12
+	String Length or Indicator Ptr = 0x7f16bdefae48
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402598][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402611][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 15
+	Column Name Ptr = 0x7f16bdefae60
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefaf30
+	Column Size Ptr = 0x7f16bdefaf20
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402624][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefae60 -> CLIENT_CHARSET
+	Name Length Ptr = 0x7ffcfdeef5be -> 14
+	Data Type Ptr = 0x7f16bdefaf30 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefaf20 -> 40
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402637][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 15
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402667][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402697][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 15
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402711][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402723][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 15
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402739][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402753][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 15
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc5f0
+	Buffer Length = 41
+	String Length or Indicator Ptr = 0x7f16bdefaf38
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402766][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402794][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 16
+	Column Name Ptr = 0x7f16bdefaf50
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb020
+	Column Size Ptr = 0x7f16bdefb010
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402810][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefaf50 -> CLIENT_PROCESS
+	Name Length Ptr = 0x7ffcfdeef5be -> 14
+	Data Type Ptr = 0x7f16bdefb020 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefb010 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402840][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 16
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402870][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402882][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 16
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402913][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402926][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 16
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402940][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402953][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 16
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc620
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefb028
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402982][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.402994][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 17
+	Column Name Ptr = 0x7f16bdefb040
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb110
+	Column Size Ptr = 0x7f16bdefb100
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403008][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb040 -> SERVER_PROCESS
+	Name Length Ptr = 0x7ffcfdeef5be -> 14
+	Data Type Ptr = 0x7f16bdefb110 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefb100 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403022][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 17
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403035][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403047][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 17
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403062][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403075][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 17
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403105][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403119][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 17
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc638
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefb118
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403135][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403148][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 18
+	Column Name Ptr = 0x7f16bdefb130
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb200
+	Column Size Ptr = 0x7f16bdefb1f0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403163][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb130 -> LOGON_TIME
+	Name Length Ptr = 0x7ffcfdeef5be -> 10
+	Data Type Ptr = 0x7f16bdefb200 -> 93[SQL_TYPE_TIMESTAMP]
+	Column Size Ptr = 0x7f16bdefb1f0 -> 26
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 2
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403193][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 18
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403205][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403218][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 18
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403247][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403260][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 18
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403273][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403287][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 18
+	Target Type = 93[SQL_C_TYPE_TIMESTAMP]
+	Target Value Ptr= 0x7f16bdefc650
+	Buffer Length = 17
+	String Length or Indicator Ptr = 0x7f16bdefb208
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403301][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403314][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 19
+	Column Name Ptr = 0x7f16bdefb220
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb2f0
+	Column Size Ptr = 0x7f16bdefb2e0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403328][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb220 -> OSUSER
+	Name Length Ptr = 0x7ffcfdeef5be -> 6
+	Data Type Ptr = 0x7f16bdefb2f0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefb2e0 -> 32
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 1[SQL_NULLABLE]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403342][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 19
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403358][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403371][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 19
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403384][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403397][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 19
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403410][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403423][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 19
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc668
+	Buffer Length = 33
+	String Length or Indicator Ptr = 0x7f16bdefb2f8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403436][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403449][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 20
+	Column Name Ptr = 0x7f16bdefb310
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb3e0
+	Column Size Ptr = 0x7f16bdefb3d0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403463][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb310 -> TERMINAL
+	Name Length Ptr = 0x7ffcfdeef5be -> 8
+	Data Type Ptr = 0x7f16bdefb3e0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefb3d0 -> 32
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 1[SQL_NULLABLE]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403477][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 20
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403497][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403511][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 20
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403525][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403557][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 20
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403570][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403583][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 20
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc690
+	Buffer Length = 33
+	String Length or Indicator Ptr = 0x7f16bdefb3e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403601][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403615][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 21
+	Column Name Ptr = 0x7f16bdefb400
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb4d0
+	Column Size Ptr = 0x7f16bdefb4c0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403629][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb400 -> VERSION
+	Name Length Ptr = 0x7ffcfdeef5be -> 7
+	Data Type Ptr = 0x7f16bdefb4d0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefb4c0 -> 64
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 1[SQL_NULLABLE]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403646][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 21
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403660][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403673][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 21
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403686][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403698][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 21
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403712][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403725][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 21
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc6b8
+	Buffer Length = 65
+	String Length or Indicator Ptr = 0x7f16bdefb4d8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403739][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403751][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 22
+	Column Name Ptr = 0x7f16bdefb4f0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb5c0
+	Column Size Ptr = 0x7f16bdefb5b0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403765][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb4f0 -> PROGRAM
+	Name Length Ptr = 0x7ffcfdeef5be -> 7
+	Data Type Ptr = 0x7f16bdefb5c0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefb5b0 -> 64
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 1[SQL_NULLABLE]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403780][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 22
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403793][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403806][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 22
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403838][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403866][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 22
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403878][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403891][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 22
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc700
+	Buffer Length = 65
+	String Length or Indicator Ptr = 0x7f16bdefb5c8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403903][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403915][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 23
+	Column Name Ptr = 0x7f16bdefb5e0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb6b0
+	Column Size Ptr = 0x7f16bdefb6a0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403929][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb5e0 -> ADDRESS
+	Name Length Ptr = 0x7ffcfdeef5be -> 7
+	Data Type Ptr = 0x7f16bdefb6b0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefb6a0 -> 257
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 1[SQL_NULLABLE]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403958][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 23
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403970][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403981][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 23
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.403992][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404003][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 23
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404015][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404026][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 23
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc748
+	Buffer Length = 258
+	String Length or Indicator Ptr = 0x7f16bdefb6b8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404040][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404051][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 24
+	Column Name Ptr = 0x7f16bdefb6d0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb7a0
+	Column Size Ptr = 0x7f16bdefb790
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404063][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb6d0 -> PORT
+	Name Length Ptr = 0x7ffcfdeef5be -> 4
+	Data Type Ptr = 0x7f16bdefb7a0 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefb790 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404077][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 24
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404089][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404100][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 24
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404112][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404123][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 24
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404134][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404146][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 24
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc850
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefb7a8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404160][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404171][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 25
+	Column Name Ptr = 0x7f16bdefb7c0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb890
+	Column Size Ptr = 0x7f16bdefb880
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404184][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb7c0 -> GLOBAL_CONNECTION
+	Name Length Ptr = 0x7ffcfdeef5be -> 17
+	Data Type Ptr = 0x7f16bdefb890 -> 16[SQL_BOOLEAN]
+	Column Size Ptr = 0x7f16bdefb880 -> 5
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404196][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 25
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404208][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404219][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 25
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404231][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404241][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 25
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404253][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404264][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 25
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc868
+	Buffer Length = 7
+	String Length or Indicator Ptr = 0x7f16bdefb898
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404276][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404287][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 26
+	Column Name Ptr = 0x7f16bdefb8b0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefb980
+	Column Size Ptr = 0x7f16bdefb970
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404299][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb8b0 -> GLOBAL_SESSION
+	Name Length Ptr = 0x7ffcfdeef5be -> 14
+	Data Type Ptr = 0x7f16bdefb980 -> 16[SQL_BOOLEAN]
+	Column Size Ptr = 0x7f16bdefb970 -> 5
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404312][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 26
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404323][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404334][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 26
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404350][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404360][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 26
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404374][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404386][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 26
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc870
+	Buffer Length = 7
+	String Length or Indicator Ptr = 0x7f16bdefb988
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404399][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404411][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 27
+	Column Name Ptr = 0x7f16bdefb9a0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefba70
+	Column Size Ptr = 0x7f16bdefba60
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404423][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefb9a0 -> DRIVER_MEMBER_POS
+	Name Length Ptr = 0x7ffcfdeef5be -> 17
+	Data Type Ptr = 0x7f16bdefba70 -> 4[SQL_INTEGER]
+	Column Size Ptr = 0x7f16bdefba60 -> 10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404435][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 27
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404447][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404457][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 27
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404469][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404480][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 27
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404492][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404503][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 27
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc878
+	Buffer Length = 12
+	String Length or Indicator Ptr = 0x7f16bdefba78
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404514][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404525][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 28
+	Column Name Ptr = 0x7f16bdefba90
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefbb60
+	Column Size Ptr = 0x7f16bdefbb50
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404544][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefba90 -> DRIVER_SESSION_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 17
+	Data Type Ptr = 0x7f16bdefbb60 -> 4[SQL_INTEGER]
+	Column Size Ptr = 0x7f16bdefbb50 -> 10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404556][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 28
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404568][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404591][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 28
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404605][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404616][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 28
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404627][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404638][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 28
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc888
+	Buffer Length = 12
+	String Length or Indicator Ptr = 0x7f16bdefbb68
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404650][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404661][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 29
+	Column Name Ptr = 0x7f16bdefbb80
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefbc50
+	Column Size Ptr = 0x7f16bdefbc40
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404673][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefbb80 -> DRIVER_SESSION_SERIAL
+	Name Length Ptr = 0x7ffcfdeef5be -> 21
+	Data Type Ptr = 0x7f16bdefbc50 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefbc40 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404685][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 29
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404697][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404708][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 29
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404719][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404730][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 29
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404741][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404752][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 29
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc898
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefbc58
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404766][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404777][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 30
+	Column Name Ptr = 0x7f16bdefbc70
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefbd40
+	Column Size Ptr = 0x7f16bdefbd30
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404790][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefbc70 -> GLOBAL_MEMBER_POS
+	Name Length Ptr = 0x7ffcfdeef5be -> 17
+	Data Type Ptr = 0x7f16bdefbd40 -> 4[SQL_INTEGER]
+	Column Size Ptr = 0x7f16bdefbd30 -> 10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404804][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 30
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404833][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404865][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 30
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404878][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404911][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 30
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404924][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404950][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 30
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc8b0
+	Buffer Length = 12
+	String Length or Indicator Ptr = 0x7f16bdefbd48
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404966][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.404988][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 31
+	Column Name Ptr = 0x7f16bdefbd60
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefbe30
+	Column Size Ptr = 0x7f16bdefbe20
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405002][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefbd60 -> GLOBAL_SESSION_ID
+	Name Length Ptr = 0x7ffcfdeef5be -> 17
+	Data Type Ptr = 0x7f16bdefbe30 -> 4[SQL_INTEGER]
+	Column Size Ptr = 0x7f16bdefbe20 -> 10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405016][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 31
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405030][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405042][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 31
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405056][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405069][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 31
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405082][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405095][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 31
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc8c0
+	Buffer Length = 12
+	String Length or Indicator Ptr = 0x7f16bdefbe38
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405109][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405122][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 32
+	Column Name Ptr = 0x7f16bdefbe50
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefbf20
+	Column Size Ptr = 0x7f16bdefbf10
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405143][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefbe50 -> GLOBAL_SESSION_SERIAL
+	Name Length Ptr = 0x7ffcfdeef5be -> 21
+	Data Type Ptr = 0x7f16bdefbf20 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefbf10 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405158][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 32
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405172][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405185][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 32
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405199][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405212][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 32
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405225][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405239][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 32
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc8d0
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefbf28
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405255][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405305][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 33
+	Column Name Ptr = 0x7f16bdefbf40
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefc010
+	Column Size Ptr = 0x7f16bdefc000
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405319][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefbf40 -> GLOBAL_SESSION_TIME
+	Name Length Ptr = 0x7ffcfdeef5be -> 19
+	Data Type Ptr = 0x7f16bdefc010 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefc000 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405332][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 33
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405344][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405355][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 33
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405383][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405409][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 33
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405420][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405431][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 33
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc8e8
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefc018
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405445][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405457][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 34
+	Column Name Ptr = 0x7f16bdefc030
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefc100
+	Column Size Ptr = 0x7f16bdefc0f0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405469][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefc030 -> IN_FULL
+	Name Length Ptr = 0x7ffcfdeef5be -> 7
+	Data Type Ptr = 0x7f16bdefc100 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefc0f0 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405481][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 34
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405494][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405504][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 34
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405517][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405528][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 34
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405562][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405574][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 34
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc900
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefc108
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405587][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405599][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 35
+	Column Name Ptr = 0x7f16bdefc120
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefc1f0
+	Column Size Ptr = 0x7f16bdefc1e0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405612][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefc120 -> IN_JOB
+	Name Length Ptr = 0x7ffcfdeef5be -> 6
+	Data Type Ptr = 0x7f16bdefc1f0 -> -5[SQL_BIGINT]
+	Column Size Ptr = 0x7f16bdefc1e0 -> 19
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405625][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 35
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405638][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405649][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 35
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405662][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405674][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 35
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405690][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405702][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 35
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc918
+	Buffer Length = 21
+	String Length or Indicator Ptr = 0x7f16bdefc1f8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405717][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405730][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 36
+	Column Name Ptr = 0x7f16bdefc210
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefc2e0
+	Column Size Ptr = 0x7f16bdefc2d0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405743][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefc210 -> FAILOVER_TYPE
+	Name Length Ptr = 0x7ffcfdeef5be -> 13
+	Data Type Ptr = 0x7f16bdefc2e0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefc2d0 -> 8
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 1[SQL_NULLABLE]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405757][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 36
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405769][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405781][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 36
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405793][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405806][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 36
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405818][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405831][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 36
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc930
+	Buffer Length = 9
+	String Length or Indicator Ptr = 0x7f16bdefc2e8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405844][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405871][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 37
+	Column Name Ptr = 0x7f16bdefc300
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefc3d0
+	Column Size Ptr = 0x7f16bdefc3c0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405884][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefc300 -> FAILED_OVER
+	Name Length Ptr = 0x7ffcfdeef5be -> 11
+	Data Type Ptr = 0x7f16bdefc3d0 -> 12[SQL_VARCHAR]
+	Column Size Ptr = 0x7f16bdefc3c0 -> 4
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 1[SQL_NULLABLE]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405896][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 37
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405908][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405919][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 37
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405933][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405945][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 37
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405957][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405969][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 37
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc940
+	Buffer Length = 5
+	String Length or Indicator Ptr = 0x7f16bdefc3d8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405980][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.405991][SQLDescribeCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 38
+	Column Name Ptr = 0x7f16bdefc3f0
+	Buffer Length = 128
+	Name Length Ptr = 0x7ffcfdeef5be
+	Data Type Ptr = 0x7f16bdefc4c0
+	Column Size Ptr = 0x7f16bdefc4b0
+	Decimal Digits Ptr = 0x7ffcfdeef5bc
+	Nullable Ptr = 0x7ffcfdeef5ba
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406003][SQLDescribeCol]
+EXIT:[SQL_SUCCESS]
+	Column Name = 0x7f16bdefc3f0 -> IS_AUDITED
+	Name Length Ptr = 0x7ffcfdeef5be -> 10
+	Data Type Ptr = 0x7f16bdefc4c0 -> 16[SQL_BOOLEAN]
+	Column Size Ptr = 0x7f16bdefc4b0 -> 5
+	Decimal Digits Ptr = 0x7ffcfdeef5bc -> 0
+	Nullable Ptr = 0x7ffcfdeef5ba -> 0[SQL_NO_NULLS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406015][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 38
+	Field Idenitifier = 6[SQL_DESC_DISPLAY_SIZE]
+	Character Attribute Ptr= 0x0
+	Buffer Length = 0
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x7ffcfdeef598
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406027][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406039][SQLColAttribute]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 38
+	Field Idenitifier = 14[SQL_DESC_TYPE_NAME]
+	Character Attribute Ptr= 0x7ffcfdeef5c0
+	Buffer Length = 128
+	String Length Ptr = 0x0
+	Numeric Attribute Ptr = 0x0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406051][SQLColAttribute]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406062][SQLGetDescField]
+ENTRY:
+	Descriptor Handle = 0x29033f8
+	Record Number = 38
+	Field Identifier = 16385[SQL_DESC_CHAR_LENGTH_UNITS]
+	Value Ptr = 0x7ffcfdeef5b8
+	Buffer Length = 0
+	String Length Ptr = 0x7ffcfdeef50c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406074][SQLGetDescField]
+EXIT:[SQL_SUCCESS]
+	String Length Ptr = 0x7ffcfdeef50c -> 0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406086][SQLBindCol]
+ENTRY:
+	Statement = 0x29030b0
+	Column Number = 38
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7f16bdefc948
+	Buffer Length = 7
+	String Length or Indicator Ptr = 0x7f16bdefc4c8
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.406100][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.424569][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.424658][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.424697][SQLFetch]
+ENTRY:
+	Statement Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.424710][SQLFetch]
+EXIT:[SQL_NO_DATA]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.424724][SQLGetDiagRec]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+	Record Number = 1
+	SQL State = 0x7ffcfdeef620
+	Native Error Ptr = 0x7ffcfdeef218
+	Message Text = 0x7ffcfdeef220
+	Buffer Length = 1024
+	Text Length Ptr = 0x7ffcfdeef21c
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.424738][SQLGetDiagRec]
+EXIT:[SQL_NO_DATA]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.425797][SQLCloseCursor]
+ENTRY:
+	Statement = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.425816][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.425852][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0x29030b0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:12.426059][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:13.358623][SQLEndTran]
+ENTRY:
+	Handle Type = 2[SQL_HANDLE_DBC]
+	Handle = 0x28d4fb0
+	Completion Type = 0[SQL_COMMIT]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:13.358804][SQLEndTran]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:13.358840][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0x28d4fb0
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:13.358959][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][36272,139735653660480][2022-12-28 14:40:13.358976][SQLFreeHandle]
+ENTRY:
+	Handle Type = 2[SQL_HANDLE_DBC]
+	Handle = 0x28d4fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492721][SQLConnect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492773][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0xd22fb0
+	Attribute = 16400[SQL_ATTR_XA_RMID]
+	Value Ptr = 0x0
+	String Length = 0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492795][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492810][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0xd22fb0
+	Attribute = 102[SQL_ATTR_AUTOCOMMIT]
+	Value Ptr = 0x1
+	String Length = -5
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492824][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492841][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492890][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.492908][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_DATE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494031][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494061][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe2a50991e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494081][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494095][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494118][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494132][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494145][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494158][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494236][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494257][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494272][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494285][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 66
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494721][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494759][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe2a5099e0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494785][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494798][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494817][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494845][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494858][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494871][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494937][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494978][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.494993][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495008][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIME_FORMAT'
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495479][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495500][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe2a50991e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495515][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495528][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495566][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495579][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495592][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495605][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495676][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495696][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495725][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.495738][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 67
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496186][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496206][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe2a5099e0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496220][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496232][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496245][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496258][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496271][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496283][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496355][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496375][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496389][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496413][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIME_WITH_TIME_ZONE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496836][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496858][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe2a50991e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496873][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496886][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496900][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496913][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496925][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496939][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.496997][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497017][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497031][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497045][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 68
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497521][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497566][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe2a5099e0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497580][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497592][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497605][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497617][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497629][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497642][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497700][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497721][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497735][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.497748][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIMESTAMP_FORMAT'
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498319][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498340][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe2a50991e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498355][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498368][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498386][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498399][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498411][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498424][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498529][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498577][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498593][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.498607][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 69
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499068][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499097][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe2a5099e0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499111][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499124][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499138][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499150][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499162][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499174][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499235][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499255][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499269][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499282][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT PROPERTY_ID   FROM X$PROPERTY@LOCAL WHERE PROPERTY_NAME = 'NLS_TIMESTAMP_WITH_TIME_ZONE_FORMAT'
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499703][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499725][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = -15[SQL_C_SSHORT]
+	Target Value Ptr= 0x7ffe2a50991e
+	Buffer Length = 2
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499740][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499753][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499767][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499779][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499792][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499819][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499890][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499910][SQLAllocHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Input Handle = 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499923][SQLAllocHandle]
+EXIT:[SQL_SUCCESS]
+	Output Handle = 0x7ffe2a5078c0 -> 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.499940][SQLExecDirect]
+ENTRY:
+	Statement Handle = 0xd510b0
+	Statement Text = 0x7ffe2a5078d0: SELECT VALUE   FROM X$PROPERTY@LOCAL WHERE PROPERTY_ID = 70
+	Text Length = -3
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500366][SQLExecDirect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500393][SQLBindCol]
+ENTRY:
+	Statement = 0xd510b0
+	Column Number = 1
+	Target Type = 1[SQL_C_CHAR]
+	Target Value Ptr= 0x7ffe2a5099e0
+	Buffer Length = 81
+	String Length or Indicator Ptr = 0x7ffe2a5078b8
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500407][SQLBindCol]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500419][SQLFetch]
+ENTRY:
+	Statement Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500432][SQLFetch]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500445][SQLCloseCursor]
+ENTRY:
+	Statement = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500458][SQLCloseCursor]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500470][SQLFreeHandle]
+ENTRY:
+	Handle Type = 3[SQL_HANDLE_STMT]
+	Handle = 0xd510b0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500520][SQLFreeHandle]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500564][SQLSetConnectAttr]
+ENTRY:
+	Connection Handle = 0xd22fb0
+	Attribute = 102[SQL_ATTR_AUTOCOMMIT]
+	Value Ptr = 0x0
+	String Length = -5
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:00.500580][SQLSetConnectAttr]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:01.941238][SQLEndTran]
+ENTRY:
+	Handle Type = 2[SQL_HANDLE_DBC]
+	Handle = 0xd22fb0
+	Completion Type = 0[SQL_COMMIT]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:01.941493][SQLEndTran]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:01.941559][SQLDisconnect]
+ENTRY:
+	Connection Handle: 0xd22fb0
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:01.941652][SQLDisconnect]
+EXIT:[SQL_SUCCESS]
+
+[gsqlnet][42615,139742899160896][2022-12-28 14:51:01.941673][SQLFreeHandle]
+ENTRY:
+	Handle Type = 2[SQL_HANDLE_DBC]
+	Handle = 0xd22fb0

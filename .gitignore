@@ -29,3 +29,4 @@ pdb/
 *.o
 uaps_lib_cTest.tar.gz
 .DS_Store
+tar/

@@ -1,0 +1,178 @@
+
+connect test test;
+drop sequence if exists seq1;
+
+Sequence dropped.
+
+Elapsed time: 9.47900 ms 
+
+commit;
+
+Commit complete.
+
+Elapsed time: 0.14000 ms 
+
+create sequence seq1;
+
+Sequence created.
+
+Elapsed time: 4.35000 ms 
+
+
+drop table if exists test;
+
+Table dropped.
+
+Elapsed time: 9.12800 ms 
+
+commit;
+
+Commit complete.
+
+Elapsed time: 1.57800 ms 
+
+
+create table test (c1 number primary key, c2 number) sharding by hash(c1) at cluster wide;
+
+Table created.
+
+Elapsed time: 13.04600 ms 
+
+
+insert into test values(seq1.nextval,seq1.nextval);
+
+1 row created.
+
+Elapsed time: 1.41900 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+1 row created.
+
+Elapsed time: 1.01300 ms 
+
+
+commit;
+
+Commit complete.
+
+Elapsed time: 1.34700 ms 
+
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+2 rows created.
+
+Elapsed time: 0.84500 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+4 rows created.
+
+Elapsed time: 0.61600 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+8 rows created.
+
+Elapsed time: 0.65600 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+16 rows created.
+
+Elapsed time: 1.33600 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+32 rows created.
+
+Elapsed time: 2.84600 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+64 rows created.
+
+Elapsed time: 4.19800 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+128 rows created.
+
+Elapsed time: 7.79900 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+256 rows created.
+
+Elapsed time: 13.58600 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+512 rows created.
+
+Elapsed time: 26.11500 ms 
+
+insert into test select seq1.nextval, seq1.nextval from test;
+
+1024 rows created.
+
+Elapsed time: 49.69500 ms 
+
+commit;
+
+Commit complete.
+
+Elapsed time: 0.86600 ms 
+
+
+select cluster_group_name, count(*) from test group by cluster_group_name;
+
+CLUSTER_GROUP_NAME COUNT(*)
+------------------ --------
+G2                     1020
+G1                     1028
+
+2 rows selected.
+
+Elapsed time: 3.37800 ms 
+
+
+select c1 from test@g1 order by c1 limit 10;
+
+C1
+--
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+10 rows selected.
+
+Elapsed time: 0.44100 ms 
+
+select c1 from test@g2 order by c1 limit 10;
+
+C1
+--
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+
+10 rows selected.
+
+Elapsed time: 0.66900 ms 
+
