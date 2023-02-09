@@ -1,0 +1,10 @@
+gcc -c a.c
+nm -A a.o
+
+gcc -g -o a a.c
+ldd ./a
+
+
+calc.c: 일반적으로 짜본다면 (atoi, switch, if)
+calc2.c: 일을 나눠서 개발해볼 때( function pointer)
+
