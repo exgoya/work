@@ -30,3 +30,4 @@ pdb/
 uaps_lib_cTest.tar.gz
 .DS_Store
 tar/
+*.swp
