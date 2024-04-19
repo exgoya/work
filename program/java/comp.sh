@@ -1,5 +1,7 @@
-javac -cp .:$GOLDILOCKS_HOME/lib/goldilocks8.jar PingJdbc.java
-java -cp .:$GOLDILOCKS_HOME/lib/goldilocks8.jar PingJdbc
+javac -cp .:./goldilocks8.jar PingJdbc.java
+#javac -cp .:$GOLDILOCKS_HOME/lib/goldilocks8.jar PingJdbc.java
+java -cp .:./goldilocks8.jar PingJdbc
+#java -cp .:$GOLDILOCKS_HOME/lib/goldilocks8.jar PingJdbc
 
 
 
