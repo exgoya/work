@@ -21,10 +21,15 @@ public class PingJdbc
         return DriverManager.getConnection(URL_NAMED, "TEST", "test");
     }
 
-    public static void main(String[] args) throws SQLException
+    public static void main(String[] args) throws SQLException,InterruptedException
     {
         Connection con = createConnectionByDriverManager("TEST", "test");
-        PreparedStatement pstmt = con.prepareStatement("SELECT 'PING' FROM DUAL");
+        Statement stmt = con.createStatement();
+        stmt.execute("alter session set trace_long_run_timer = 1");
+        stmt.execute("alter session set trace_long_run_cursor = 10");
+        stmt.execute("alter session set trace_long_run_sql = 10");
+       //PreparedStatement pstmt = con.prepareStatement("SELECT 'PING' FROM DUAL");
+        PreparedStatement pstmt = con.prepareStatement("SELECT * FROM t1");
         long startTime = 0;
         long endTime = 0;
         long timeElapsed = 0;
@@ -34,10 +39,11 @@ public class PingJdbc
         while(true){
             startTime = System.nanoTime();
             rs = pstmt.executeQuery();
-            //while (rs.next())
-            //{
-            //    System.out.println("ID = : " + rs.getString(1));
-            //}
+            while (rs.next())
+            {
+			//    Thread.sleep(500); //1초 대기
+                System.out.println("ID = : " + rs.getString(1));
+            }
             endTime = System.nanoTime();
             timeElapsed = endTime - startTime;
             System.out.println("nano seconds : " +  timeElapsed + "  Time : " + new Timestamp(System.currentTimeMillis()));        
@@ -54,7 +60,6 @@ public class PingJdbc
                 break;
             }
         }
-
         pstmt.close();
         con.close();
     }
