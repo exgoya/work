@@ -87,7 +87,7 @@ SQLRETURN testCreateTable( SQLHDBC aDbc )
     /* SQLExecDirect is way to submit an SQL statement for one-time execution */
     sReturn = SQLExecDirect( sStmt,
                              (SQLCHAR*)"CREATE TABLE DEPOSIT ("
-                             " NAME          VARCHAR(30),"
+                             " NAME          VARCHAR(30) primary key,"
                              " BALANCE       INTEGER,"
                              " ACCOUNTNUMBER VARCHAR(100),"
                              " ACCOUNTDAY    DATE,"

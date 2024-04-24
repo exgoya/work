@@ -1,0 +1,188 @@
+/*
+ * sample2.gc
+ *
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <sys/time.h>
+
+
+EXEC SQL INCLUDE SQLCA;
+
+#define  FAILURE  -1
+#define  SUCCESS 0
+
+#define  PRINT_SQL_ERROR(aMsg)                                      \
+    {                                                               \
+        printf("\n");                                               \
+        printf(aMsg);                                               \
+        printf("\nSQLCODE : %d\nSQLSTATE : %s\nERROR MSG : %s\n",   \
+               sqlca.sqlcode,                                       \
+               SQLSTATE,                                            \
+               sqlca.sqlerrm.sqlerrmc );                            \
+    }
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword);
+
+void CalTime(struct timeval startTime,struct timeval endTime, char *inte){
+    struct timeval gepTime;
+    gepTime.tv_sec = endTime.tv_sec - startTime.tv_sec;
+    gepTime.tv_usec = endTime.tv_usec - startTime.tv_usec;
+
+    if ( gepTime.tv_usec < 0 )
+    {
+        printf("xxl\n");
+        gepTime.tv_sec = gepTime.tv_sec - 1;
+        gepTime.tv_usec = gepTime.tv_usec + 1000000;
+    }
+    printf("%s ellapsed time [%02ld.%02ld] second\n",inte, gepTime.tv_sec, gepTime.tv_usec);
+
+
+}
+int main(int argc, char **argv)
+{
+
+    struct timeval startTimeA , startTimeB, endTimeA, endTimeB;
+
+    EXEC SQL BEGIN DECLARE SECTION;
+    int          sEmpNo;
+    varchar      sEName[20 + 1];
+    char         sJob[20];
+    long         sSalary;
+    EXEC SQL END DECLARE SECTION;
+
+    int  sRecordCount = 0;
+
+    printf("Connect GOLDILOCKS ...\n");
+    if(Connect("DSN=GOLDILOCKS", "test", "test") != SUCCESS)
+    {
+        goto fail_exit;
+    }
+    EXEC SQL ALTER SESSION SET TRACE_LOG_ID = 111111; if(sqlca.sqlcode != 0) { PRINT_SQL_ERROR("[ERROR] SQL ERROR -"); }
+    EXEC SQL ALTER SESSION SET TRACE_LOG_TIME_DETAIL = 1; if(sqlca.sqlcode != 0) { PRINT_SQL_ERROR("[ERROR] SQL ERROR -"); }
+    EXEC SQL ALTER SESSION SET TRACE_LONG_RUN_TIMER = 1; if(sqlca.sqlcode != 0) { PRINT_SQL_ERROR("[ERROR] SQL ERROR -"); }
+    EXEC SQL ALTER SESSION SET TRACE_LONG_RUN_CURSOR = 1; if(sqlca.sqlcode != 0) { PRINT_SQL_ERROR("[ERROR] SQL ERROR -"); }
+    EXEC SQL ALTER SESSION SET TRACE_LONG_RUN_SQL = 1; if(sqlca.sqlcode != 0) { PRINT_SQL_ERROR("[ERROR] SQL ERROR -"); }
+
+    /***********************************************
+     * Retrieve employee
+     **********************************************/
+    gettimeofday( &startTimeA, NULL );
+    EXEC SQL
+        DECLARE EMP_CUR CURSOR FOR
+        SELECT empno, ename, job, sal
+        FROM   EMP 
+        union  SELECT empno, ename, job, sal FROM   EMP ;
+    EXEC SQL OPEN EMP_CUR;
+    if(sqlca.sqlcode != 0)
+    {
+        PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+        goto fail_exit;
+    }
+
+    gettimeofday( &endTimeA, NULL );
+
+    gettimeofday( &startTimeB, NULL );
+ 
+    printf(" EMPNO    ENAME                JOB      SALARY\n");
+    printf("====== ==================== ========== ========\n");
+
+    while( 1 )
+    {
+        EXEC SQL
+            FETCH EMP_CUR
+            INTO  :sEmpNo, :sEName, :sJob, :sSalary;
+
+        if(sqlca.sqlcode == SQL_NO_DATA)
+        {
+            break;
+        }
+        else if(sqlca.sqlcode != 0)
+        {
+            PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+            goto fail_exit;
+        }
+
+        sRecordCount ++;
+        usleep(5000);
+        printf("%6d %20s %10s %8ld\n",
+               sEmpNo, sEName.arr, sJob, sSalary);
+    }
+
+    printf("====== ==================== ========== ========\n");
+    printf("Record Count = %d\n", sRecordCount);
+    printf("====== ==================== ========== ========\n");
+
+        //sleep(10);
+    EXEC SQL CLOSE EMP_CUR;
+    if(sqlca.sqlcode != 0)
+    {
+        PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+        goto fail_exit;
+    }
+    gettimeofday( &endTimeB, NULL );
+
+    CalTime(startTimeA,endTimeA, "exec time ");
+    CalTime(startTimeB,endTimeB, "cursor time ");
+    CalTime(startTimeA,endTimeB, "all time ");
+
+    EXEC SQL COMMIT WORK RELEASE;
+    if(sqlca.sqlcode != 0)
+    {
+        PRINT_SQL_ERROR("[ERROR] SQL ERROR -");
+        goto fail_exit;
+    }
+
+    printf("\n\nSUCCESS\n");
+    printf("############################\n");
+
+    return 0;
+
+  fail_exit:
+
+    printf("\n\nFAILURE\n");
+    printf("############################\n\n");
+
+    EXEC SQL ROLLBACK WORK RELEASE;
+
+    return 0;
+}
+
+int Connect(char *aHostInfo, char *aUserID, char *sPassword)
+{
+    EXEC SQL BEGIN DECLARE SECTION;
+    VARCHAR  sUid[80];
+    VARCHAR  sPwd[20];
+    VARCHAR  sConnStr[1024];
+    EXEC SQL END DECLARE SECTION;
+
+    /*----------------------------------------------
+      Log on GOLDILOCKS
+      ------------------------------------------------*/
+    strcpy((char *)sUid.arr, aUserID);
+    sUid.len = (short)strlen((char *)sUid.arr);
+    strcpy((char *)sPwd.arr, sPassword);
+    sPwd.len = (short)strlen((char *)sPwd.arr);
+    strcpy((char *)sConnStr.arr, aHostInfo);
+    sConnStr.len = (short)strlen((char *)sConnStr.arr);
+
+    /* DB 연결 */
+    EXEC SQL CONNECT :sUid IDENTIFIED BY :sPwd USING :sConnStr;
+    if(sqlca.sqlcode != 0)
+    {
+        goto fail_exit;
+    }
+
+    return SUCCESS;
+
+  fail_exit:
+
+    PRINT_SQL_ERROR("[ERROR] Connection Failure!");
+
+    return FAILURE;
+}
+
