@@ -9,7 +9,7 @@ CFLAGS = -g -Wall
 INC = -I$(GOLDILOCKS_HOME)/include
 LFLAGS = -L$(GOLDILOCKS_HOME)/lib
 
-CSMODE=1
+CSMODE=0
 
 LIB = -lgoldilocksesql -lpthread -ldl -lm -lrt
 ifeq ($(CSMODE), 1)
@@ -80,4 +80,4 @@ $(TARGET) : $(OBJECT)
 	$(CC) -o $@ $^ $(LFLAGS) $(LIB)
 
 clean :
-	rm -rf $(BINS) *.o *.c *~ core
+	rm -rf $(BINS) *.o *~ core

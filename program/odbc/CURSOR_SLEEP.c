@@ -215,17 +215,18 @@ SQLRETURN testSelect( SQLHDBC aDbc )
                                    NULL )
                     == SQL_SUCCESS );
 
-    gettimeofday( &startTimeA, NULL );
      /* SQLExecDirect is way to submit an SQL statement for one-time execution */
     GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LOG_ID = 111111", SQL_NTS ) );
     GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LOG_TIME_DETAIL = 1", SQL_NTS ) );
     GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LONG_RUN_TIMER = 1", SQL_NTS ) );
     GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LONG_RUN_CURSOR = 1", SQL_NTS ) );
+    GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LONG_RUN_SQL = 1", SQL_NTS ) );
 
-//GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"SELECT COUNT(*) FROM Deposit ", SQL_NTS ) );
+    gettimeofday( &startTimeA, NULL );
     //GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"select sum(balance) as cnt from deposit", SQL_NTS ) ); ??????
     //GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"update deposit set ACCOUNTDAY = sysdate", SQL_NTS ) );
-    GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"select * from deposit", SQL_NTS ) );
+    //GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"select * from deposit", SQL_NTS ) );
+    GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"SELECT FUNC1(1), name FROM Deposit limit 1", SQL_NTS ) );
 
     /* SQLNumResultCols returns the number of columns in a result set. */
     GOLDILOCKS_SQL_TRY( SQLNumResultCols( sStmt,
@@ -492,13 +493,13 @@ SQLRETURN testSelect( SQLHDBC aDbc )
     /* Data will be printed. */
     while( 1 )
     {
-        usleep(5000);
         sReturn = SQLFetch( sStmt );
 
         if( sReturn == SQL_NO_DATA )
         {
             break;
         }
+        usleep(1000000);
 
         GOLDILOCKS_SQL_TRY( sReturn );
 
