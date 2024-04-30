@@ -23,6 +23,15 @@ public class PingJdbc
     public static void main(String[] args) throws SQLException
     {
         Connection con = createConnectionByDriverManager("TEST", "test");
+        PreparedStatement pstmt1 = con.prepareStatement("alter session set trace_long_run_timer = 1");
+        pstmt1.execute();
+        pstmt1.close();
+        PreparedStatement pstmt2 = con.prepareStatement("alter session set trace_long_run_cursor = 10");
+        pstmt2.execute();
+        pstmt2.close();
+        PreparedStatement pstmt3 = con.prepareStatement("alter session set trace_long_run_sql = 10");
+        pstmt3.execute();
+        pstmt3.close();
         PreparedStatement pstmt = con.prepareStatement("SELECT 'PING' FROM DUAL");
         long startTime = 0;
         long endTime = 0;
@@ -34,6 +43,7 @@ public class PingJdbc
             rs = pstmt.executeQuery();
             while (rs.next())
             {
+                Thread.sleep(1000);
                 System.out.println("ID = : " + rs.getString(1));
             }
             endTime = System.currentTimeMillis();
