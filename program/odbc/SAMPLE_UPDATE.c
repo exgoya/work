@@ -91,6 +91,11 @@ SQLRETURN testUpdate( SQLHDBC aDbc )
                                    &sStmt ) );
     sState = 1;
 
+    GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LONG_RUN_TIMER = 1", SQL_NTS ) );
+    GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LONG_RUN_CURSOR = 1", SQL_NTS ) );
+    GOLDILOCKS_SQL_TRY( SQLExecDirect( sStmt, (SQLCHAR*)"alter session set TRACE_LONG_RUN_SQL = 1", SQL_NTS ) );
+
+
     GOLDILOCKS_SQL_TRY( SQLPrepare( sStmt,
                                (SQLCHAR*)"UPDATE Deposit Set InterestRates = ? WHERE AccountNumber = ?",
                                SQL_NTS ) );
@@ -119,7 +124,7 @@ SQLRETURN testUpdate( SQLHDBC aDbc )
 
     sConditionInd = snprintf( (char*)sCondition, 
                               BUF_LEN, 
-                              "9999-99-9999" );
+                              "asdf" );
 
     sValue        = (SQLREAL)6.0;
 
