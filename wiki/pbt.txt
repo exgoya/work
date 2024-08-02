@@ -1,0 +1,47 @@
+SKT 가용성 테스트중 발생한 현상을 사내에서 재현해본 결과 아래와 같은 현상이 나타남을 확인하였다.
+
+서비스 중인 서버가 비정상 종료 혹은 네트워크 단절 발생시 
+connection 이 이미 연결된 상태에서 에러를 리턴받는 소요시간은 아래의 두가지 경우가 있다. (ODBC,JDBC 동일)
+1. recv 중이 아니었을 경우
+{{{
+이후 첫 recv 나 send시 에러를 return 받는 시간에 retries2 커널 프로퍼티의 영향을 받는다.
+net.ipv4.tcp_retries2 = 5
+}}}
+2. recv 중이였을 경우
+{{{
+JDBC 는 keep_alive=on 를 url 이나 jdbc property 에 설정 하고 시간은 아래의 커널 설정에 따른다.
+
+net.ipv4.tcp_keepalive_intvl = 3
+net.ipv4.tcp_keepalive_probes = 3
+net.ipv4.tcp_keepalive_time = 3
+
+ODBC 는 아래의 값을 .odbc.ini 에 설정해야 한다.( 현재 internal임 )
+
+KEEPALIVE_IDLE_TIME=3
+KEEPALIVE_INTERVAL=3
+KEEPALIVE_COUNT=3
+}}}
+
+* 테스트 방법 (jdbc, esql)
+{{{
+30초 sleep하는 function 을 호출하여 client 가 recv 도중 서버의 네트워크 선을 뽑는다..
+}}}
+weblogic stack (이 단계에서 수행중인 멤버에서 장애가 발생했을 경우 keepalive 설정이 안돼 있으면 무한대기 할 수 있다.)
+{{{
+"[ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)'" daemon prio=10 tid=0x00007f0d[0x00007f0cffffd000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:384)
+	- locked <0x00000000e4487ff0> (a java.lang.Object)
+	at indep.jdbc.cm.CmChannel.receive(CmChannel.java:191)
+	at indep.jdbc.cm.CmChannel.sendAndReceive(CmChannel.java:445)
+	at indep.jdbc.cm.ServerGatewayCS.sendAndReceive(ServerGatewayCS.java:107)
+	at indep.jdbc.core.JdbcPreparedStatement.executeQueryInternal(JdbcPreparedStatement.java:2276)
+	at indep.jdbc.core.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:1370)
+	- locked <0x00000000e444caa8> (a sunje.goldilocks.jdbc.GoldilocksConnection)
+	at weblogic.jdbc.wrapper.PreparedStatement.executeQuery(PreparedStatement.java:135)
+	at jsp_servlet.__gtest._jspService(__gtest.java:92)
+}}}

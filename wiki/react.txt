@@ -1,0 +1,14 @@
+create-react-app 이 deprecated 되고 next.js 가 기본이 되는것 같다  https://nextjs.org/learn/dashboard-app/getting-started
+
+next js 강의  생코 nextjs
+
+next js
+
+Fullstack framework
+client side
+server side
+prisma orm
+Server side rendering 지원
+test tool
+
+test json server wiki:json-server
