@@ -1,138 +1,175 @@
-[[PageOutline(1-5, Contents)]]
+.. contents:: Contents
+    :depth: 1
+    :local:
 
-ubuntu pstack [[BR]]
+Ubuntu pstack
+=============
 
-https://askubuntu.com/questions/143561/why-wont-strace-gdb-attach-to-a-process-even-though-im-root
+`Ask Ubuntu - Why won't strace/gdb attach to a process even though I'm root <https://askubuntu.com/questions/143561/why-wont-strace-gdb-attach-to-a-process-even-though-im-root>`_
 
-{{{ goya@tech5:~/goldilocks_data/conf$ pstack 9876 Could not attach to
-target 9876: Operation not permitted. detach: No such process }}}
+test::
+    goya@tech5:~/goldilocks_data/conf$ pstack 9876 
+    Could not attach to target 9876: Operation not permitted. 
+    detach: No such process
 
-{{{ goya@tech5:~/goldilocks_data/conf$ sudo cat
-/proc/sys/kernel/yama/ptrace_scope 1 goya@tech5:~/goldilocks_data/conf$
-echo 0 \| sudo tee /proc/sys/kernel/yama/ptrace_scope 0
-goya@tech5:~/goldilocks_data/conf$ sudo cat
-/proc/sys/kernel/yama/ptrace_scope 0 }}}
+    goya@tech5:~/goldilocks_data/conf$ sudo cat /proc/sys/kernel/yama/ptrace_scope 1 
+    goya@tech5:~/goldilocks_data/conf$ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope 0 
+    goya@tech5:~/goldilocks_data/conf$ sudo cat /proc/sys/kernel/yama/ptrace_scope 0
 
-{{{ goya@tech5:~/goldilocks_data/conf$ !pstack pstack 9876
+    goya@tech5:~/goldilocks_data/conf$ !pstack 
+    pstack 9876
 
-9876: cyclone –slave –start –sync all –local ‘linux-vdso.so.1’: opening
-object file: No such file or directory Could not open object file. }}}
+    9876: cyclone –slave –start –sync all –local 'linux-vdso.so.1': opening object file: No such file or directory 
+    Could not open object file.
 
-https://tanelpoder.com/posts/high-system-load-low-cpu-utilization-on-linux/
+`Tanel Poder - High System Load Low CPU Utilization on Linux <https://tanelpoder.com/posts/high-system-load-low-cpu-utilization-on-linux/>`_
 
-== psn
+psn
+===
 
-https://tanelpoder.com/psnapper/ [[BR]]
+`PSnapper <https://tanelpoder.com/psnapper/>`_ [[BR]]
+`0x.tools <https://0x.tools/>`_ [[BR]]
+`0xtools GitHub <https://github.com/tanelpoder/0xtools>`_
 
-https://0x.tools/ [[BR]]
+install & run::
 
-https://github.com/tanelpoder/0xtools
+    $ git clone https://github.com/tanelpoder/0xtools 
+    $ make 
+    $ sudo make install
 
-install & run {{{ $ git clone https://github.com/tanelpoder/0xtools $
-make $ sudo make install }}}
+.. code-block:: bash
 
-{{{ [goya@tech10 ~]$ python –version Python 3.11.4 [goya@tech10 ~]$ psn
-Traceback (most recent call last): File “/bin/psn”, line 40, in import
-sqlite3 File “/usr/local/lib/python3.11/sqlite3/**init**.py”, line 57,
-in from sqlite3.dbapi2 import \* File
-“/usr/local/lib/python3.11/sqlite3/dbapi2.py”, line 27, in from
-\_sqlite3 import \* ModuleNotFoundError: No module named ’\_sqlite3’
+    [goya@tech10 ~]$ python --version 
+    Python 3.11.4 
+    [goya@tech10 ~]$ psn 
+    Traceback (most recent call last): 
+        File "/bin/psn", line 40, in <module> 
+        import sqlite3 
+        File "/usr/local/lib/python3.11/sqlite3/__init__.py", line 57, in <module> 
+        from sqlite3.dbapi2 import * 
+        File "/usr/local/lib/python3.11/sqlite3/dbapi2.py", line 27, in <module> 
+        from _sqlite3 import * 
+    ModuleNotFoundError: No module named '_sqlite3'
 
-}}}
+.. code-block:: bash
 
-{{{ [goya@tech10 ~]$ sudo update-alternatives –config python
+    [goya@tech10 ~]$ sudo update-alternatives --config python
 
-3 개의 프로그램이 ’python’를 제공합니다.
+    3 개의 프로그램이 'python'를 제공합니다.
 
-선택 명령
----------
+    선택 명령
+    ---------
 
-1 /bin/python2.7 \* 2 /bin/python3.6 + 3 /usr/local/bin/python3.11
+       1 /bin/python2.7 
+       2 /bin/python3.6 
+    *  3 /usr/local/bin/python3.11
 
-현재 선택[+]을 유지하려면 엔터키를 누르고, 아니면 선택 번호를
-입력하십시오:1 [goya@tech10 ~]$ python –version Python 2.7.5
-[goya@tech10 ~]$ psn
+    현재 선택[+]을 유지하려면 엔터키를 누르고, 아니면 선택 번호를 입력하십시오: 1 
+    [goya@tech10 ~]$ python --version 
+    Python 2.7.5 
+    [goya@tech10 ~]$ psn
 
-Linux Process Snapper v1.2.4 by Tanel Poder [https://0x.tools] Sampling
-/proc/stat for 5 seconds… finished.
+    Linux Process Snapper v1.2.4 by Tanel Poder [https://0x.tools] 
+    Sampling /proc/stat for 5 seconds... finished.
 
-=== Active Threads =======================================
+    === Active Threads =======================================
 
-samples \| avg_threads \| comm \| state
----------------------------------------
+    samples | avg_threads | comm          | state
+    ---------------------------------------
 
-::
+         12 |        0.36 | (gmaster)     | Running (ON CPU) 
+          3 |        0.09 | (ksoftirqd/*) | Running (ON CPU) 
+          1 |        0.03 | (cdispatcher) | Running (ON CPU) 
+          1 |        0.03 | (cserver)     | Running (ON CPU) 
+          1 |        0.03 | (ftdc)        | Running (ON CPU) 
 
-     12 |        0.36 | (gmaster)     | Running (ON CPU) 
-      3 |        0.09 | (ksoftirqd/*) | Running (ON CPU) 
-      1 |        0.03 | (cdispatcher) | Running (ON CPU) 
-      1 |        0.03 | (cserver)     | Running (ON CPU) 
-      1 |        0.03 | (ftdc)        | Running (ON CPU) 
+    samples: 33 (expected: 100) 
+    total processes: 1106, threads: 1635 
+    runtime: 5.14, measure time: 5.06
 
-samples: 33 (expected: 100) total processes: 1106, threads: 1635
-runtime: 5.14, measure time: 5.06
+    [goya@tech10 ~]$ psn -G syscall,wchan
 
-[goya@tech10 ~]$ psn -G syscall,wchan
+    Linux Process Snapper v1.2.4 by Tanel Poder [https://0x.tools] 
+    Sampling /proc/stat, wchan, syscall for 5 seconds... finished.
 
-Linux Process Snapper v1.2.4 by Tanel Poder [https://0x.tools] Sampling
-/proc/stat, wchan, syscall for 5 seconds… finished.
+    === Active Threads =======================================
 
-=== Active Threads
+    query returned no rows
 
-query returned no rows
+    samples: 23 (expected: 100) 
+    total processes: 2, threads: 2 
+    runtime: 5.07, measure time: 5.07
 
-samples: 23 (expected: 100) total processes: 2, threads: 2 runtime:
-5.07, measure time: 5.07
+    Warning: 37559 /proc file accesses failed. 
+    Run as root or avoid restricted proc-files like "syscall" or measure only your own processes
 
-Warning: 37559 /proc file accesses failed. Run as root or avoid
-restricted proc-files like “syscall” or measure only your own processes
+    [goya@tech10 ~]$
 
-[goya@tech10 ~]$
+CentOS7
+=======
 
-}}} = Centos7 =
+set nameserver
+--------------
 
-== set nameserver == vi /etc/resolv.conf {{{ ; generated by
-/usr/sbin/dhclient-script search openstacklocal novalocal nameserver
-20.0.0.2 nameserver 8.8.8.8 }}} == dd {{{ dd if=inputfileparh
-of=outputfilepath bs=32M iflag=direct oflag=direct }}}
+.. code-block:: bash
 
-== ip netns
+    vi /etc/resolv.conf 
+    ; generated by /usr/sbin/dhclient-script 
+    search openstacklocal novalocal 
+    nameserver 20.0.0.2 
+    nameserver 8.8.8.8
 
-== nmcli
+dd
+--
 
-=== connection {{{ [root@goya-db1 centos]# nmcli connection show NAME
-UUID TYPE DEVICE Wired connection 1 8d9ca9ef-2297-3a10-89b5-756cb74c0a43
-ethernet eth0 Wired connection 2 0cf47dac-14e9-371c-acf8-30856e279aff
-ethernet eth1 System eth0 5fb06bd0-0bb0-7ffb-45f1-d6edd65f3e03 ethernet
-– System eth1 9c92fad9-6ecb-3e6c-eb4d-8a47c6f50c04 ethernet – ens3
-23f54601-52b3-4455-9ec6-8bc5216e9df2 ethernet –
+.. code-block:: bash
 
-[root@goya-db1 centos]# nmcli connection down
-0cf47dac-14e9-371c-acf8-30856e279aff ‘Wired connection 2’ 연결이
-성공적으로 비활성화되었습니다 (D-Bus 활성 경로:
-/org/freedesktop/NetworkManager/ActiveConnection/7)
+    dd if=inputfileparh of=outputfilepath bs=32M iflag=direct oflag=direct
 
-[root@goya-db1 centos]# nmcli connection up “Wired connection 2” 연결이
-성공적으로 활성화되었습니다 (D-버스 활성 경로:
-/org/freedesktop/NetworkManager/ActiveConnection/8) }}}
+ip netns
+--------
 
-== route
+nmcli
+-----
 
-default gw 변경 {{{ route add default gw 게이트웨이주소 장치명 }}}
+.. code-block:: bash
 
-{{{ echo ‘GATEWAY=게이트웨이주소’ >> /etc/sysconfig/network service
-network restart }}}
+    [root@goya-db1 centos]# nmcli connection show 
+    NAME              UUID                                  TYPE      DEVICE 
+    Wired connection 1 8d9ca9ef-2297-3a10-89b5-756cb74c0a43 ethernet  eth0 
+    Wired connection 2 0cf47dac-14e9-371c-acf8-30856e279aff ethernet  eth1 
+    System eth0       5fb06bd0-0bb0-7ffb-45f1-d6edd65f3e03 ethernet  -- 
+    System eth1       9c92fad9-6ecb-3e6c-eb4d-8a47c6f50c04 ethernet  -- 
+    ens3              23f54601-52b3-4455-9ec6-8bc5216e9df2 ethernet  --
 
-== mount && umount ==
+    [root@goya-db1 centos]# nmcli connection down 0cf47dac-14e9-371c-acf8-30856e279aff 
+    'Wired connection 2' 연결이 성공적으로 비활성화되었습니다 (D-Bus 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/7)
 
-{{{ [root@tech9 ~]# mount -v \|grep nfs nfsd on /proc/fs/nfsd type nfsd
-(rw,relatime) sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs
-(rw,relatime)
-192.168.0.120:/home/accordion/nfs/host-cluster/acc-system-prometheus-prometheus-operator-prometheus-db-prometheus-prometheus-operator-prometheus-0-pvc-4231363a-4d68-4ccb-aea6-f052a0b9c300/prometheus-db
-on
-/var/lib/kubelet/pods/8695c8ab-c896-41d9-9727-f70c4c35e297/volume-subpaths/pvc-4231363a-4d68-4ccb-aea6-f052a0b9c300/thanos-sidecar/0
-type nfs4
-(rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.0.119,local_lock=none,addr=192.168.0.120)
-[root@tech9 ~]# umount -fl
-/var/lib/kubelet/pods/8695c8ab-c896-41d9-9727-f70c4c35e297/volume-subpaths/pvc-4231363a-4d68-4ccb-aea6-f052a0b9c300/thanos-sidecar/0
-}}}
+    [root@goya-db1 centos]# nmcli connection up "Wired connection 2" 
+    연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/8)
+
+route
+-----
+
+default gw 변경::
+
+    route add default gw 게이트웨이주소 장치명 
+
+.. code-block:: bash
+
+    echo 'GATEWAY=게이트웨이주소' >> /etc/sysconfig/network 
+    service network restart
+
+mount && umount
+---------------
+
+.. code-block:: bash
+
+    [root@tech9 ~]# mount -v | grep nfs 
+    nfsd on /proc/fs/nfsd type nfsd (rw,relatime) 
+    sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime) 
+    192.168.0.120:/home/accordion/nfs/host-cluster/acc-system-prometheus-prometheus-operator-prometheus-db-prometheus-prometheus-operator-prometheus-0-pvc-4231363a-4d68-4ccb-aea6-f052a0b9c300/prometheus-db 
+    on /var/lib/kubelet/pods/8695c8ab-c896-41d9-9727-f70c4c35e297/volume-subpaths/pvc-4231363a-4d68-4ccb-aea6-f052a0b9c300/thanos-sidecar/0 
+    type nfs4 (rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.0.119,local_lock=none,addr=192.168.0.120)
+
+    [root@tech9 ~]# umount -fl /var/lib/kubelet/pods/8695c8ab-c896-41d9-9727-f70c4c35e297/volume-subpaths/pvc-4231363a-4d68-4ccb-aea6-f052a0b9c300/thanos-sidecar/0
