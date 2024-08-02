@@ -1,0 +1,582 @@
+=== ’’‘[wiki:goya wiki_goya]’’’  === [[PageOutline(2-5, Table of
+Contents, floated)]] [[BR]] [[BR]] [[BR]]
+
+= TPC-C =
+
+[https://en.wikipedia.org/wiki/TPC-C tpcc wiki] [[BR]]
+
+[https://github.com/petergeoghegan/benchmarksql/blob/master/HOW-TO-RUN.txt
+benchmarksql github] [[BR]]
+
+[http://192.168.0.111:8888/view/S206A/job/Ubuntu1004_206_PS-003_TPC-C_trunk/plot/TPC-C(ODBC%20.vs.%20EmbeddedSQL)/
+hudson tpcc] [[BR]]
+
+[http://222.108.147.73:8000/intranet/ticket/5056 iitp ticket] [[BR]]
+
+참고
+:[https://velog.io/@rhtaegus17/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-MySQL-TPC-C
+잘 정리된 블로그]
+
+첨부파일 도커파일 참고해서 로컬에서 그대로 수행하면 된다
+
+Dockerfile {{{ FROM ubuntu:18.04
+
+| RUN apt-get update &&
+| apt-get install wget -y &&
+| wget -O benchmark.zip
+  https://sourceforge.net/projects/benchmarksql/files/latest/download
+
+| RUN apt-get install -y locales && rm -rf /var/lib/apt/lists/\*
+| && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias
+  en_US.UTF-8 ENV LANG en_US.utf8 ARG BENCH_DB ENV BENCH_DB ${BENCH_DB}
+
+RUN apt update && apt install openjdk-8-jdk -y RUN apt install ant -y
+RUN apt install python -y
+
+RUN apt-get install unzip -y && unzip benchmark.zip
+
+ADD props.\* /benchmarksql-5.0/run/ ADD gen_source
+/benchmarksql-5.0/run/gen_source/ ADD genFiles.py /benchmarksql-5.0/run/
+ADD \*.jar /benchmarksql-5.0/lib/$BENCH_DB/ RUN [“ls”,
+“/benchmarksql-5.0/lib”]
+
+WORKDIR /benchmarksql-5.0/run RUN echo $BENCH_DB RUN echo $BENCH_DB \|
+xargs python genFiles.py RUN cp ./gen_source/gen_funcs.sh
+/benchmarksql-5.0/run/funcs.sh RUN cp ./gen_source/gen_jTPCC.java
+/benchmarksql-5.0/src/client/jTPCC.java RUN cp
+./gen_source/gen_jTPCCConfig.java
+/benchmarksql-5.0/src/client/jTPCCConfig.java
+
+RUN ant -f /benchmarksql-5.0/build.xml
+
+docker build -t . –build-arg BENCH_DB=tibero
+============================================
+
+docker run –rm -it
+==================
+
+}}}
+
+{{{
+
+[goya1@tech9 tpcc]$ cp -r benchmark_docker/gen_source/
+benchmarksql-5.0/run [goya1@tech9 tpcc]$ cp -r
+benchmark_docker/genFiles.py benchmarksql-5.0/run
+
+[goya1@tech9 tpcc]$ cd benchmarksql-5.0/run [goya1@tech9 run]$ ls
+funcs.sh gen_source generateReport.sh misc props.goldilocks props.ora
+runBenchmark.sh runDatabaseDestroy.sh runSQL.sh sql.firebird
+sql.postgres genFiles.py generateGraphs.sh log4j.properties props.fb
+props.goldilocks~ props.pg runDatabaseBuild.sh runLoader.sh sql.common
+sql.oracle [goya1@tech9 run]$ echo goldilocks \| xargs python
+genFiles.py generate funcs.sh success ! generate jTPCC.java success !
+generate jTPCCConfig.java success !
+
+[goya1@tech9 run]$ pwd /home/goya1/tpcc/benchmarksql-5.0/run
+[goya1@tech9 run]$ cp gen_source/gen_funcs.sh funcs.sh [goya1@tech9
+run]$ cp gen_source/gen_jTPCC.java ../src/client/jTPCC.java [goya1@tech9
+run]$ cp gen_source/gen_jTPCCConfig.java ../src/client/jTPCCConfig.java
+[goya1@tech9 run]$ cd ../ [goya1@tech9 benchmarksql-5.0]$ [goya1@tech9
+benchmarksql-5.0]$ ls HOW-TO-RUN.txt README.md build.xml doc gen_source
+lib run src [goya1@tech9 benchmarksql-5.0]$ ant -f build.xml Buildfile:
+/home/goya1/tpcc/benchmarksql-5.0/build.xml
+
+init: [mkdir] Created dir: /home/goya1/tpcc/benchmarksql-5.0/build
+
+compile: [javac] Compiling 11 source files to
+/home/goya1/tpcc/benchmarksql-5.0/build
+
+dist: [mkdir] Created dir: /home/goya1/tpcc/benchmarksql-5.0/dist [jar]
+Building jar:
+/home/goya1/tpcc/benchmarksql-5.0/dist/BenchmarkSQL-5.0.jar
+
+BUILD SUCCESSFUL Total time: 1 second [goya1@tech9 benchmarksql-5.0]$
+
+[goya1@tech9 benchmarksql-5.0]$ ls HOW-TO-RUN.txt README.md build
+build.xml dist doc gen_source lib run src [goya1@tech9
+benchmarksql-5.0]$ cd run [goya1@tech9 run]$ ls funcs.sh gen_source
+generateReport.sh misc props.goldilocks props.ora runBenchmark.sh
+runDatabaseDestroy.sh runSQL.sh sql.firebird sql.postgres genFiles.py
+generateGraphs.sh log4j.properties props.fb props.goldilocks~ props.pg
+runDatabaseBuild.sh runLoader.sh sql.common sql.oracle [goya1@tech9
+run]$ ./runDatabaseBuild.sh props.goldilocks # ———————————————————— #
+Loading SQL file ./sql.common/tableCreates.sql # ————————————————————
+create table bmsql_config ( cfg_name varchar(30) primary key, cfg_value
+varchar(50) ); create table bmsql_warehouse ( w_id integer not null,
+w_ytd decimal(12,2), w_tax decimal(4,4), w_name varchar(10), w_street_1
+varchar(20), w_street_2 varchar(20), w_city varchar(20), w_state
+char(2), w_zip char(9) ); create table bmsql_district ( d_w_id integer
+not null, d_id integer not null, d_ytd decimal(12,2), d_tax
+decimal(4,4), d_next_o_id integer, d_name varchar(10), d_street_1
+varchar(20), d_street_2 varchar(20), d_city varchar(20), d_state
+char(2), d_zip char(9) ); create table bmsql_customer ( c_w_id integer
+not null, c_d_id integer not null, c_id integer not null, c_discount
+decimal(4,4), c_credit char(2), c_last varchar(16), c_first varchar(16),
+c_credit_lim decimal(12,2), c_balance decimal(12,2), c_ytd_payment
+decimal(12,2), c_payment_cnt integer, c_delivery_cnt integer, c_street_1
+varchar(20), c_street_2 varchar(20), c_city varchar(20), c_state
+char(2), c_zip char(9), c_phone char(16), c_since timestamp, c_middle
+char(2), c_data varchar(500) ); create sequence bmsql_hist_id_seq;
+create table bmsql_history ( hist_id integer, h_c_id integer, h_c_d_id
+integer, h_c_w_id integer, h_d_id integer, h_w_id integer, h_date
+timestamp, h_amount decimal(6,2), h_data varchar(24) ); create table
+bmsql_new_order ( no_w_id integer not null, no_d_id integer not null,
+no_o_id integer not null ); create table bmsql_oorder ( o_w_id integer
+not null, o_d_id integer not null, o_id integer not null, o_c_id
+integer, o_carrier_id integer, o_ol_cnt integer, o_all_local integer,
+o_entry_d timestamp ); create table bmsql_order_line ( ol_w_id integer
+not null, ol_d_id integer not null, ol_o_id integer not null, ol_number
+integer not null, ol_i_id integer not null, ol_delivery_d timestamp,
+ol_amount decimal(6,2), ol_supply_w_id integer, ol_quantity integer,
+ol_dist_info char(24) ); create table bmsql_item ( i_id integer not
+null, i_name varchar(24), i_price decimal(5,2), i_data varchar(50),
+i_im_id integer ); create table bmsql_stock ( s_w_id integer not null,
+s_i_id integer not null, s_quantity integer, s_ytd integer, s_order_cnt
+integer, s_remote_cnt integer, s_data varchar(50), s_dist_01 char(24),
+s_dist_02 char(24), s_dist_03 char(24), s_dist_04 char(24), s_dist_05
+char(24), s_dist_06 char(24), s_dist_07 char(24), s_dist_08 char(24),
+s_dist_09 char(24), s_dist_10 char(24) ); Starting BenchmarkSQL LoadData
+
+driver=sunje.goldilocks.jdbc.GoldilocksDriver
+conn=jdbc:goldilocks://127.0.0.1:30009/test user=sys
+password=**********\* warehouses=10 loadWorkers=32 fileLocation (not
+defined) csvNullValue (not defined - using default ‘NULL’)
+
+Worker 000: Loading ITEM Worker 001: Loading Warehouse 1 Worker 002:
+Loading Warehouse 2 Worker 003: Loading Warehouse 3 Worker 004: Loading
+Warehouse 4 Worker 005: Loading Warehouse 5 Worker 006: Loading
+Warehouse 6 Worker 007: Loading Warehouse 7 Worker 008: Loading
+Warehouse 8 Worker 009: Loading Warehouse 9 Worker 010: Loading
+Warehouse 10
+
+}}}
+
+property {{{ db=goldilocks driver=sunje.goldilocks.jdbc.GoldilocksDriver
+conn=jdbc:goldilocks://10.10.10.176:22581/test?locality_aware_transaction=1&locator_file=/home/gold/locator.ini&program=test
+//conn=jdbc:goldilocks://10.10.10.176:22581/test user=tpcc password=tpcc
+
+warehouses=1000 loadWorkers=32
+
+terminals=199 //To run specified transactions per terminal- runMins must
+equal zero runTxnsPerTerminal=1000 //To run for specified minutes-
+runTxnsPerTerminal must equal zero runMins=0 //Number of total
+transactions per minute limitTxnsPerMin=1000000
+
+//Set to true to run in 4.x compatible mode. Set to false to use the
+//entire configured database evenly. terminalWarehouseFixed=true
+
+//The following five values must add up to 100 newOrderWeight=45
+paymentWeight=43 orderStatusWeight=4 deliveryWeight=4 stockLevelWeight=4
+
+// Directory name to create for collecting detailed result data. //
+Comment this out to suppress.
+resultDirectory=my_result\_%tY-%tm-%td\_%tH%tM%tS
+osCollectorScript=./misc/os_collector_linux.py osCollectorInterval=1
+//osCollectorSSHAddr=user@dbhost //osCollectorDevices=bond0 }}}
+
+create sql {{{ [gold@bss2 run]$ cat sql.common/tableCreates.sql create
+table bmsql_config ( cfg_name varchar(30) primary key, cfg_value
+varchar(50) );
+
+create table bmsql_warehouse ( w_id integer not null, w_ytd
+decimal(12,2), w_tax decimal(4,4), w_name varchar(10), w_street_1
+varchar(20), w_street_2 varchar(20), w_city varchar(20), w_state
+char(2), w_zip char(9) ) sharding by hash(w_id) pctfree 98;
+
+create table bmsql_district ( d_w_id integer not null, d_id integer not
+null, d_ytd decimal(12,2), d_tax decimal(4,4), d_next_o_id integer,
+d_name varchar(10), d_street_1 varchar(20), d_street_2 varchar(20),
+d_city varchar(20), d_state char(2), d_zip char(9) ) sharding by
+hash(d_w_id);
+
+create table bmsql_customer ( c_w_id integer not null, c_d_id integer
+not null, c_id integer not null, c_discount decimal(4,4), c_credit
+char(2), c_last varchar(16), c_first varchar(16), c_credit_lim
+decimal(12,2), c_balance decimal(12,2), c_ytd_payment decimal(12,2),
+c_payment_cnt integer, c_delivery_cnt integer, c_street_1 varchar(20),
+c_street_2 varchar(20), c_city varchar(20), c_state char(2), c_zip
+char(9), c_phone char(16), c_since timestamp, c_middle char(2), c_data
+varchar(500) ) sharding by hash (c_w_id);
+
+create sequence bmsql_hist_id_seq;
+
+create table bmsql_history ( hist_id integer, h_c_id integer, h_c_d_id
+integer, h_c_w_id integer, h_d_id integer, h_w_id integer, h_date
+timestamp, h_amount decimal(6,2), h_data varchar(24) ) sharding by
+hash(h_w_id);
+
+create table bmsql_new_order ( no_w_id integer not null, no_d_id integer
+not null, no_o_id integer not null ) sharding by hash(no_w_id);
+
+create table bmsql_oorder ( o_w_id integer not null, o_d_id integer not
+null, o_id integer not null, o_c_id integer, o_carrier_id integer,
+o_ol_cnt integer, o_all_local integer, o_entry_d timestamp ) sharding by
+hash(o_w_id);
+
+create table bmsql_order_line ( ol_w_id integer not null, ol_d_id
+integer not null, ol_o_id integer not null, ol_number integer not null,
+ol_i_id integer not null, ol_delivery_d timestamp, ol_amount
+decimal(6,2), ol_supply_w_id integer, ol_quantity integer, ol_dist_info
+char(24) ) sharding by hash(ol_w_id) storage(next 50M );
+
+create table bmsql_item ( i_id integer not null, i_name varchar(24),
+i_price decimal(5,2), i_data varchar(50), i_im_id integer ) cloned;
+
+create table bmsql_stock ( s_w_id integer not null, s_i_id integer not
+null, s_quantity integer, s_ytd integer, s_order_cnt integer,
+s_remote_cnt integer, s_data varchar(50), s_dist_01 char(24), s_dist_02
+char(24), s_dist_03 char(24), s_dist_04 char(24), s_dist_05 char(24),
+s_dist_06 char(24), s_dist_07 char(24), s_dist_08 char(24), s_dist_09
+char(24), s_dist_10 char(24) ) sharding by (s_w_id); }}}
+
+foreignKeys 모두 에러처리 {{{ [goya@tech10 sql.common]$ cat
+foreignKeys.sql
+
+alter table bmsql_district add constraint d_warehouse_fkey foreign key
+(d_w_id) references bmsql_warehouse (w_id);
+
+alter table bmsql_customer add constraint c_district_fkey foreign key
+(c_w_id, c_d_id) references bmsql_district (d_w_id, d_id);
+
+alter table bmsql_history add constraint h_customer_fkey foreign key
+(h_c_w_id, h_c_d_id, h_c_id) references bmsql_customer (c_w_id, c_d_id,
+c_id); alter table bmsql_history add constraint h_district_fkey foreign
+key (h_w_id, h_d_id) references bmsql_district (d_w_id, d_id);
+
+alter table bmsql_new_order add constraint no_order_fkey foreign key
+(no_w_id, no_d_id, no_o_id) references bmsql_oorder (o_w_id, o_d_id,
+o_id);
+
+alter table bmsql_oorder add constraint o_customer_fkey foreign key
+(o_w_id, o_d_id, o_c_id) references bmsql_customer (c_w_id, c_d_id,
+c_id);
+
+alter table bmsql_order_line add constraint ol_order_fkey foreign key
+(ol_w_id, ol_d_id, ol_o_id) references bmsql_oorder (o_w_id, o_d_id,
+o_id); alter table bmsql_order_line add constraint ol_stock_fkey foreign
+key (ol_supply_w_id, ol_i_id) references bmsql_stock (s_w_id, s_i_id);
+
+alter table bmsql_stock add constraint s_warehouse_fkey foreign key
+(s_w_id) references bmsql_warehouse (w_id); alter table bmsql_stock add
+constraint s_item_fkey foreign key (s_i_id) references bmsql_item
+(i_id); }}}
+
+./runDatabaseBuild.sh
+
+{{{ [goya@tech10 run]$ sh runDatabaseDestroy.sh props.goldilocks #
+———————————————————— # Loading SQL file ./sql.common/tableDrops.sql #
+———————————————————— drop table bmsql_config; drop table
+bmsql_new_order; drop table bmsql_order_line; drop table bmsql_oorder;
+drop table bmsql_history; drop table bmsql_customer; drop table
+bmsql_stock; drop table bmsql_item; drop table bmsql_district; drop
+table bmsql_warehouse; drop sequence bmsql_hist_id_seq; [goya@tech10
+run]$ sh runDatabaseBuild.sh props.goldilocks # ———————————————————— #
+Loading SQL file ./sql.common/tableCreates.sql # ————————————————————
+create table bmsql_config ( cfg_name varchar(30) primary key, cfg_value
+varchar(50) ); create table bmsql_warehouse ( w_id integer not null,
+w_ytd decimal(12,2), w_tax decimal(4,4), w_name varchar(10), w_street_1
+varchar(20), w_street_2 varchar(20), w_city varchar(20), w_state
+char(2), w_zip char(9) ); create table bmsql_district ( d_w_id integer
+not null, d_id integer not null, d_ytd decimal(12,2), d_tax
+decimal(4,4), d_next_o_id integer, d_name varchar(10), d_street_1
+varchar(20), d_street_2 varchar(20), d_city varchar(20), d_state
+char(2), d_zip char(9) ); create table bmsql_customer ( c_w_id integer
+not null, c_d_id integer not null, c_id integer not null, c_discount
+decimal(4,4), c_credit char(2), c_last varchar(16), c_first varchar(16),
+c_credit_lim decimal(12,2), c_balance decimal(12,2), c_ytd_payment
+decimal(12,2), c_payment_cnt integer, c_delivery_cnt integer, c_street_1
+varchar(20), c_street_2 varchar(20), c_city varchar(20), c_state
+char(2), c_zip char(9), c_phone char(16), c_since timestamp, c_middle
+char(2), c_data varchar(500) ); create sequence bmsql_hist_id_seq;
+create table bmsql_history ( hist_id integer, h_c_id integer, h_c_d_id
+integer, h_c_w_id integer, h_d_id integer, h_w_id integer, h_date
+timestamp, h_amount decimal(6,2), h_data varchar(24) ); create table
+bmsql_new_order ( no_w_id integer not null, no_d_id integer not null,
+no_o_id integer not null ); create table bmsql_oorder ( o_w_id integer
+not null, o_d_id integer not null, o_id integer not null, o_c_id
+integer, o_carrier_id integer, o_ol_cnt integer, o_all_local integer,
+o_entry_d timestamp ); create table bmsql_order_line ( ol_w_id integer
+not null, ol_d_id integer not null, ol_o_id integer not null, ol_number
+integer not null, ol_i_id integer not null, ol_delivery_d timestamp,
+ol_amount decimal(6,2), ol_supply_w_id integer, ol_quantity integer,
+ol_dist_info char(24) ); create table bmsql_item ( i_id integer not
+null, i_name varchar(24), i_price decimal(5,2), i_data varchar(50),
+i_im_id integer ); create table bmsql_stock ( s_w_id integer not null,
+s_i_id integer not null, s_quantity integer, s_ytd integer, s_order_cnt
+integer, s_remote_cnt integer, s_data varchar(50), s_dist_01 char(24),
+s_dist_02 char(24), s_dist_03 char(24), s_dist_04 char(24), s_dist_05
+char(24), s_dist_06 char(24), s_dist_07 char(24), s_dist_08 char(24),
+s_dist_09 char(24), s_dist_10 char(24) ); Starting BenchmarkSQL LoadData
+
+driver=sunje.goldilocks.jdbc.GoldilocksDriver
+conn=jdbc:goldilocks://192.168.0.119:30009/test user=tpcc
+password=**********\* warehouses=10 loadWorkers=8 fileLocation (not
+defined) csvNullValue (not defined - using default ‘NULL’)
+
+Worker 000: Loading ITEM Worker 001: Loading Warehouse 1 Worker 002:
+Loading Warehouse 2 Worker 003: Loading Warehouse 3 Worker 004: Loading
+Warehouse 4 Worker 005: Loading Warehouse 5 Worker 006: Loading
+Warehouse 6 Worker 007: Loading Warehouse 7 Worker 000: Loading ITEM
+done Worker 000: Loading Warehouse 8 Worker 004: Loading Warehouse 4
+done Worker 004: Loading Warehouse 9 Worker 007: Loading Warehouse 7
+done Worker 007: Loading Warehouse 10 Worker 005: Loading Warehouse 5
+done Worker 003: Loading Warehouse 3 done Worker 006: Loading Warehouse
+6 done Worker 001: Loading Warehouse 1 done Worker 002: Loading
+Warehouse 2 done Worker 000: Loading Warehouse 8 done Worker 007:
+Loading Warehouse 10 done Worker 004: Loading Warehouse 9 done #
+———————————————————— # Loading SQL file ./sql.common/indexCreates.sql #
+———————————————————— alter table bmsql_warehouse add constraint
+bmsql_warehouse_pkey primary key (w_id); alter table bmsql_district add
+constraint bmsql_district_pkey primary key (d_w_id, d_id); alter table
+bmsql_customer add constraint bmsql_customer_pkey primary key (c_w_id,
+c_d_id, c_id); create index bmsql_customer_idx1 on bmsql_customer
+(c_w_id, c_d_id, c_last, c_first); alter table bmsql_oorder add
+constraint bmsql_oorder_pkey primary key (o_w_id, o_d_id, o_id); create
+unique index bmsql_oorder_idx1 on bmsql_oorder (o_w_id, o_d_id,
+o_carrier_id, o_id); alter table bmsql_new_order add constraint
+bmsql_new_order_pkey primary key (no_w_id, no_d_id, no_o_id); alter
+table bmsql_order_line add constraint bmsql_order_line_pkey primary key
+(ol_w_id, ol_d_id, ol_o_id, ol_number); alter table bmsql_stock add
+constraint bmsql_stock_pkey primary key (s_w_id, s_i_id); alter table
+bmsql_item add constraint bmsql_item_pkey primary key (i_id); #
+———————————————————— # Loading SQL file ./sql.common/foreignKeys.sql #
+———————————————————— alter table bmsql_district add constraint
+d_warehouse_fkey foreign key (d_w_id) references bmsql_warehouse (w_id);
+not implemented feature, in a function qlrValidateAddConst() alter table
+bmsql_customer add constraint c_district_fkey foreign key (c_w_id,
+c_d_id) references bmsql_district (d_w_id, d_id); not implemented
+feature, in a function qlrValidateAddConst() alter table bmsql_history
+add constraint h_customer_fkey foreign key (h_c_w_id, h_c_d_id, h_c_id)
+references bmsql_customer (c_w_id, c_d_id, c_id); not implemented
+feature, in a function qlrValidateAddConst() alter table bmsql_history
+add constraint h_district_fkey foreign key (h_w_id, h_d_id) references
+bmsql_district (d_w_id, d_id); not implemented feature, in a function
+qlrValidateAddConst() alter table bmsql_new_order add constraint
+no_order_fkey foreign key (no_w_id, no_d_id, no_o_id) references
+bmsql_oorder (o_w_id, o_d_id, o_id); not implemented feature, in a
+function qlrValidateAddConst() alter table bmsql_oorder add constraint
+o_customer_fkey foreign key (o_w_id, o_d_id, o_c_id) references
+bmsql_customer (c_w_id, c_d_id, c_id); not implemented feature, in a
+function qlrValidateAddConst() alter table bmsql_order_line add
+constraint ol_order_fkey foreign key (ol_w_id, ol_d_id, ol_o_id)
+references bmsql_oorder (o_w_id, o_d_id, o_id); not implemented feature,
+in a function qlrValidateAddConst() alter table bmsql_order_line add
+constraint ol_stock_fkey foreign key (ol_supply_w_id, ol_i_id)
+references bmsql_stock (s_w_id, s_i_id); not implemented feature, in a
+function qlrValidateAddConst() alter table bmsql_stock add constraint
+s_warehouse_fkey foreign key (s_w_id) references bmsql_warehouse (w_id);
+not implemented feature, in a function qlrValidateAddConst() alter table
+bmsql_stock add constraint s_item_fkey foreign key (s_i_id) references
+bmsql_item (i_id); not implemented feature, in a function
+qlrValidateAddConst() ERROR: Cannot locate SQL file for extraHistID #
+———————————————————— # Loading SQL file ./sql.common/buildFinish.sql #
+———————————————————— – —- – Extra commands to run after the tables are
+created, loaded, – indexes built and extra’s created. – —-
+
+}}}
+
+sh runBenchmark.sh {{{ [goya@tech10 run]$ sh runBenchmark.sh usage:
+runBenchmark.sh PROPS_FILE [goya@tech10 run]$ ./runBenchmark.sh
+props.goldilocks 18:08:37,973 [main] INFO jTPCC : Term-00, 18:08:37,975
+[main] INFO jTPCC : Term-00, +————————————————————-+ 18:08:37,976 [main]
+INFO jTPCC : Term-00, BenchmarkSQL v5.0 18:08:37,976 [main] INFO jTPCC :
+Term-00, +————————————————————-+ 18:08:37,976 [main] INFO jTPCC :
+Term-00, (c) 2003, Raul Barbosa 18:08:37,976 [main] INFO jTPCC :
+Term-00, (c) 2004-2016, Denis Lussier 18:08:37,979 [main] INFO jTPCC :
+Term-00, (c) 2016, Jan Wieck 18:08:37,979 [main] INFO jTPCC : Term-00,
++————————————————————-+ 18:08:37,979 [main] INFO jTPCC : Term-00,
+18:08:37,979 [main] INFO jTPCC : Term-00, db=goldilocks 18:08:37,979
+[main] INFO jTPCC : Term-00,
+driver=sunje.goldilocks.jdbc.GoldilocksDriver 18:08:37,979 [main] INFO
+jTPCC : Term-00, conn=jdbc:goldilocks://192.168.0.119:30009/test
+18:08:37,979 [main] INFO jTPCC : Term-00, user=tpcc 18:08:37,979 [main]
+INFO jTPCC : Term-00, 18:08:37,980 [main] INFO jTPCC : Term-00,
+warehouses=10 18:08:37,980 [main] INFO jTPCC : Term-00, terminals=20
+18:08:37,981 [main] INFO jTPCC : Term-00, runTxnsPerTerminal=1000
+18:08:37,981 [main] INFO jTPCC : Term-00, limitTxnsPerMin=1000000
+18:08:37,982 [main] INFO jTPCC : Term-00, terminalWarehouseFixed=true
+18:08:37,982 [main] INFO jTPCC : Term-00, 18:08:37,982 [main] INFO jTPCC
+: Term-00, newOrderWeight=45 18:08:37,982 [main] INFO jTPCC : Term-00,
+paymentWeight=43 18:08:37,982 [main] INFO jTPCC : Term-00,
+orderStatusWeight=4 18:08:37,982 [main] INFO jTPCC : Term-00,
+deliveryWeight=4 18:08:37,982 [main] INFO jTPCC : Term-00,
+stockLevelWeight=4 18:08:37,982 [main] INFO jTPCC : Term-00,
+18:08:37,982 [main] INFO jTPCC : Term-00,
+resultDirectory=my_result\_%tY-%tm-%td\_%tH%tM%tS 18:08:37,982 [main]
+INFO jTPCC : Term-00, osCollectorScript=./misc/os_collector_linux.py
+18:08:37,982 [main] INFO jTPCC : Term-00, 18:08:38,008 [main] INFO jTPCC
+: Term-00, copied props.goldilocks to
+my_result_2022-11-25_180838/run.properties 18:08:38,009 [main] INFO
+jTPCC : Term-00, created my_result_2022-11-25_180838/data/runInfo.csv
+for runID 1 18:08:38,009 [main] INFO jTPCC : Term-00, writing per
+transaction results to my_result_2022-11-25_180838/data/result.csv
+18:08:38,010 [main] INFO jTPCC : Term-00,
+osCollectorScript=./misc/os_collector_linux.py 18:08:38,010 [main] INFO
+jTPCC : Term-00, osCollectorInterval=1 18:08:38,010 [main] INFO jTPCC :
+Term-00, osCollectorSSHAddr=null 18:08:38,010 [main] INFO jTPCC :
+Term-00, osCollectorDevices=null 18:08:38,077 [main] INFO jTPCC :
+Term-00, File “”, line 63 print “,”.join([str(x) for x in sysInfo]) ^
+SyntaxError: invalid syntax 18:08:38,110 [Thread-0] ERROR
+OSCollector$CollectData : OSCollector, unexpected EOF while reading from
+external helper process 18:08:38,216 [main] INFO jTPCC : Term-00, C
+value for C_LAST during load: 12 18:08:38,217 [main] INFO jTPCC :
+Term-00, C value for C_LAST this run: 77 18:08:38,217 [main] INFO jTPCC
+: Term-00, Term-00, Running Average tpmTOTAL: 298965.51 Current
+tpmTOTAL: 151164 Memory Usage: 295MB / 1963MB 18:08:42,835 [Thread-11]
+INFO jTPCC : Term-00, 18:08:42,837 [Thread-11] INFO jTPCC : Term-00,
+18:08:42,837 [Thread-11] INFO jTPCC : Term-00, Measured tpmC (NewOrders)
+= 130409.04 18:08:42,838 [Thread-11] INFO jTPCC : Term-00, Measured
+tpmTOTAL = 288753.6 18:08:42,838 [Thread-11] INFO jTPCC : Term-00,
+Session Start = 2022-11-25 18:08:38 18:08:42,838 [Thread-11] INFO jTPCC
+: Term-00, Session End = 2022-11-25 18:08:42 18:08:42,838 [Thread-11]
+INFO jTPCC : Term-00, Transaction Count = 20000 }}}
+
+sh generateReport.sh my_result_2022-11-25_180838 {{{ [goya@tech10 run]$
+ls benchmarksql-error.log generateGraphs.sh props.fb runBenchmark.sh
+sql.common funcs.sh generateReport.sh props.goldilocks
+runDatabaseBuild.sh sql.firebird genFiles.py log4j.properties props.ora
+runDatabaseDestroy.sh sql.oracle gen_funcs.sh misc props.pg runLoader.sh
+sql.postgres gen_source my_result_2022-11-25_180838 props.tibero
+runSQL.sh
+
+[goya@tech10 run]$ sh generateReport.sh my_result_2022-11-25_180838
+Generating my_result_2022-11-25_180838/tpm_nopm.png … OK Generating
+my_result_2022-11-25_180838/latency.png … OK Generating
+my_result_2022-11-25_180838/cpu_utilization.png … Error in
+read.table(file = file, header = header, sep = sep, quote = quote, :
+입력에 가능한 라인들이 없습니다 Calls: read.csv -> read.table 실행이
+정지되었습니다 ERROR
+
+R version 3.6.0 (2019-04-26) – “Planting of a Tree” Copyright (C) 2019
+The R Foundation for Statistical Computing Platform:
+x86_64-redhat-linux-gnu (64-bit)
+
+R은 자유 소프트웨어이며, 어떠한 형태의 보증없이 배포됩니다. 또한, 일정한
+조건하에서 이것을 재배포 할 수 있습니다. 배포와 관련된 상세한 내용은
+‘license()’ 또는 ’licence()’을 통하여 확인할 수 있습니다.
+
+R은 많은 기여자들이 참여하는 공동프로젝트입니다. ’contributors()’라고
+입력하시면 이에 대한 더 많은 정보를 확인하실 수 있습니다. 그리고, R 또는
+R 패키지들을 출판물에 인용하는 방법에 대해서는 ’citation()’을 통해
+확인하시길 부탁드립니다.
+
+’demo()’를 입력하신다면 몇가지 데모를 보실 수 있으며, ’help()’를
+입력하시면 온라인 도움말을 이용하실 수 있습니다. 또한, ’help.start()’의
+입력을 통하여 HTML 브라우저에 의한 도움말을 사용하실수 있습니다 R의
+종료를 원하시면 ’q()’을 입력해주세요.
+
+   .. rubric:: —-
+      :name: section
+
+   .. rubric:: R graph to show CPU utilization
+      :name: r-graph-to-show-cpu-utilization
+
+   .. rubric:: —-
+      :name: section-1
+
+   .. rubric:: —-
+      :name: section-2
+
+   .. rubric:: Read the runInfo.csv file.
+      :name: read-the-runinfo.csv-file.
+
+   .. rubric:: —-
+      :name: section-3
+
+   runInfo <- read.csv(“data/runInfo.csv”, head=TRUE)
+
+   .. rubric:: —-
+      :name: section-4
+
+   .. rubric:: Determine the grouping interval in seconds based on the
+      :name: determine-the-grouping-interval-in-seconds-based-on-the
+
+   .. rubric:: run duration.
+      :name: run-duration.
+
+   .. rubric:: —-
+      :name: section-5
+
+   xmax <- runInfo$runMins for (interval in c(1, 2, 5, 10, 20, 60, 120,
+   300, 600)) { + if ((xmax \* 60) / interval <= 1000) { + break + } + }
+   idiv <- interval \* 1000.0
+
+   .. rubric:: —-
+      :name: section-6
+
+   .. rubric:: Read the recorded CPU data and aggregate it for the
+      desired interval.
+      :name: read-the-recorded-cpu-data-and-aggregate-it-for-the-desired-interval.
+
+   .. rubric:: —-
+      :name: section-7
+
+   rawData <- read.csv(“data/sys_info.csv”, head=TRUE) Generating
+   my_result_2022-11-25_180838/report.html … OK }}}
+
+-  2023/09/06 테스트 {{{ ### GOLDILOCKS 는 아래의 단계로 실행하면 된다.
+   ### 가능하면 Analyze해주면 좋겠다. (Tabke명은 sql파일 참조)
+   [lim272@kuber-master:0 sql.common]$ gsqlnet sys gliese –dsn g1n1
+   –import tableDrops.sql [lim272@kuber-master:0 sql.common]$ gsqlnet
+   sys gliese –dsn g1n1 –import tableCreates.sql [lim272@kuber-master:0
+   sql.common]$ gsqlnet sys gliese –dsn g1n1 –import indexCreates.sql
+
+vi props.pg 에 다음 항목들을 우리꺼에 맞게 아래와 같이 수정
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+db=postgres driver=sunje.goldilocks.jdbc.GoldilocksDriver
+conn=jdbc:goldilocks://192.168.0.119:27581/test user=sys password=gliese
+warehouses=10 loadWorkers=32
+
+terminals=100 <== 실제 붙는 세션수로 해석 runTxnsPerTerminal=10000 <==
+세션당 처리량
+
+사전 데이터를 로딩하는 과정이다.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[lim272@kuber-master:0 run]$ sh runLoader.sh props.pg Starting
+BenchmarkSQL LoadData
+
+driver=sunje.goldilocks.jdbc.GoldilocksDriver
+conn=jdbc:goldilocks://192.168.0.119:27581/test user=sys
+password=**********\* warehouses=10 loadWorkers=32 fileLocation (not
+defined) csvNullValue (not defined - using default ‘NULL’)
+
+Worker 000: Loading ITEM Worker 001: Loading Warehouse 1 Worker 002:
+Loading Warehouse 2 Worker 003: Loading Warehouse 3 Worker 004: Loading
+Warehouse 4 Worker 005: Loading Warehouse 5 Worker 006: Loading
+Warehouse 6 Worker 007: Loading Warehouse 7 Worker 008: Loading
+Warehouse 8 Worker 009: Loading Warehouse 9 Worker 010: Loading
+Warehouse 10 Worker 000: Loading ITEM done Worker 003: Loading Warehouse
+3 done Worker 010: Loading Warehouse 10 done Worker 006: Loading
+Warehouse 6 done Worker 008: Loading Warehouse 8 done Worker 004:
+Loading Warehouse 4 done Worker 005: Loading Warehouse 5 done Worker
+009: Loading Warehouse 9 done Worker 001: Loading Warehouse 1 done
+Worker 002: Loading Warehouse 2 done Worker 007: Loading Warehouse 7
+done
+
+tpcc 테스트를 돌리는 과정이다.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[lim272@kuber-master:0 run]$ sh runBenchmark.sh props.pg
+
+| 14:36:29,703 [Thread-7] INFO jTPCC : Term-00, Measured tpmC
+  (NewOrders) = 31925.72 <==== 이숫자와 아래 TOTAL을 같이 기록.
+| 14:36:29,703 [Thread-7] INFO jTPCC : Term-00, Measured tpmTOTAL =
+  70789.59
+| 14:36:29,703 [Thread-7] INFO jTPCC : Term-00, Session Start =
+  2023-09-06 14:22:22
+| 14:36:29,703 [Thread-7] INFO jTPCC : Term-00, Session End = 2023-09-06
+  14:36:29
+| 14:36:29,703 [Thread-7] INFO jTPCC : Term-00, Transaction Count =
+  1000000 <=== 100만은 최소 하자
+
+서버상태로 봐서는 부하를 훨씬 더 주어도 무방해보였음. 문제는 io wait 성능인거 같은 느낌.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+구성
+~~~~
+
+(119, 120)을 Cluster, (139)번에서 Client를 수행한 환경.
+
+}}}
