@@ -8,6 +8,7 @@ Ubuntu pstack
 `Ask Ubuntu - Why won't strace/gdb attach to a process even though I'm root <https://askubuntu.com/questions/143561/why-wont-strace-gdb-attach-to-a-process-even-though-im-root>`_
 
 test::
+
     goya@tech5:~/goldilocks_data/conf$ pstack 9876 
     Could not attach to target 9876: Operation not permitted. 
     detach: No such process
