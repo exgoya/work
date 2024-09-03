@@ -106,5 +106,5 @@ async def main(table_type):
 
 if __name__ == "__main__":
     # 'rowstore', 'columnstore', 'temporary' 중 선택하여 사용
-    table_type = 'rowstore'
+    table_type = 'columnstore'
     asyncio.run(main(table_type))
