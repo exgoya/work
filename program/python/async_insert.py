@@ -87,8 +87,8 @@ async def main(table_type):
     start_time = time.time()
 
     # 10,000,000건의 무작위 데이터 생성 및 삽입
-    batch_size = 10000  # 배치 크기
-    total_records = 10000000
+    batch_size = 1000  # 배치 크기
+    total_records = 1000000
     batches = [ [generate_random_data() for _ in range(batch_size)] for _ in range(total_records // batch_size) ]
 
     # 코루틴을 통해 비동기적으로 데이터 삽입 및 각 배치마다 commit
