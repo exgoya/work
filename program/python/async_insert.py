@@ -36,7 +36,7 @@ async def create_table(cursor, table_type):
     if table_type == 'rowstore':
         create_table_sql = """
         CREATE ROWSTORE TABLE emp (
-            id INT AUTO_INCREMENT PRIMARY KEY,
+            id BIGINT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             age INT NOT NULL,
             hire_date DATE,
@@ -46,18 +46,18 @@ async def create_table(cursor, table_type):
     elif table_type == 'columnstore':
         create_table_sql = """
         CREATE TABLE emp (
-            id INT AUTO_INCREMENT PRIMARY KEY,
+            id BIGINT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             age INT NOT NULL,
             hire_date DATE,
-            department TEXT,
-            SORT KEY(name)
+            department TEXT
+           -- ,SORT KEY(name)
         ) 
         """
     elif table_type == 'temporary':
         create_table_sql = """
         CREATE TEMPORARY TABLE emp (
-            id INT AUTO_INCREMENT PRIMARY KEY,
+            id BIGINT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             age INT NOT NULL,
             hire_date DATE,
