@@ -6,11 +6,11 @@ import time
 
 # Singlestore에 연결 설정
 db_config = {
-    'host': '192.168.0.7',  # Singlestore 호스트 주소
+    'host': '192.168.0.125',  # Singlestore 호스트 주소
     'user': 'root',         # Singlestore 사용자 이름
     'password': 'test',     # Singlestore 비밀번호
     'db': 'test',           # 사용할 데이터베이스 이름
-    'port': 3306            # Singlestore 포트 (기본값: 3306)
+    'port': 3307            # Singlestore 포트 (기본값: 3306)
 }
 
 def generate_random_data():
@@ -87,6 +87,7 @@ async def main(table_type):
     start_time = time.time()
 
     # 10,000,000건의 무작위 데이터 생성 및 삽입
+    # batch_size = 1000, total_records = 1000000 일때 ingest queued 현상 
     batch_size = 1000  # 배치 크기
     total_records = 1000000
     batches = [ [generate_random_data() for _ in range(batch_size)] for _ in range(total_records // batch_size) ]
